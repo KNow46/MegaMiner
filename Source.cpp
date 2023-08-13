@@ -21,7 +21,7 @@
 #include "TestObject.h"
 #include "InterfaceManager.h"
 #include "Camera.h"
-
+#include "Machine.h"
 
 //transforms to range (-1,1)
 //if transforming point set length to 0
@@ -77,12 +77,12 @@ void rendererScene(std::vector<std::shared_ptr<T>> &sceneObjects, Renderer& rend
 }
 
 
-//struct UserData
-//{
-//    std::vector<std::shared_ptr<InterfaceObject>>&allInterfaceObjects;
-// 
-//    UserData(std::vector<std::shared_ptr<InterfaceObject>>& objects) : allInterfaceObjects(objects) {}
-//};
+struct UserData
+{
+   std::shared_ptr<Machine> machine;
+
+   UserData(std::shared_ptr<Machine> machine) : machine(machine) {}
+};
 
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
@@ -94,6 +94,50 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
         InterfaceManager::getInstance().handleLeftClick(xpos, ypos);
     }
 }
+void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    if (action == GLFW_PRESS || action == GLFW_REPEAT)
+    {
+        UserData* userData = static_cast<UserData*>(glfwGetWindowUserPointer(window));
+
+        if(userData)
+        {
+            std::shared_ptr<Machine> machine = userData->machine;
+
+            if (key == GLFW_KEY_UP)
+            {
+                machine->setCurrentState(Machine::State::FLYING);
+            }
+            else if (key == GLFW_KEY_DOWN)
+            {
+                machine->setCurrentState(Machine::State::DRILLING_DOWN);
+
+            }
+            else if (key == GLFW_KEY_LEFT)
+            {
+                machine->setCurrentState(Machine::State::DRILLING_LEFT);
+            }
+            else if (key == GLFW_KEY_RIGHT)
+            {
+                machine->setCurrentState(Machine::State::DRILLING_RIGHT);
+            }
+        }
+    }
+    else if (action == GLFW_RELEASE)
+    {
+        UserData* userData = static_cast<UserData*>(glfwGetWindowUserPointer(window));
+
+        if (userData)
+        {
+            std::shared_ptr<Machine> machine = userData->machine;
+       
+            machine->setCurrentState(Machine::State::STANDING);
+            
+        }
+    }
+
+}
+
 
 
 int main(void)
@@ -115,6 +159,7 @@ int main(void)
         glfwTerminate();
         return -1;
     }
+
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
@@ -157,16 +202,23 @@ int main(void)
 		shader.Bind();
 		shader.SetUniform1i("u_Texture", 1);
 
-
+        std::shared_ptr<Machine> machine = std::make_shared<Machine>(100, 100, 200, 150);
+       // userdata userdata(machine);
+      //  glfwsetwindowuserpointer(window, &userdata);
         glfwSetMouseButtonCallback(window, mouse_button_callback);
+        glfwSetKeyCallback(window, keyCallback);
 
-       
+
+        std::vector<std::shared_ptr<GameObject>> gameObjects;
+
+        gameObjects.push_back(std::shared_ptr<Machine>(machine));
 
 
-        //UserData userData();
-        //glfwSetWindowUserPointer(window, &userData);
+
+        UserData userData(machine);
+        glfwSetWindowUserPointer(window, &userData);
  
-
+        gameObjects.emplace_back(std::make_shared<InterfaceObject>(300, 300, windowWidth / 2, windowWidth / 2, "res/textures/board.png", "res/textures/xWon.png"));
         double xpos, ypos;
         /* Loop until the user closes the window */
         while (!glfwWindowShouldClose(window))
@@ -176,7 +228,8 @@ int main(void)
                 
              glfwGetCursorPos(window, &xpos, &ypos);
 
-                
+
+
             
           
           
@@ -186,7 +239,9 @@ int main(void)
 
             InterfaceManager::getInstance().handleHover(xpos, ypos);
 
-            rendererScene(InterfaceManager::getInstance().getAllInterfaceObjects(), renderer, shader, va, vb, layout, ib, window, basicCamera, false);
+            rendererScene(gameObjects, renderer, shader, va, vb, layout, ib, window, basicCamera, true);
+
+            //rendererScene(InterfaceManager::getInstance().getAllInterfaceObjects(), renderer, shader, va, vb, layout, ib, window, basicCamera, false);
 
             /* Swap front and back buffers */
             GLCall(glfwSwapBuffers(window));

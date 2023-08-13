@@ -149,6 +149,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
+    <ClCompile Include="Machine.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="IndexBuffer.h" />
     <ClInclude Include="InterfaceManager.h" />
     <ClInclude Include="InterfaceObject.h" />
+    <ClInclude Include="Machine.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="src\vendor\stb_image\stb_image.h" />

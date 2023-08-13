@@ -6,10 +6,10 @@ C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(34,18): warning C4244: '=':
 C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(38,64): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(94,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(94,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(187,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(187,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(240,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(240,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(58,51): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(189,13): message : see reference to function template instantiation 'void rendererScene<InterfaceObject>(std::vector<std::shared_ptr<InterfaceObject>,std::allocator<std::shared_ptr<InterfaceObject>>> &,Renderer &,Shader &,VertexArray &,VertexBuffer &,VertexBufferLayout &,IndexBuffer &,GLFWwindow *,Camera *,bool)' being compiled
+C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(242,13): message : see reference to function template instantiation 'void rendererScene<GameObject>(std::vector<std::shared_ptr<GameObject>,std::allocator<std::shared_ptr<GameObject>>> &,Renderer &,Shader &,VertexArray &,VertexBuffer &,VertexBufferLayout &,IndexBuffer &,GLFWwindow *,Camera *,bool)' being compiled
 C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(58,189): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(59,96): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(59,214): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data

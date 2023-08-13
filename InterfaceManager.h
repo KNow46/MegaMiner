@@ -9,7 +9,7 @@ private:
 
     InterfaceManager()
     {
-        allInterfaceObjects.emplace_back(std::make_shared<InterfaceObject>(300, 300, windowWidth / 2, windowWidth / 2, "res/textures/board.png", "res/textures/xWon.png"));
+       // allInterfaceObjects.emplace_back(std::make_shared<InterfaceObject>(300, 300, windowWidth / 2, windowWidth / 2, "res/textures/board.png", "res/textures/xWon.png"));
     }
 
 public:
