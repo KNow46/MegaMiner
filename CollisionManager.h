@@ -1,20 +1,32 @@
 #pragma once
 #include "GameObject.h"
 #include <vector>
+#include "World.h"
+#include <memory>
 
 class CollisionManager
 {
-private:
-	std::vector<std::shared_ptr<GameObject>> gameObjects;
 public:
-	void checkCollisions()
+	std::shared_ptr<GameObject> checkCollisions(int x, int y)
 	{
-		for (int i = 0; i < gameObjects.size() - 1; i++)
+		for (const auto& object : World::getInstance().getAllObjects())
 		{
-			for (int j = i + 1; j < gameObjects.size(); i++)
+			if (x > object->getX() && x < object->getX() + object->getWidth())
 			{
-				//if(gameObjects[i]->getX)
+				if (y > object->getY() && y < object->getY() + object->getHeight())
+				{
+					return object;
+				}
 			}
 		}
+		return nullptr;
+		
 	}
+	static CollisionManager& getInstance()
+	{
+		static CollisionManager instance;
+		return instance;
+	}
+private:
+
 };
