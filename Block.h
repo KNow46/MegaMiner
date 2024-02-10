@@ -15,9 +15,9 @@ public:
 protected:
 	int hp;
 public:
-	Block(int x, int y, int width, int height, int hp, BlockType blockType);
+	Block(int x, int y, int width, int height, BlockType blockType);
 
-	void getHit(int damage);
+	void hit(int damage);
 
 	int getHp();
 	

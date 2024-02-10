@@ -16,15 +16,18 @@ class World {
 
         for (int i = 0; i < 10; i++)
         {
-            block = std::make_shared<Block>(i*100, 100, 100, 100, 5, BlockType::stone);
+            block = std::make_shared<Block>(i*100, 100, 100, 100,  BlockType::stone);
             addObject(block);
         }
 
         for (int i = 0; i < 10; i++)
         {
-            block = std::make_shared<Block>(200+i * 100, 400, 100, 100, 5, BlockType::stone);
+            block = std::make_shared<Block>(200+i * 100, 400, 100, 100, BlockType::stone);
             addObject(block);
         }
+
+        block = std::make_shared<Block>(800, 300, 100, 100, BlockType::stone);
+        addObject(block);
 
     };
     ~World() {};
@@ -63,6 +66,10 @@ public:
         for (const auto& object : objects) 
         {
             object->update();
+            if (object->getIsDestroyed() == true)
+            {
+                removeObject(object);
+            }
         }
     }
 

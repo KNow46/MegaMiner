@@ -10,12 +10,22 @@ std::string getBlockTexturePath(BlockType blockType) {
     }
 }
 
-Block::Block(int x, int y, int width, int height, int initialHp, BlockType blockType)
-    : GameObject(x, y, width, height, "res/textures/"+ getBlockTexturePath(blockType)), hp(initialHp), blockType(blockType)
+int getBlockInitialHp(BlockType blockType) {
+    switch (blockType) {
+    case BlockType::stone:
+        return 20;
+
+    default:
+        return 20;
+    }
+}
+
+Block::Block(int x, int y, int width, int height, BlockType blockType)
+    : GameObject(x, y, width, height, "res/textures/"+ getBlockTexturePath(blockType)), hp(getBlockInitialHp(blockType)), blockType(blockType)
 {
 }
 
-void Block::getHit(int damage)
+void Block::hit(int damage)
 {
     hp -= damage;
     if (hp <= 0)
