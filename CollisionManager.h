@@ -11,9 +11,9 @@ public:
 	{
 		for (const auto& object : World::getInstance().getAllObjects())
 		{
-			if (x > object->getX() && x < object->getX() + object->getWidth())
+			if (x >= object->getX() && x < object->getX() + object->getWidth())
 			{
-				if (y > object->getY() && y < object->getY() + object->getHeight())
+				if (y >= object->getY() && y < object->getY() + object->getHeight())
 				{
 					return object;
 				}

@@ -11,11 +11,11 @@ public:
 
 	Machine(int x, int y, int width, int height);
 
-	double xSpeed = 2;
-	double fallingYSpeed = 2;
-	double fallingXSpeed = 2;
-	double flyingYspeed = 2;
-	double flyingXspeed = 2;
+	double xSpeed = 8;
+	double fallingYSpeed = 8;
+	double fallingXSpeed = 8;
+	double flyingYspeed = 8;
+	double flyingXspeed = 8;
 
 	virtual const Texture& getTexture();
 

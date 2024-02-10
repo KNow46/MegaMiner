@@ -1,7 +1,17 @@
 #include "Block.h"
 
-Block::Block(int x, int y, int width, int height, int initialHp, std::string texturePath)
-    : GameObject(x, y, width, height, "res/textures/board.png"), hp(initialHp)
+std::string getBlockTexturePath(BlockType blockType) {
+    switch (blockType) {
+    case BlockType::stone:
+        return "stone.jpg";
+
+    default:
+        return "stone.jpg";
+    }
+}
+
+Block::Block(int x, int y, int width, int height, int initialHp, BlockType blockType)
+    : GameObject(x, y, width, height, "res/textures/"+ getBlockTexturePath(blockType)), hp(initialHp), blockType(blockType)
 {
 }
 

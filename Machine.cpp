@@ -45,7 +45,7 @@ const Texture& Machine::getTexture()
     }
     else if (currentState == FALLING_LEFT)
     {
-        return TextureManager::getInstance().getTexture(basePath + "drillingRight.png");
+        return TextureManager::getInstance().getTexture(basePath + "drillingLeft.png");
     }
     else if (currentState == FALLING_RIGHT)
     {
@@ -161,7 +161,7 @@ void Machine::update()
         {
             isBlockOnTheRight = false;
         }
-
+        
         if (!isBlockOver)
         {
             y -= flyingYspeed;
@@ -242,5 +242,5 @@ void Machine::update()
             x -= fallingXSpeed;
         }
     }
-    std::cout << isBlockUnder << std::endl;
+    std::cout << blockUnderMachine1 << std::endl;
 }

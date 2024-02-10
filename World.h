@@ -14,12 +14,18 @@ class World {
         machine = std::make_shared<Machine>(100, 150, 150, 100);
         addObject(machine);
 
-        block = std::make_shared<Block>(400, 100, 200, 200, 5, "");
-        addObject(block);
+        for (int i = 0; i < 10; i++)
+        {
+            block = std::make_shared<Block>(i*100, 100, 100, 100, 5, BlockType::stone);
+            addObject(block);
+        }
 
+        for (int i = 0; i < 10; i++)
+        {
+            block = std::make_shared<Block>(200+i * 100, 400, 100, 100, 5, BlockType::stone);
+            addObject(block);
+        }
 
-        block = std::make_shared<Block>(50, 500, 200, 200, 5, "");
-        addObject(block);
     };
     ~World() {};
 
