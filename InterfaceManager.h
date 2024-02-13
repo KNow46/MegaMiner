@@ -3,6 +3,7 @@
 #include <memory>
 #include "InterfaceObject.h"
 #include "Storage.h"
+#include "Text.h"
 class InterfaceManager
 {
 private:
@@ -14,6 +15,7 @@ private:
      storage = std::make_shared<Storage>();
      allInterfaceObjects.emplace_back(storage);
 
+     allInterfaceObjects.emplace_back(std::make_shared<Text>(0,0,1000, 1000, "hello world", 30));
     }
 
 public:

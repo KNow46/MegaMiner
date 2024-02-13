@@ -5,6 +5,9 @@ currentOccupacy(0), occupatedSlots(0)
 }
 void Storage::addItem(Item item)
 {
-	items.emplace_back(item);
-	aggregatedObjects.emplace_back(new GameObject(1230, 70 + (items.size()-1) * 70, 70, 70, item.texturePath));
+	if(currentOccupacy < maxOccupacy)
+	{
+		items.emplace_back(item);
+		aggregatedObjects.emplace_back(new GameObject(1230, 70 + (items.size() - 1) * 70, 70, 70, item.texturePath));
+	}
 }
