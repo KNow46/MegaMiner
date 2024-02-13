@@ -1,24 +1,27 @@
 #pragma once
+#include "GameObject.h"
+#include <vector>
+#include <memory>
 
 class Camera
 {
 private:
 	int x;
 	int y;
-	int xPosAtScreen;
-	int yPosAtScreen;
+	int xOffset;
+	int yOffset;
 	int xRange;
 	int yRange;
 	bool isOn;
 public:
-	Camera(int x, int y, int xPosAtScreen, int yPosAtScreen, int xRange, int yRange);
+	Camera(int x, int y, int xOffset, int yOffSet, int xRange, int yRange);
 
 	int getX();
 	int getY();
 	int getXrange();
 	int getYrange();
-	int getXposAtScreen();
-	int getYposAtScreen();
+	int getXoffset();
+	int getYoffset();
 	bool getIsOn();
 
 	void setX(int x);
@@ -26,7 +29,8 @@ public:
 	void setXrange(int xRange);
 	void setYrange(int yRange);
 	void setIsOn(bool isOn);
-	void setXposAtScreen(int x);
-	void setYposAtScreen(int x);
+	void setXOffset(int x);
+	void setYOffset(int y);
+	void followObject(std::shared_ptr<GameObject>);
 
 };

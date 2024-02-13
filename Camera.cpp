@@ -1,7 +1,7 @@
 #include "Camera.h"
 
-Camera::Camera(int x, int y, int xPosAtScreen, int yPosAtScreen, int xRange, int yRange)
-    : x(x), y(y), xRange(xRange), yRange(yRange), isOn(true), xPosAtScreen(xPosAtScreen), yPosAtScreen(yPosAtScreen)
+Camera::Camera(int x, int y, int xOffset, int yOffset, int xRange, int yRange)
+    : x(x), y(y), xRange(xRange), yRange(yRange), isOn(true), xOffset(xOffset), yOffset(yOffset)
 {
 }
 
@@ -25,14 +25,14 @@ int Camera::getYrange()
     return yRange;
 }
 
-int Camera::getYposAtScreen()
+int Camera::getYoffset()
 {
-    return yPosAtScreen;
+    return yOffset;
 }
 
-int Camera::getXposAtScreen()
+int Camera::getXoffset()
 {
-    return xPosAtScreen;
+    return xOffset;
 }
 
 bool Camera::getIsOn()
@@ -60,17 +60,23 @@ void Camera::setYrange(int yRange)
     this->yRange = yRange;
 }
 
-void Camera::setXposAtScreen(int x)
+void Camera::setXOffset(int x)
 {
-    this->xPosAtScreen = x;
+    this->xOffset = x;
 }
 
-void Camera::setYposAtScreen(int y)
+void Camera::setYOffset(int y)
 {
-    this->yPosAtScreen = y;
+    this->yOffset = y;
 }
 
 void Camera::setIsOn(bool isOn)
 {
     this->isOn = isOn;
+}
+
+void Camera::followObject(std::shared_ptr<GameObject> object)
+{
+    this->x = object->getX() + this->xOffset;
+    this->y = object->getY()+ this->yOffset;
 }

@@ -1,4 +1,5 @@
 #include "Block.h"
+#include "InterfaceManager.h"
 
 std::string getBlockTexturePath(BlockType blockType) {
     switch (blockType) {
@@ -32,6 +33,9 @@ void Block::hit(int damage)
     {
         hp = 0;
         isDestroyed = true;
+        
+        InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::GOLD));
+
     }
 }
 

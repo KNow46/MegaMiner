@@ -11,7 +11,7 @@
 class World {
 
     World() {
-        machine = std::make_shared<Machine>(100, 150, 150, 100);
+        machine = std::make_shared<Machine>(100, 150, 90, 60);
         addObject(machine);
 
         for (int i = 0; i < 10; i++)
@@ -19,6 +19,7 @@ class World {
             block = std::make_shared<Block>(i*100, 100, 100, 100,  BlockType::stone);
             addObject(block);
         }
+        
 
         for (int i = 0; i < 10; i++)
         {
@@ -28,6 +29,14 @@ class World {
 
         block = std::make_shared<Block>(800, 300, 100, 100, BlockType::stone);
         addObject(block);
+
+        block = std::make_shared<Block>(900, 300, 100, 100, BlockType::stone);
+        addObject(block);
+        block = std::make_shared<Block>(1000, 300, 100, 100, BlockType::stone);
+        addObject(block);
+        block = std::make_shared<Block>(600, 300, 100, 100, BlockType::stone);
+        addObject(block);
+
 
     };
     ~World() {};
@@ -57,6 +66,12 @@ public:
  
     void removeObject(std::shared_ptr<GameObject> object) 
     {
+        std::shared_ptr<Block> block = std::dynamic_pointer_cast<Block>(object);
+
+        if (block)
+        {
+            blocks.erase(std::remove(blocks.begin(), blocks.end(), block), blocks.end());
+        }
         objects.erase(std::remove(objects.begin(), objects.end(), object), objects.end());
     }
 
@@ -65,10 +80,16 @@ public:
     {
         for (const auto& object : objects) 
         {
-            object->update();
-            if (object->getIsDestroyed() == true)
+            if(object != nullptr)
             {
-                removeObject(object);
+                if (object->getIsDestroyed() == true)
+                {
+                    removeObject(object);
+                }
+                else
+                {
+                    object->update();
+                }
             }
         }
     }

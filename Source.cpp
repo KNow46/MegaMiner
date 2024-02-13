@@ -53,7 +53,7 @@ void rendererScene(std::vector<std::shared_ptr<T>> &sceneObjects, Renderer& rend
 
             glEnable(GL_SCISSOR_TEST);
 
-            glScissor(camera->getXposAtScreen(), windowHeight - camera->getYposAtScreen() - camera->getYrange(),camera->getXrange(), camera->getYrange());
+            glScissor(0, 0, camera->getXrange(), camera->getYrange());
 
             float positionsTransformed[] = {
             transformToOpenGl(sceneObject->getX() - (areObjectsInterface ? 0 : camera->getX()), 0, 1),  transformToOpenGl(sceneObject->getY() - (areObjectsInterface ? 0 : camera->getY())  + sceneObject->getHeight(),0,0), 0.0f, 0.0f,
@@ -146,7 +146,7 @@ int main(void)
 
     GLFWwindow* window;
 
-    Camera *basicCamera = new Camera(0, 0, 0, 0,  windowWidth, windowHeight);
+    Camera *basicCamera = new Camera(0, 0, -windowWidth/2, -windowHeight/2,  windowWidth, windowHeight);
 
     /* Initialize the library */
     if (!glfwInit())   
@@ -214,6 +214,8 @@ int main(void)
         { 
             updateMachineState(window);
 
+            basicCamera->followObject(World::getInstance().getMachine());
+
              /* Poll for and process events */
              GLCall(glfwPollEvents());
                 
@@ -225,8 +227,8 @@ int main(void)
 
             renderer.Clear();
 
-            rendererScene(World::getInstance().getAllObjects(), renderer, shader, va, vb, layout, ib, window, basicCamera, true);
-            rendererScene(InterfaceManager::getInstance().getAllInterfaceObjects(), renderer, shader, va, vb, layout, ib, window, basicCamera, false);
+            rendererScene(World::getInstance().getAllObjects(), renderer, shader, va, vb, layout, ib, window, basicCamera, false);
+            rendererScene(InterfaceManager::getInstance().getAllInterfaceObjects(), renderer, shader, va, vb, layout, ib, window, basicCamera, true);
 
             /* Swap front and back buffers */
             GLCall(glfwSwapBuffers(window));

@@ -15,8 +15,6 @@ public:
 
 	virtual void onClick() { std::cout << "clicked"; };
 
-	void ballCollisionEffect() {};
-
 	
 	void setIsHovered(bool isHovered)
 	{

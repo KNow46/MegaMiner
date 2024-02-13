@@ -2,14 +2,18 @@
 #include <vector>
 #include <memory>
 #include "InterfaceObject.h"
+#include "Storage.h"
 class InterfaceManager
 {
 private:
     std::vector<std::shared_ptr<InterfaceObject>> allInterfaceObjects;
+    std::shared_ptr<Storage> storage;
 
     InterfaceManager()
-    {
-       // allInterfaceObjects.emplace_back(std::make_shared<InterfaceObject>(300, 300, windowWidth / 2, windowWidth / 2, "res/textures/board.png", "res/textures/xWon.png"));
+    { 
+     storage = std::make_shared<Storage>();
+     allInterfaceObjects.emplace_back(storage);
+
     }
 
 public:
@@ -22,6 +26,10 @@ public:
     std::vector<std::shared_ptr<InterfaceObject>> &getAllInterfaceObjects()
     {
         return allInterfaceObjects;
+    }
+    std::shared_ptr<Storage>& getStorage()
+    {
+        return storage;
     }
 
     void handleLeftClick(int xPos, int yPos)

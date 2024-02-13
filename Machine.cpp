@@ -110,7 +110,7 @@ void Machine::update()
         std::shared_ptr<Block> block = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x - xSpeed, y + height / 2));
         if (block)
         {
-
+            block->hit(1);
         }
         else
         {
@@ -242,5 +242,4 @@ void Machine::update()
             x -= fallingXSpeed;
         }
     }
-    std::cout << blockUnderMachine1 << std::endl;
 }
