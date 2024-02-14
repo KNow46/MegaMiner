@@ -3,10 +3,12 @@
 #include <vector>
 #include "InterfaceObject.h"
 #include "Block.h"
+#include "Text.h"
+#include <memory>
 
 struct Item
 {
-	enum ItemType{GOLD};
+	enum ItemType{GOLD, DIAMOND};
 	Item(ItemType itemType)
 	{
 		this->itemType = itemType;
@@ -15,6 +17,11 @@ struct Item
 		{
 			value = 300;
 			texturePath = "res/textures/gold.png";
+		}
+		if (itemType == DIAMOND)
+		{
+			value = 1000;
+			texturePath = "res/textures/diamond.png";
 		}
 	};
 	ItemType itemType;
@@ -30,6 +37,7 @@ class Storage : public InterfaceObject
 	int slots;
 	int occupatedSlots;
 	std::vector<Item> items;
+	std::vector<std::shared_ptr<Text>> amountCounters;
 public:
 	Storage();
 	void upgrade();

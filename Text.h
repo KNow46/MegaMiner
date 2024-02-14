@@ -13,8 +13,9 @@ public:
 
 	void changeText(std::string newText);
 
+	int getIntText();
 
-private:
+protected:
 	void stringTextToTexture();
 	std::string fontPath;
 	int fontSize;

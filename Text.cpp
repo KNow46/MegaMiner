@@ -45,3 +45,15 @@ void Text::stringTextToTexture()
 
 	}
 }
+
+int Text::getIntText()
+{
+	int integer = 0;
+
+	for (int i = 0; i < strText.length(); i++)
+	{
+		std::cout << (strText[i] - '0') * pow(10, strText.length() - i -1) << std::endl;
+		integer += (strText[i] - '0') * pow(10, strText.length() - i - 1);
+	}
+	return integer;
+}

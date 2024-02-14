@@ -170,7 +170,7 @@ int main(void)
     else
         std::cout << "glew initialized properly\n";
 
-    std::cout << glGetString(GL_VERSION);
+    std::cout << glGetString(GL_VERSION) << std::endl;
 
 	
         float positions[] = {

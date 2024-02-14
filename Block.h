@@ -5,7 +5,9 @@
 
 enum BlockType
 {
-	stone
+	STONE,
+	GOLD,
+	DIAMOND
 };
 
 class Block : public GameObject

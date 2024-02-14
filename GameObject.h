@@ -16,10 +16,15 @@ protected:
     double x;
     double y;
     std::vector<std::shared_ptr<GameObject>> aggregatedObjects;
+    std::string description;
 
 public:
     GameObject(int x, int y, int width, int height, std::string texturePath)
         :x(x), y(y), height(height), width(width), isDestroyed(false), texture(TextureManager::getInstance().getTexture(texturePath))
+    {
+    };
+    GameObject(int x, int y, int width, int height, std::string texturePath, std::string description)
+        :x(x), y(y), height(height), width(width), isDestroyed(false), description(description), texture(TextureManager::getInstance().getTexture(texturePath))
     {
     };
 
@@ -43,8 +48,14 @@ public:
 
     virtual const Texture& getTexture() { return texture; };
 
-
-
+    void setDescription(std::string description)
+    {
+        this->description = description;
+    }
+    std::string getDescription()
+    {
+        return description;
+    }
     virtual void update() {};
 
 
@@ -52,5 +63,4 @@ public:
     {
         return aggregatedObjects;
     }
-
 };

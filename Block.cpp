@@ -3,8 +3,12 @@
 
 std::string getBlockTexturePath(BlockType blockType) {
     switch (blockType) {
-    case BlockType::stone:
+    case BlockType::STONE:
         return "stone.jpg";
+    case BlockType::GOLD:
+        return "goldOre.png";
+    case BlockType::DIAMOND:
+        return "diamondOre.jpg";
 
     default:
         return "stone.jpg";
@@ -13,7 +17,7 @@ std::string getBlockTexturePath(BlockType blockType) {
 
 int getBlockInitialHp(BlockType blockType) {
     switch (blockType) {
-    case BlockType::stone:
+    case BlockType::STONE:
         return 20;
 
     default:
@@ -34,7 +38,10 @@ void Block::hit(int damage)
         hp = 0;
         isDestroyed = true;
         
-        InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::GOLD));
+        if(blockType == BlockType::GOLD)
+            InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::GOLD));
+        if (blockType == BlockType::DIAMOND)
+            InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::DIAMOND));
 
     }
 }
