@@ -3,7 +3,7 @@
 #include <iostream>
 #include "Text.h"
 
-Storage::Storage() : InterfaceObject(1200, 50, 130, 600, "res/textures/storage.png"), level(1), maxOccupacy(100), slots(8),
+Storage::Storage() : InterfaceObject(1200, 30, 175, 620, "res/textures/storage.png"), level(1), maxOccupacy(100), slots(8),
 currentOccupacy(0), occupatedSlots(0)
 {
 	
@@ -13,6 +13,12 @@ currentOccupacy(0), occupatedSlots(0)
 		text->setDescription("storageAmountCounterSlot" + std::to_string(i));
 		aggregatedObjects.emplace_back(text);
 		amountCounters.emplace_back(text);
+
+		currentOccupacyText = std::make_shared<Text>(1250, 32, 50, 50, "jojo", 15);
+		aggregatedObjects.emplace_back(currentOccupacyText);
+
+		maxOccupacyText = std::make_shared<Text>(1290, 32, 50, 50, "/" + std::to_string(maxOccupacy), 15);
+		aggregatedObjects.emplace_back(maxOccupacyText);
 	}
 }
 void Storage::addItem(Item item)
@@ -32,7 +38,7 @@ void Storage::addItem(Item item)
 		if(itemIndex == -1)
 		{
 			items.emplace_back(item);
-			aggregatedObjects.emplace_back(new GameObject(1230, 70 + (items.size() - 1) * 70, 70, 70, item.texturePath, "item"));
+			aggregatedObjects.emplace_back(new GameObject(1262, 70 + (items.size() - 1) * 70, 70, 70, item.texturePath, "item"));
 			amountCounters[occupatedSlots]->changeText("1");
 			occupatedSlots++;
 			currentOccupacy++;
@@ -45,5 +51,6 @@ void Storage::addItem(Item item)
 			amountCounters[itemIndex]->changeText(std::to_string(currAmount + 1));
 			currentOccupacy++;
 		}
+		currentOccupacyText->changeText(std::to_string(currentOccupacy));
 	}
 }

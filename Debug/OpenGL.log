@@ -1,17 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Arkanoid.vcxproj, OpenGL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Text.cpp
+  Storage.cpp
 C:\Users\Krzysztof\source\repos\MegaMiner\GameObject.h(39,25): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\GameObject.h(41,25): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Text.cpp(30,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\source\repos\MegaMiner\Text.cpp(33,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Text.cpp(39,97): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Text.cpp(39,81): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Text.cpp(39,61): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Text.cpp(39,50): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Text.cpp(43,96): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Text.cpp(43,80): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Text.cpp(43,60): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Text.cpp(43,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\Text.cpp(53,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\source\repos\MegaMiner\Text.cpp(56,33): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
   OpenGL.vcxproj -> C:\Users\Krzysztof\source\repos\MegaMiner\Debug\2Dsetup.exe

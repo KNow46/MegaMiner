@@ -40,6 +40,13 @@ void Text::stringTextToTexture()
 				"res/textures/empty.png"));
 			continue;
 		}
+		if (strText[i] == '/')
+		{
+			aggregatedObjects.emplace_back(new GameObject(positionX, positionY, fontSize * 0.9, fontSize * 1.8,
+				"res/textures/ansi/backslash.png"));
+			continue;
+		}
+
 		aggregatedObjects.emplace_back(new GameObject(positionX, positionY, fontSize * 0.9, fontSize * 1.8, 
 			fontPath + "/" + strText[i] + ".png"));
 

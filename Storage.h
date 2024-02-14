@@ -38,6 +38,8 @@ class Storage : public InterfaceObject
 	int occupatedSlots;
 	std::vector<Item> items;
 	std::vector<std::shared_ptr<Text>> amountCounters;
+	std::shared_ptr<Text> maxOccupacyText;
+	std::shared_ptr<Text> currentOccupacyText;
 public:
 	Storage();
 	void upgrade();
