@@ -15,12 +15,16 @@ Text::Text(int x, int y, int width, int height, std::string strText, int fontSiz
 
 void Text::changeText(std::string newText)
 {
+	std::cout << aggregatedObjects.size() << std::endl;
 	for (int i = aggregatedObjects.size(); i > 0; i--)
 	{
 		aggregatedObjects.pop_back();
+		
 	}
+	std::cout << aggregatedObjects.size() << std::endl;
 	strText = newText;
 	stringTextToTexture();
+	std::cout << std::endl << std::endl;
 }
 
 
@@ -59,7 +63,6 @@ int Text::getIntText()
 
 	for (int i = 0; i < strText.length(); i++)
 	{
-		std::cout << (strText[i] - '0') * pow(10, strText.length() - i -1) << std::endl;
 		integer += (strText[i] - '0') * pow(10, strText.length() - i - 1);
 	}
 	return integer;

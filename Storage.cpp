@@ -13,13 +13,12 @@ currentOccupacy(0), occupatedSlots(0)
 		text->setDescription("storageAmountCounterSlot" + std::to_string(i));
 		aggregatedObjects.emplace_back(text);
 		amountCounters.emplace_back(text);
-
-		currentOccupacyText = std::make_shared<Text>(1250, 32, 50, 50, "jojo", 15);
-		aggregatedObjects.emplace_back(currentOccupacyText);
-
-		maxOccupacyText = std::make_shared<Text>(1290, 32, 50, 50, "/" + std::to_string(maxOccupacy), 15);
-		aggregatedObjects.emplace_back(maxOccupacyText);
 	}
+	currentOccupacyText = std::make_shared<Text>(1250, 32, 50, 50, "0", 15);
+	aggregatedObjects.emplace_back(currentOccupacyText);
+
+	maxOccupacyText = std::make_shared<Text>(1290, 32, 50, 50, "/" + std::to_string(maxOccupacy), 15);
+	aggregatedObjects.emplace_back(maxOccupacyText);
 }
 void Storage::addItem(Item item)
 {
