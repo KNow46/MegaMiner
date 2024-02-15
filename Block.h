@@ -7,7 +7,10 @@ enum BlockType
 {
 	STONE,
 	GOLD,
-	DIAMOND
+	DIAMOND,
+	EMERALD,
+	IRON,
+	MYSTIC,
 };
 
 class Block : public GameObject
@@ -16,6 +19,7 @@ public:
 	BlockType blockType;
 protected:
 	int hp;
+	std::string getBlockTexturePath(BlockType blockType);
 public:
 	Block(int x, int y, int width, int height, BlockType blockType);
 

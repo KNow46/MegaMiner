@@ -8,7 +8,7 @@
 
 struct Item
 {
-	enum ItemType{GOLD, DIAMOND};
+	enum ItemType{GOLD, DIAMOND, EMERALD, IRON, MYSTIC};
 	Item(ItemType itemType)
 	{
 		this->itemType = itemType;
@@ -20,8 +20,23 @@ struct Item
 		}
 		if (itemType == DIAMOND)
 		{
-			value = 1000;
+			value = 3000;
 			texturePath = "res/textures/diamond.png";
+		}
+		if (itemType == IRON)
+		{
+			value = 1000;
+			texturePath = "res/textures/iron.png";
+		}
+		if (itemType == EMERALD)
+		{
+			value = 100;
+			texturePath = "res/textures/emerald.png";
+		}
+		if (itemType == MYSTIC)
+		{
+			value = 10000;
+			texturePath = "res/textures/mystic.png";
 		}
 	};
 	ItemType itemType;

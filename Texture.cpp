@@ -79,7 +79,7 @@ Texture::Texture(const Texture& other)
 	}
 	else
 	{
-		std::cout << "\nError: Failed to load texture" << std::endl;
+		std::cout << "\nError: Failed to load texture with path: " << m_FilePath << std::endl;
 		std::cout << stbi_failure_reason() << std::endl;
 		__debugbreak();
 	}

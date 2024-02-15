@@ -122,7 +122,7 @@ void Machine::update()
         std::shared_ptr<Block> block = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x + width /2, y + height + fallingYSpeed));
         if (block)
         {
-
+            block->hit(1);
         }
     }
     else if (currentState == FLYING)

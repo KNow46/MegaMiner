@@ -1,7 +1,7 @@
 #include "Block.h"
 #include "InterfaceManager.h"
 
-std::string getBlockTexturePath(BlockType blockType) {
+std::string Block::getBlockTexturePath(BlockType blockType) {
     switch (blockType) {
     case BlockType::STONE:
         return "stone.jpg";
@@ -9,6 +9,12 @@ std::string getBlockTexturePath(BlockType blockType) {
         return "goldOre.png";
     case BlockType::DIAMOND:
         return "diamondOre.jpg";
+    case BlockType::EMERALD:
+        return "emeraldOre.png";
+    case BlockType::IRON:
+        return "ironOre.jpg";
+    case BlockType::MYSTIC:
+        return "mysticOre.png";
 
     default:
         return "stone.jpg";
@@ -42,6 +48,12 @@ void Block::hit(int damage)
             InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::GOLD));
         if (blockType == BlockType::DIAMOND)
             InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::DIAMOND));
+        if (blockType == BlockType::IRON)
+            InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::IRON));
+        if (blockType == BlockType::EMERALD)
+            InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::EMERALD));
+        if (blockType == BlockType::MYSTIC)
+            InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::MYSTIC));
 
     }
 }

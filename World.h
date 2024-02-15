@@ -14,41 +14,7 @@ class World {
         machine = std::make_shared<Machine>(100, 150, 90, 60);
         addObject(machine);
 
-        for (int i = 0; i < 50; i++)
-        {
-            block = std::make_shared<Block>(i*100, 100, 100, 100,  BlockType::STONE);
-            addObject(block);
-        }
-        
-
-        for (int i = 0; i < 50; i++)
-        {
-            block = std::make_shared<Block>(200+i * 100, 400, 100, 100, BlockType::STONE);
-            addObject(block);
-        }
-        for (int i = 0; i < 30; i++)
-        {
-            block = std::make_shared<Block>(1400 + i * 100, 300, 100, 100, BlockType::DIAMOND);
-            addObject(block);
-        }
-
-        block = std::make_shared<Block>(800, 300, 100, 100, BlockType::STONE);
-        addObject(block);
-
-        block = std::make_shared<Block>(900, 300, 100, 100, BlockType::GOLD);
-        addObject(block);
-        block = std::make_shared<Block>(1000, 300, 100, 100, BlockType::GOLD);
-        addObject(block);
-        block = std::make_shared<Block>(1100, 300, 100, 100, BlockType::GOLD);
-        addObject(block);
-
-        block = std::make_shared<Block>(600, 300, 100, 100, BlockType::DIAMOND);
-        addObject(block);
-        block = std::make_shared<Block>(1200, 300, 100, 100, BlockType::DIAMOND);
-        addObject(block);
-        block = std::make_shared<Block>(1300, 300, 100, 100, BlockType::DIAMOND);
-        addObject(block);
-
+        generateBlocks();
 
     };
     ~World() {};
@@ -125,6 +91,65 @@ public:
         return machine;
     }
 private:
+    void generateBlocks()
+    {
+        for (int i = 0; i < 50; i++)
+        {
+            block = std::make_shared<Block>(i * 100, 100, 100, 100, BlockType::STONE);
+            addObject(block);
+        }
+
+
+        for (int i = 0; i < 50; i++)
+        {
+            block = std::make_shared<Block>(200 + i * 100, 400, 100, 100, BlockType::STONE);
+            addObject(block);
+        }
+        for (int i = 0; i < 30; i++)
+        {
+            block = std::make_shared<Block>(1400 + i * 100, 300, 100, 100, BlockType::DIAMOND);
+            addObject(block);
+        }
+        for (int i = 0; i < 30; i++)
+        {
+            block = std::make_shared<Block>(1400 + i * 100, 500, 100, 100, BlockType::EMERALD);
+            addObject(block);
+        }
+        for (int i = 0; i < 30; i++)
+        {
+            block = std::make_shared<Block>(1400 + i * 100, 600, 100, 100, BlockType::IRON);
+            addObject(block);
+        }
+        for (int i = 0; i < 30; i++)
+        {
+            block = std::make_shared<Block>(1400 + i * 100, 700, 100, 100, BlockType::IRON);
+            addObject(block);
+        }
+        for (int i = 0; i < 30; i++)
+        {
+            block = std::make_shared<Block>(1400 + i * 100, 0, 100, 100, BlockType::MYSTIC);
+            addObject(block);
+        }
+
+
+        block = std::make_shared<Block>(800, 300, 100, 100, BlockType::STONE);
+        addObject(block);
+
+        block = std::make_shared<Block>(900, 300, 100, 100, BlockType::GOLD);
+        addObject(block);
+        block = std::make_shared<Block>(1000, 300, 100, 100, BlockType::GOLD);
+        addObject(block);
+        block = std::make_shared<Block>(1100, 300, 100, 100, BlockType::GOLD);
+        addObject(block);
+
+        block = std::make_shared<Block>(600, 300, 100, 100, BlockType::DIAMOND);
+        addObject(block);
+        block = std::make_shared<Block>(1200, 300, 100, 100, BlockType::DIAMOND);
+        addObject(block);
+        block = std::make_shared<Block>(1300, 300, 100, 100, BlockType::DIAMOND);
+        addObject(block);
+
+    }
 
     std::vector<std::shared_ptr<GameObject>> objects;
     std::vector<std::shared_ptr<Block>> blocks;
