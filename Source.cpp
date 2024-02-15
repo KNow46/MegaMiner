@@ -210,8 +210,22 @@ int main(void)
 
         double xpos, ypos;
         /* Loop until the user closes the window */
+        double lastTime = glfwGetTime();
+        int nbFrames = 0;
+
         while (!glfwWindowShouldClose(window))
-        { 
+        {
+            
+            double currentTime = glfwGetTime();
+            nbFrames++;
+            if (currentTime - lastTime >= 1.0) {
+    
+                std::cout << nbFrames << " frames per second" << std::endl;
+                nbFrames = 0;
+                lastTime += 1.0;
+            }
+            
+
             updateMachineState(window);
 
             basicCamera->followObject(World::getInstance().getMachine());
@@ -227,7 +241,10 @@ int main(void)
 
             renderer.Clear();
 
-            rendererScene(World::getInstance().getAllObjects(), renderer, shader, va, vb, layout, ib, window, basicCamera, false);
+            rendererScene(World::getInstance().getVisibleBlocks(), renderer, shader, va, vb, layout, ib, window, basicCamera, false);
+            std::vector<std::shared_ptr <GameObject>> machine;
+            machine.push_back(World::getInstance().getMachine());
+            rendererScene(machine, renderer, shader, va, vb, layout, ib, window, basicCamera, false);
             rendererScene(InterfaceManager::getInstance().getAllInterfaceObjects(), renderer, shader, va, vb, layout, ib, window, basicCamera, true);
 
             /* Swap front and back buffers */

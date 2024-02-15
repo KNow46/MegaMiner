@@ -9,7 +9,7 @@ class CollisionManager
 public:
 	std::shared_ptr<GameObject> checkCollisions(int x, int y)
 	{
-		for (const auto& object : World::getInstance().getAllObjects())
+		for (const auto& object : World::getInstance().getVisibleBlocks())
 		{
 			if (x >= object->getX() && x < object->getX() + object->getWidth())
 			{

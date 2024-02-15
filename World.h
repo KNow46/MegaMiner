@@ -6,16 +6,25 @@
 
 #include <vector>
 #include <memory>
-
+#include <cstdlib>
+#include <ctime>
 
 class World {
 
     World() {
-        machine = std::make_shared<Machine>(100, 150, 90, 60);
+        machine = std::make_shared<Machine>(100, -150, 90, 60);
         addObject(machine);
 
         generateBlocks();
 
+        for (int i = 0; i < 20; i++)
+        {
+            for (int j = 0; j < 20; j++)
+            {
+                visibleBlocks.push_back(blocks[i + j * mapWidth]);
+            }
+        }
+        
     };
     ~World() {};
 
@@ -40,14 +49,17 @@ public:
         }
 
     }
-
  
-    void removeObject(std::shared_ptr<GameObject> object) 
+ 
+    void removeObject(std::shared_ptr<GameObject> object)
     {
         std::shared_ptr<Block> block = std::dynamic_pointer_cast<Block>(object);
 
         if (block)
         {
+          
+            visibleBlocks.erase(std::remove(visibleBlocks.begin(), visibleBlocks.end(), block), visibleBlocks.end());
+        
             blocks.erase(std::remove(blocks.begin(), blocks.end(), block), blocks.end());
         }
         objects.erase(std::remove(objects.begin(), objects.end(), object), objects.end());
@@ -70,6 +82,32 @@ public:
                 }
             }
         }
+        time++;
+        if (time > 10)
+        {
+            updateVisibleBlocks();
+            time = 0;
+        }
+    }
+
+    void updateVisibleBlocks() {
+        visibleBlocks.clear();
+        int horizontalVision = 5;
+        int verticalVision = 4;
+
+        int machineX = machine->getX() / 150; // Za³ó¿my, ¿e szerokoœæ bloku to 150
+        int machineY = machine->getY() / 150; // Za³ó¿my, ¿e wysokoœæ bloku to 150
+
+        for (const auto& block : blocks) {
+            int blockX = block->getX() / 150; // Za³ó¿my, ¿e szerokoœæ bloku to 150
+            int blockY = block->getY() / 150; // Za³ó¿my, ¿e wysokoœæ bloku to 150
+
+            // Sprawdzenie, czy blok jest w obszarze widocznym wokó³ maszyny
+            if (blockX >= machineX - horizontalVision && blockX <= machineX + horizontalVision &&
+                blockY >= machineY - verticalVision && blockY <= machineY + verticalVision) {
+                visibleBlocks.push_back(block);
+            }
+        }
     }
 
     std::vector<std::shared_ptr<GameObject>> &getAllObjects()
@@ -79,6 +117,10 @@ public:
     std::vector<std::shared_ptr<Block>>& getAllBlocks()
     {
         return blocks;
+    }
+    std::vector<std::shared_ptr<Block>>& getVisibleBlocks()
+    {
+        return visibleBlocks;
     }
    
   /*  void draw() {
@@ -91,68 +133,56 @@ public:
         return machine;
     }
 private:
+
     void generateBlocks()
     {
-        for (int i = 0; i < 50; i++)
-        {
-            block = std::make_shared<Block>(i * 100, 100, 100, 100, BlockType::STONE);
-            addObject(block);
-        }
+        std::srand(std::time(nullptr));
 
+        for (int i = 0; i < mapHeight; i++)
+        {
+            for (int j = 0; j < mapWidth; j++)
+            { 
+                BlockType blockType;
+                int random = std::rand() % 100;
+                if (random <= 75)
+                {
+                    blockType = BlockType::STONE;
+                }
+                else if (random <= 80)
+                {
+                    blockType = BlockType::GOLD;
+                }
+                else if (random <= 85)
+                {
+                    blockType = BlockType::EMERALD;
+                }
+                else if (random <= 90)
+                {
+                    blockType = BlockType::DIAMOND;
+                }
+                else  if (random <= 95)
+                {
+                    blockType = BlockType::MYSTIC;
+                }
+                else
+                {
+                    blockType = BlockType::IRON;
+                }
 
-        for (int i = 0; i < 50; i++)
-        {
-            block = std::make_shared<Block>(200 + i * 100, 400, 100, 100, BlockType::STONE);
-            addObject(block);
+                block = std::make_shared<Block>(j * 150, i * 150, 150, 150, blockType);
+                addObject(block);
+            }
         }
-        for (int i = 0; i < 30; i++)
-        {
-            block = std::make_shared<Block>(1400 + i * 100, 300, 100, 100, BlockType::DIAMOND);
-            addObject(block);
-        }
-        for (int i = 0; i < 30; i++)
-        {
-            block = std::make_shared<Block>(1400 + i * 100, 500, 100, 100, BlockType::EMERALD);
-            addObject(block);
-        }
-        for (int i = 0; i < 30; i++)
-        {
-            block = std::make_shared<Block>(1400 + i * 100, 600, 100, 100, BlockType::IRON);
-            addObject(block);
-        }
-        for (int i = 0; i < 30; i++)
-        {
-            block = std::make_shared<Block>(1400 + i * 100, 700, 100, 100, BlockType::IRON);
-            addObject(block);
-        }
-        for (int i = 0; i < 30; i++)
-        {
-            block = std::make_shared<Block>(1400 + i * 100, 0, 100, 100, BlockType::MYSTIC);
-            addObject(block);
-        }
-
-
-        block = std::make_shared<Block>(800, 300, 100, 100, BlockType::STONE);
-        addObject(block);
-
-        block = std::make_shared<Block>(900, 300, 100, 100, BlockType::GOLD);
-        addObject(block);
-        block = std::make_shared<Block>(1000, 300, 100, 100, BlockType::GOLD);
-        addObject(block);
-        block = std::make_shared<Block>(1100, 300, 100, 100, BlockType::GOLD);
-        addObject(block);
-
-        block = std::make_shared<Block>(600, 300, 100, 100, BlockType::DIAMOND);
-        addObject(block);
-        block = std::make_shared<Block>(1200, 300, 100, 100, BlockType::DIAMOND);
-        addObject(block);
-        block = std::make_shared<Block>(1300, 300, 100, 100, BlockType::DIAMOND);
-        addObject(block);
 
     }
 
     std::vector<std::shared_ptr<GameObject>> objects;
     std::vector<std::shared_ptr<Block>> blocks;
+    std::vector<std::shared_ptr<Block>> visibleBlocks;
+    std::vector<std::vector<std::shared_ptr<Block>>> blocks2d;
     std::shared_ptr<Machine> machine;
     std::shared_ptr<Block> block;
+    int mapWidth = 100;
+    int mapHeight = 100;
+    int time = 0;
 };
