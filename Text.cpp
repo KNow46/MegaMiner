@@ -22,7 +22,6 @@ void Text::changeText(std::string newText)
 	}
 	strText = newText;
 	stringTextToTexture();
-	std::cout << std::endl << std::endl;
 }
 
 

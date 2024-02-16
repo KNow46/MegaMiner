@@ -74,7 +74,8 @@ public:
  
     void update() 
     {
-        for (const auto& object : objects) 
+        machine->update();
+        for (const auto& object : visibleBlocks) 
         {
             if(object != nullptr)
             {
@@ -88,15 +89,15 @@ public:
                 }
             }
         }
-      //  time++;
-      //  if (time % 5 == 0)
-       // {
+       time++;
+        if (time % 3 == 0)
+       {
             updateVisibleBlocks();
              setAdjacentBlocks();
               time = 0;
   
 
-        //}  
+        }  
     }
 
     void updateVisibleBlocks() {
@@ -139,6 +140,7 @@ public:
         int machineSectorRow = machineSector.first;
         int machineSectorCol = machineSector.second;
 
+        int d = 0;
         for (int i = machineSectorRow - 1; i <= machineSectorRow + 1; ++i) 
         {
             for (int j = machineSectorCol - 1; j <= machineSectorCol + 1; ++j) 
@@ -150,10 +152,14 @@ public:
                      {
                          if (block->getIsDestroyed() == false)
                             adjacentBlocks.push_back(block);
+                         d++;
+                         
                      }
+                    
                  }
             }
         }
+        std::cout<<"d: " << d << std::endl;
       
     }
 
@@ -241,8 +247,8 @@ private:
     std::vector<std::vector<std::vector<std::shared_ptr<Block>>>> sectors;
     std::vector<std::shared_ptr<Block>> adjacentBlocks;
     int sectorSize = 5;
-    int mapWidth = 150;
-    int mapHeight = 150;
+    int mapWidth = 500;
+    int mapHeight = 500;
     int blocksSize = 150;
     int time = 0;
 };

@@ -38,23 +38,26 @@ Block::Block(int x, int y, int width, int height, BlockType blockType)
 
 void Block::hit(int damage)
 {
-    hp -= damage;
-    if (hp <= 0)
+    if(!isDestroyed)
     {
-        hp = 0;
-        isDestroyed = true;
-        
-        if(blockType == BlockType::GOLD)
-            InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::GOLD));
-        if (blockType == BlockType::DIAMOND)
-            InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::DIAMOND));
-        if (blockType == BlockType::IRON)
-            InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::IRON));
-        if (blockType == BlockType::EMERALD)
-            InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::EMERALD));
-        if (blockType == BlockType::MYSTIC)
-            InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::MYSTIC));
+        hp -= damage;
+        if (hp <= 0)
+        {
+            hp = 0;
+            isDestroyed = true;
 
+            if (blockType == BlockType::GOLD)
+                InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::GOLD));
+            if (blockType == BlockType::DIAMOND)
+                InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::DIAMOND));
+            if (blockType == BlockType::IRON)
+                InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::IRON));
+            if (blockType == BlockType::EMERALD)
+                InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::EMERALD));
+            if (blockType == BlockType::MYSTIC)
+                InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::MYSTIC));
+
+        }
     }
 }
 

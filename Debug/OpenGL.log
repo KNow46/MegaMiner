@@ -2,9 +2,9 @@
   Machine.cpp
 C:\Users\Krzysztof\source\repos\MegaMiner\GameObject.h(39,25): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\GameObject.h(41,25): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\World.h(146,34): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\source\repos\MegaMiner\World.h(146,66): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\source\repos\MegaMiner\World.h(181,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Krzysztof\source\repos\MegaMiner\World.h(148,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\source\repos\MegaMiner\World.h(148,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\source\repos\MegaMiner\World.h(187,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\Machine.cpp(70,145): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\Machine.cpp(70,130): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\Machine.cpp(71,150): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
@@ -46,9 +46,9 @@ C:\Users\Krzysztof\source\repos\MegaMiner\Machine.cpp(235,133): warning C4244: '
   Source.cpp
 C:\Users\Krzysztof\source\repos\MegaMiner\GameObject.h(39,25): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\GameObject.h(41,25): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\source\repos\MegaMiner\World.h(146,34): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\source\repos\MegaMiner\World.h(146,66): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\source\repos\MegaMiner\World.h(181,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Krzysztof\source\repos\MegaMiner\World.h(148,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\source\repos\MegaMiner\World.h(148,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\source\repos\MegaMiner\World.h(187,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(35,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(39,64): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Krzysztof\source\repos\MegaMiner\Source.cpp(87,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
