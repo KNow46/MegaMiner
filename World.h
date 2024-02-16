@@ -11,12 +11,18 @@
 
 class World {
 
-    World() {
+    World()
+    {
         machine = std::make_shared<Machine>(100, -150, 90, 60);
         addObject(machine);
 
+        int numVerticalSectors = mapHeight / sectorSize;
+        int numHorizontalSectors = mapWidth / sectorSize;
+        sectors.resize(numVerticalSectors, std::vector<std::vector<std::shared_ptr<Block>>>(numHorizontalSectors));
+        
+        
         generateBlocks();
-
+        
         for (int i = 0; i < 20; i++)
         {
             for (int j = 0; j < 20; j++)
@@ -24,7 +30,8 @@ class World {
                 visibleBlocks.push_back(blocks[i + j * mapWidth]);
             }
         }
-        
+
+        setAdjacentBlocks();
     };
     ~World() {};
 
@@ -57,10 +64,9 @@ public:
 
         if (block)
         {
-          
             visibleBlocks.erase(std::remove(visibleBlocks.begin(), visibleBlocks.end(), block), visibleBlocks.end());
-        
             blocks.erase(std::remove(blocks.begin(), blocks.end(), block), blocks.end());
+            adjacentBlocks.erase(std::remove(adjacentBlocks.begin(), adjacentBlocks.end(), block), adjacentBlocks.end());
         }
         objects.erase(std::remove(objects.begin(), objects.end(), object), objects.end());
     }
@@ -82,32 +88,73 @@ public:
                 }
             }
         }
-        time++;
-        if (time > 10)
-        {
+      //  time++;
+      //  if (time % 5 == 0)
+       // {
             updateVisibleBlocks();
-            time = 0;
-        }
+             setAdjacentBlocks();
+              time = 0;
+  
+
+        //}  
     }
 
     void updateVisibleBlocks() {
+       
         visibleBlocks.clear();
         int horizontalVision = 5;
         int verticalVision = 4;
 
-        int machineX = machine->getX() / 150; // Za³ó¿my, ¿e szerokoœæ bloku to 150
-        int machineY = machine->getY() / 150; // Za³ó¿my, ¿e wysokoœæ bloku to 150
+        int machineX = machine->getX() / blocksSize;
+        int machineY = machine->getY() / blocksSize;
 
-        for (const auto& block : blocks) {
-            int blockX = block->getX() / 150; // Za³ó¿my, ¿e szerokoœæ bloku to 150
-            int blockY = block->getY() / 150; // Za³ó¿my, ¿e wysokoœæ bloku to 150
+        for (const auto& block : adjacentBlocks) {
+            int blockX = block->getX() / blocksSize;
+            int blockY = block->getY() / blocksSize;
 
-            // Sprawdzenie, czy blok jest w obszarze widocznym wokó³ maszyny
             if (blockX >= machineX - horizontalVision && blockX <= machineX + horizontalVision &&
                 blockY >= machineY - verticalVision && blockY <= machineY + verticalVision) {
                 visibleBlocks.push_back(block);
             }
         }
+    }
+
+
+    std::pair<int, int> getMachineSector() const {
+        int machineX = machine->getX() / blocksSize; 
+        int machineY = machine->getY() / blocksSize;
+
+       
+        int sectorRow = machineY / sectorSize;
+        int sectorCol = machineX / sectorSize;
+
+        return std::make_pair(sectorRow, sectorCol);
+    }
+
+   void setAdjacentBlocks()
+   {
+       adjacentBlocks.clear();
+
+        std::pair<int, int> machineSector = getMachineSector();
+        int machineSectorRow = machineSector.first;
+        int machineSectorCol = machineSector.second;
+
+        for (int i = machineSectorRow - 1; i <= machineSectorRow + 1; ++i) 
+        {
+            for (int j = machineSectorCol - 1; j <= machineSectorCol + 1; ++j) 
+            {
+                 if (i >= 0 && i < sectors.size() && j >= 0 && j < sectors[0].size()) 
+                 {
+                  
+                     for(auto & block: sectors[i][j])
+                     {
+                         if (block->getIsDestroyed() == false)
+                            adjacentBlocks.push_back(block);
+                     }
+                 }
+            }
+        }
+      
     }
 
     std::vector<std::shared_ptr<GameObject>> &getAllObjects()
@@ -123,11 +170,6 @@ public:
         return visibleBlocks;
     }
    
-  /*  void draw() {
-        for (const auto& object : objects_) {
-            object->draw();
-        }
-    }*/
     std::shared_ptr<Machine> getMachine()
     {
         return machine;
@@ -169,10 +211,24 @@ private:
                     blockType = BlockType::IRON;
                 }
 
-                block = std::make_shared<Block>(j * 150, i * 150, 150, 150, blockType);
+                block = std::make_shared<Block>(j * blocksSize, i * blocksSize, blocksSize, blocksSize, blockType);
                 addObject(block);
+
+                int sectorRow = i / sectorSize;
+                int sectorCol = j / sectorSize;
+
+                
+                int blockX = j % sectorSize;
+                int blockY = i % sectorSize;
+
+                std::shared_ptr<Block> block = std::make_shared<Block>(j * blocksSize, i * blocksSize, blocksSize, blocksSize, blockType);
+
+                
+                sectors[sectorRow][sectorCol].push_back(block);
+ 
             }
         }
+
 
     }
 
@@ -182,7 +238,11 @@ private:
     std::vector<std::vector<std::shared_ptr<Block>>> blocks2d;
     std::shared_ptr<Machine> machine;
     std::shared_ptr<Block> block;
-    int mapWidth = 100;
-    int mapHeight = 100;
+    std::vector<std::vector<std::vector<std::shared_ptr<Block>>>> sectors;
+    std::vector<std::shared_ptr<Block>> adjacentBlocks;
+    int sectorSize = 5;
+    int mapWidth = 150;
+    int mapHeight = 150;
+    int blocksSize = 150;
     int time = 0;
 };

@@ -15,13 +15,11 @@ Text::Text(int x, int y, int width, int height, std::string strText, int fontSiz
 
 void Text::changeText(std::string newText)
 {
-	std::cout << aggregatedObjects.size() << std::endl;
 	for (int i = aggregatedObjects.size(); i > 0; i--)
 	{
 		aggregatedObjects.pop_back();
 		
 	}
-	std::cout << aggregatedObjects.size() << std::endl;
 	strText = newText;
 	stringTextToTexture();
 	std::cout << std::endl << std::endl;
