@@ -10,7 +10,6 @@ currentOccupacy(0), occupatedSlots(0)
 	for(int i = 0; i < slots; i++)
 	{
 		std::shared_ptr<Text> text = std::make_shared<Text>(1200, 80 + i*70, 50, 50, "0", 15);
-		text->setDescription("storageAmountCounterSlot" + std::to_string(i));
 		aggregatedObjects.emplace_back(text);
 		amountCounters.emplace_back(text);
 	}
@@ -37,7 +36,7 @@ void Storage::addItem(Item item)
 		if(itemIndex == -1)
 		{
 			items.emplace_back(item);
-			aggregatedObjects.emplace_back(new GameObject(1262, 70 + (items.size() - 1) * 70, 70, 70, item.texturePath, "item"));
+			aggregatedObjects.emplace_back(new GameObject(1262, 70 + (items.size() - 1) * 70, 70, 70, item.texturePath));
 			amountCounters[occupatedSlots]->changeText("1");
 			occupatedSlots++;
 			currentOccupacy++;

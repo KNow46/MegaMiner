@@ -7,7 +7,7 @@
 class CollisionManager
 {
 public:
-	std::shared_ptr<GameObject> checkCollisions(int x, int y)
+	std::shared_ptr<GameObject> checkBlocksCollisions(int x, int y)
 	{
 		for (const auto& object : World::getInstance().getVisibleBlocks())
 		{
@@ -21,6 +21,18 @@ public:
 		}
 		return nullptr;
 		
+	}
+	std::shared_ptr<Machine> checkMachineCollision(int x, int y)
+	{
+		
+		if (x >= World::getInstance().getMachine()->getX() && x < World::getInstance().getMachine()->getX() + World::getInstance().getMachine()->getWidth())
+		{
+			if (y >= World::getInstance().getMachine()->getY() && y < World::getInstance().getMachine()->getY() + World::getInstance().getMachine()->getHeight())
+			{
+				return  World::getInstance().getMachine();
+			}
+		}
+		return nullptr;
 	}
 	static CollisionManager& getInstance()
 	{

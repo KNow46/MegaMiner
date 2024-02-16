@@ -45,6 +45,7 @@ template<typename T>
 void rendererScene(std::vector<std::shared_ptr<T>> &sceneObjects, Renderer& renderer, Shader& shader, 
     VertexArray& va, VertexBuffer& vb, VertexBufferLayout& layout, IndexBuffer& ib, GLFWwindow* window, Camera *camera, bool areObjectsInterface)
 {
+
     for (const auto& sceneObject : sceneObjects)
     {
         if (sceneObject->getIsDestroyed() == false)
@@ -242,9 +243,12 @@ int main(void)
             renderer.Clear();
 
             rendererScene(World::getInstance().getVisibleBlocks(), renderer, shader, va, vb, layout, ib, window, basicCamera, false);
-            std::vector<std::shared_ptr <GameObject>> machine;
-            machine.push_back(World::getInstance().getMachine());
-            rendererScene(machine, renderer, shader, va, vb, layout, ib, window, basicCamera, false);
+            std::vector<std::shared_ptr <GameObject>> noBlockObjectsToRender;
+            noBlockObjectsToRender.push_back(World::getInstance().getShop());
+            noBlockObjectsToRender.push_back(World::getInstance().getMachine());
+            
+
+            rendererScene(noBlockObjectsToRender, renderer, shader, va, vb, layout, ib, window, basicCamera, false);
             rendererScene(InterfaceManager::getInstance().getAllInterfaceObjects(), renderer, shader, va, vb, layout, ib, window, basicCamera, true);
 
             /* Swap front and back buffers */

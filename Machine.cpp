@@ -67,8 +67,8 @@ void Machine::update()
 {
     bool isBlockUnder = true;
 
-    std::shared_ptr<Block> blockUnderMachine1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x , y + height + fallingYSpeed));
-    std::shared_ptr<Block> blockUnderMachine2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x+width, y + height + fallingYSpeed));
+    std::shared_ptr<Block> blockUnderMachine1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x , y + height + fallingYSpeed));
+    std::shared_ptr<Block> blockUnderMachine2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x+width, y + height + fallingYSpeed));
 
     if (!blockUnderMachine1 && !blockUnderMachine2)
     {
@@ -95,7 +95,7 @@ void Machine::update()
     }
     else if (currentState == DRILLING_RIGHT)
     {
-        std::shared_ptr<Block> block = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x + width + xSpeed, y + height/2));
+        std::shared_ptr<Block> block = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x + width + xSpeed, y + height/2));
         if (block)
         {
             block->hit(1);
@@ -107,7 +107,7 @@ void Machine::update()
     }
     else if (currentState == DRILLING_LEFT)
     {
-        std::shared_ptr<Block> block = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x - xSpeed, y + height / 2));
+        std::shared_ptr<Block> block = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x - xSpeed, y + height / 2));
         if (block)
         {
             block->hit(1);
@@ -119,7 +119,7 @@ void Machine::update()
     }
     else if (currentState == DRILLING_DOWN)/////////////////////
     {
-        std::shared_ptr<Block> block = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x + width /2, y + height + fallingYSpeed));
+        std::shared_ptr<Block> block = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x + width /2, y + height + fallingYSpeed));
         if (block)
         {
             block->hit(1);
@@ -129,8 +129,8 @@ void Machine::update()
     {
         bool isBlockOver = true;
 
-        std::shared_ptr<Block> blockOverMachine1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x, y-flyingYspeed));
-        std::shared_ptr<Block> blockOverMachine2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x + width, y-flyingYspeed));
+        std::shared_ptr<Block> blockOverMachine1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x, y-flyingYspeed));
+        std::shared_ptr<Block> blockOverMachine2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x + width, y-flyingYspeed));
 
         if (!blockOverMachine1 && !blockOverMachine2)
         {
@@ -147,11 +147,11 @@ void Machine::update()
         bool isBlockOver = true;
         bool isBlockOnTheRight = true;
 
-        std::shared_ptr<Block> blockOverMachine1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x, y - flyingYspeed));
-        std::shared_ptr<Block> blockOverMachine2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x + width, y - flyingYspeed));
+        std::shared_ptr<Block> blockOverMachine1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x, y - flyingYspeed));
+        std::shared_ptr<Block> blockOverMachine2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x + width, y - flyingYspeed));
 
-        std::shared_ptr<Block> blockOnTheRight1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x + width + flyingXspeed, y));
-        std::shared_ptr<Block> blockOnTheRight2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x + width + flyingXspeed, y + height));
+        std::shared_ptr<Block> blockOnTheRight1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x + width + flyingXspeed, y));
+        std::shared_ptr<Block> blockOnTheRight2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x + width + flyingXspeed, y + height));
 
         if (!blockOverMachine1 && !blockOverMachine2)
         {
@@ -177,11 +177,11 @@ void Machine::update()
         bool isBlockOver = true;
         bool isBlockOnTheLeft= true;
 
-        std::shared_ptr<Block> blockOverMachine1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x, y - flyingYspeed));
-        std::shared_ptr<Block> blockOverMachine2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x + width, y - flyingYspeed));
+        std::shared_ptr<Block> blockOverMachine1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x, y - flyingYspeed));
+        std::shared_ptr<Block> blockOverMachine2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x + width, y - flyingYspeed));
         
-        std::shared_ptr<Block> blockOnTheLeft1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x - flyingXspeed, y));
-        std::shared_ptr<Block> blockOnTheLeft2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x - flyingXspeed, y + height));
+        std::shared_ptr<Block> blockOnTheLeft1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x - flyingXspeed, y));
+        std::shared_ptr<Block> blockOnTheLeft2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x - flyingXspeed, y + height));
 
         if (!blockOverMachine1 && !blockOverMachine2)
         {
@@ -211,8 +211,8 @@ void Machine::update()
 
         bool isBlockOnTheRight = true;
 
-        std::shared_ptr<Block> blockOnTheRight1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x + width + fallingXSpeed, y));
-        std::shared_ptr<Block> blockOnTheRight2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x + width + fallingXSpeed, y + height));
+        std::shared_ptr<Block> blockOnTheRight1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x + width + fallingXSpeed, y));
+        std::shared_ptr<Block> blockOnTheRight2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x + width + fallingXSpeed, y + height));
         
         if (!blockOnTheRight1 && !blockOnTheRight2) 
         {
@@ -231,8 +231,8 @@ void Machine::update()
 
         bool isBlockOnTheLeft = true;
 
-        std::shared_ptr<Block> blockOnTheLeft1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x - fallingXSpeed, y));
-        std::shared_ptr<Block> blockOnTheLeft2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkCollisions(x - fallingXSpeed, y + height));
+        std::shared_ptr<Block> blockOnTheLeft1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x - fallingXSpeed, y));
+        std::shared_ptr<Block> blockOnTheLeft2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x - fallingXSpeed, y + height));
 
         if (!blockOnTheLeft1 && !blockOnTheLeft2) {
             isBlockOnTheLeft = false;
