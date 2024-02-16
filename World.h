@@ -103,7 +103,7 @@ public:
     void updateVisibleBlocks() {
        
         visibleBlocks.clear();
-        int horizontalVision = 5;
+        int horizontalVision = 6;
         int verticalVision = 4;
 
         int machineX = machine->getX() / blocksSize;
@@ -140,7 +140,7 @@ public:
         int machineSectorRow = machineSector.first;
         int machineSectorCol = machineSector.second;
 
-        int d = 0;
+
         for (int i = machineSectorRow - 1; i <= machineSectorRow + 1; ++i) 
         {
             for (int j = machineSectorCol - 1; j <= machineSectorCol + 1; ++j) 
@@ -152,14 +152,14 @@ public:
                      {
                          if (block->getIsDestroyed() == false)
                             adjacentBlocks.push_back(block);
-                         d++;
+                      
                          
                      }
                     
                  }
             }
         }
-        std::cout<<"d: " << d << std::endl;
+
       
     }
 
@@ -246,9 +246,9 @@ private:
     std::shared_ptr<Block> block;
     std::vector<std::vector<std::vector<std::shared_ptr<Block>>>> sectors;
     std::vector<std::shared_ptr<Block>> adjacentBlocks;
-    int sectorSize = 5;
-    int mapWidth = 500;
-    int mapHeight = 500;
-    int blocksSize = 150;
+    int sectorSize = 6;
+    int mapWidth = 240;
+    int mapHeight = 240;
+    int blocksSize = 120;
     int time = 0;
 };
