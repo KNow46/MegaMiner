@@ -4,7 +4,7 @@
 class Shop : public GameObject
 {
 public:
-	Shop();
+	Shop(int x, int y, int width, int height);
 	void update();
 
 };

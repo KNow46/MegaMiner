@@ -3,7 +3,7 @@
 int GameObject::nextId = 1;
 
 GameObject::GameObject(int x, int y, int width, int height, std::string texturePath)
-    : x(x), y(y), height(height), width(width), isDestroyed(false), texture(TextureManager::getInstance().getTexture(texturePath))
+    : x(x), y(y), height(height), width(width), isDestroyed(false), texture(TextureManager::getInstance().getTexture(texturePath)),isVisible(true)
 {
     id = nextId++;
     std::cout << id << std::endl;
@@ -49,6 +49,19 @@ void GameObject::update() {
   
 }
 
+int GameObject::getId()
+{
+    return id;
+}
+
 std::vector<std::shared_ptr<GameObject>>& GameObject::getAggregatedObjects() {
     return aggregatedObjects;
+}
+void GameObject::setIsVisible(bool isVisible)
+{
+    this->isVisible = isVisible;
+}
+bool GameObject::getIsVisible()
+{
+    return isVisible;
 }

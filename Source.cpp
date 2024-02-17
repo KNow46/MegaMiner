@@ -48,7 +48,7 @@ void rendererScene(std::vector<std::shared_ptr<T>> &sceneObjects, Renderer& rend
 
     for (const auto& sceneObject : sceneObjects)
     {
-        if (sceneObject->getIsDestroyed() == false)
+        if (sceneObject->getIsDestroyed() == false  && sceneObject->getIsVisible())
         {
             //float angle = 1.0;
 

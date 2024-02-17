@@ -25,9 +25,37 @@ public:
         return instance;
     }
 
+    std::shared_ptr<InterfaceObject> getObjectById(int id)
+    {
+        for (const auto & interfaceObject : allInterfaceObjects)
+        {
+            if (interfaceObject->getId() == id)
+            {
+                return interfaceObject;
+            }
+        }
+        return nullptr;
+    }
+    void addObject(std::shared_ptr<InterfaceObject> object)
+    {
+        allInterfaceObjects.push_back(object);
+    }
     std::vector<std::shared_ptr<InterfaceObject>> &getAllInterfaceObjects()
     {
         return allInterfaceObjects;
+    }
+    std::vector<std::shared_ptr<InterfaceObject>> getAllVisibleObjects()
+    {
+        std::vector<std::shared_ptr<InterfaceObject>> allVisibleObjects;
+
+        for (const auto& interfaceObject : allInterfaceObjects)
+        {
+            if (interfaceObject->getIsVisible())
+            {
+                allVisibleObjects.push_back(interfaceObject);
+            }
+        }
+        return allVisibleObjects;
     }
     std::shared_ptr<Storage>& getStorage()
     {

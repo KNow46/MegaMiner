@@ -18,7 +18,7 @@ protected:
     double x;
     double y;
     std::vector<std::shared_ptr<GameObject>> aggregatedObjects;
-
+    bool isVisible;
     static int nextId;
     int id;
 
@@ -28,6 +28,7 @@ public:
 
     virtual void collision(GameObject&) {};
 
+    int getId();
     int getHeight();
     int getWidth();
     int getX();
@@ -35,6 +36,8 @@ public:
     void setX(float x);
     void setY(float y);
     bool getIsDestroyed();
+    bool getIsVisible();
+    void setIsVisible(bool isVisible);
     virtual const Texture& getTexture();
 
     virtual void update();

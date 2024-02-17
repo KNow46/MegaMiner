@@ -1,5 +1,9 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Arkanoid.vcxproj, OpenGL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  GameObject.cpp
-C:\Users\Krzysztof\Desktop\MegaMiner\GameObject.cpp(25,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\Desktop\MegaMiner\GameObject.cpp(29,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  Shop.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(150,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(150,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(193,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
   OpenGL.vcxproj -> C:\Users\Krzysztof\Desktop\MegaMiner\Debug\2Dsetup.exe
