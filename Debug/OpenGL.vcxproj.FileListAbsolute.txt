@@ -6,3 +6,4 @@ C:\Users\Krzysztof\source\repos\SetupFor2Dgames\Debug\2Dsetup.exe
 C:\Users\Krzysztof\source\repos\MegaMiner\Debug\2Dsetup.exe
 C:\Users\Krzysztof\Desktop\MegaMiner\MegaMiner\Debug\2Dsetup.exe
 C:\Users\Krzysztof\Desktop\MegaMiner\Debug\2Dsetup.exe
+C:\Users\Krzysztof\Desktop\kopia\MegaMiner\Debug\2Dsetup.exe

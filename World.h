@@ -256,8 +256,8 @@ private:
     std::vector<std::shared_ptr<Block>> adjacentBlocks;
 
     int sectorSize = 6;
-    int mapWidth = sectorSize * 40;
-    int mapHeight = sectorSize * 40;
+    int mapWidth = sectorSize * 20;
+    int mapHeight = sectorSize * 20;
     int blocksSize = 120;
     int time = 0;
 };

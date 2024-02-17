@@ -21,7 +21,6 @@ void Shop::update()
 	}
 	else
 	{
-		std::cout << "lalal";
 		text->setIsVisible(false);
 	}
 }

@@ -7,9 +7,10 @@ class Shop : public GameObject
 public:
 	Shop(int x, int y, int width, int height);
 	void update();
+	bool isCollidingWithMachine();
 private:
 	int textId;
-	bool isCollidingWithMachine();
 	std::shared_ptr<Text> text;
+
 
 };

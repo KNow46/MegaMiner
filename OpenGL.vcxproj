@@ -152,6 +152,7 @@
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
     <ClCompile Include="Machine.cpp" />
+    <ClCompile Include="Money.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shop.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="InterfaceManager.h" />
     <ClInclude Include="InterfaceObject.h" />
     <ClInclude Include="Machine.h" />
+    <ClInclude Include="Money.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Shop.h" />

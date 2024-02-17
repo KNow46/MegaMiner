@@ -4,18 +4,21 @@
 #include "InterfaceObject.h"
 #include "Storage.h"
 #include "Text.h"
+#include "Money.h"
 class InterfaceManager
 {
 private:
     std::vector<std::shared_ptr<InterfaceObject>> allInterfaceObjects;
     std::shared_ptr<Storage> storage;
-
+    std::shared_ptr<Money> money;
     InterfaceManager()
     { 
      storage = std::make_shared<Storage>();
      allInterfaceObjects.emplace_back(storage);
-
-    // allInterfaceObjects.emplace_back(std::make_shared<Text>(0,0,1000, 1000, "hello world", 30));
+    
+     money = std::make_shared<Money>();
+     allInterfaceObjects.emplace_back(money);
+  
     }
 
 public:
@@ -38,7 +41,9 @@ public:
     }
     void addObject(std::shared_ptr<InterfaceObject> object)
     {
+        std::cout << "zzz";
         allInterfaceObjects.emplace_back(object);
+       
     }
     std::vector<std::shared_ptr<InterfaceObject>> &getAllInterfaceObjects()
     {
