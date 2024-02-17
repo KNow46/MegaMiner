@@ -76,6 +76,7 @@ public:
  
     void update() 
     {
+        shop->update();
         machine->update();
         for (const auto& object : visibleBlocks) 
         {

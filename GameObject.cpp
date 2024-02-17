@@ -6,7 +6,6 @@ GameObject::GameObject(int x, int y, int width, int height, std::string textureP
     : x(x), y(y), height(height), width(width), isDestroyed(false), texture(TextureManager::getInstance().getTexture(texturePath)),isVisible(true)
 {
     id = nextId++;
-    std::cout << id << std::endl;
 }
 
 GameObject::~GameObject() {

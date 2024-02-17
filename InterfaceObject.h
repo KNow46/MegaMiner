@@ -7,12 +7,12 @@ class InterfaceObject : public GameObject
 protected:
 	bool isHovered;
 	Texture& hoverTexture;
-	bool isVisible;
+
 public:
 	InterfaceObject(int x, int y, int height, int width, std::string texturePath, std::string textureHoveredPath)
 		:GameObject(x, y, height, width, texturePath),  isHovered(0), hoverTexture(TextureManager::getInstance().getTexture(textureHoveredPath)) {};
 	InterfaceObject(int x, int y, int height, int width, std::string texturePath)
-		:GameObject(x, y, height, width, texturePath), isHovered(0), hoverTexture(TextureManager::getInstance().getTexture(texturePath)), isVisible(false) {};
+		:GameObject(x, y, height, width, texturePath), isHovered(0), hoverTexture(TextureManager::getInstance().getTexture(texturePath)) {};
 
 	virtual void onClick() { std::cout << "clicked"; };
 

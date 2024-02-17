@@ -38,16 +38,16 @@ public:
     }
     void addObject(std::shared_ptr<InterfaceObject> object)
     {
-        allInterfaceObjects.push_back(object);
+        allInterfaceObjects.emplace_back(object);
     }
     std::vector<std::shared_ptr<InterfaceObject>> &getAllInterfaceObjects()
     {
         return allInterfaceObjects;
     }
-    std::vector<std::shared_ptr<InterfaceObject>> getAllVisibleObjects()
+    std::vector<std::shared_ptr<InterfaceObject>> &getAllVisibleObjects()
     {
         std::vector<std::shared_ptr<InterfaceObject>> allVisibleObjects;
-
+        std::cout << allInterfaceObjects.size() << std::endl;
         for (const auto& interfaceObject : allInterfaceObjects)
         {
             if (interfaceObject->getIsVisible())
@@ -55,6 +55,7 @@ public:
                 allVisibleObjects.push_back(interfaceObject);
             }
         }
+       // std::cout << allVisibleObjects.size() << std::endl;
         return allVisibleObjects;
     }
     std::shared_ptr<Storage>& getStorage()
@@ -89,6 +90,13 @@ public:
             {
                 interfaceObject->setIsHovered(false);
             }
+        }
+    }
+    void update()
+    {
+        for (const auto& object: allInterfaceObjects)
+        {
+            object->update();
         }
     }
 
