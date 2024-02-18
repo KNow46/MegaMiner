@@ -156,6 +156,7 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shop.cpp" />
+    <ClCompile Include="ShopMenu.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="src\vendor\stb_image\stb_image.cpp" />
     <ClCompile Include="Storage.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Shop.h" />
+    <ClInclude Include="ShopMenu.h" />
     <ClInclude Include="src\vendor\stb_image\stb_image.h" />
     <ClInclude Include="Storage.h" />
     <ClInclude Include="TestObject.h" />

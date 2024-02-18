@@ -17,11 +17,20 @@ void Shop::update()
 	if (isCollidingWithMachine())
 	{
 		text->setIsVisible(true);
+		if (InterfaceManager::getInstance().getShopMenu()->getIsVisible())
+		{
+			text->changeText("Press tab to close shop");
+		}
+		else
+		{
+			text->changeText("Press tab to open shop");
+		}
 		
 	}
 	else
 	{
 		text->setIsVisible(false);
+		InterfaceManager::getInstance().getShopMenu()->setIsVisible(false);
 	}
 }
 

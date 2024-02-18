@@ -5,12 +5,16 @@
 #include "Storage.h"
 #include "Text.h"
 #include "Money.h"
+#include "ShopMenu.h"
+
 class InterfaceManager
 {
 private:
     std::vector<std::shared_ptr<InterfaceObject>> allInterfaceObjects;
     std::shared_ptr<Storage> storage;
     std::shared_ptr<Money> money;
+    std::shared_ptr<ShopMenu> shopMenu;
+
     InterfaceManager()
     { 
      storage = std::make_shared<Storage>();
@@ -18,6 +22,9 @@ private:
     
      money = std::make_shared<Money>();
      allInterfaceObjects.emplace_back(money);
+
+    shopMenu = std::make_shared<ShopMenu>();
+     allInterfaceObjects.emplace_back(shopMenu);
   
     }
 
@@ -41,7 +48,6 @@ public:
     }
     void addObject(std::shared_ptr<InterfaceObject> object)
     {
-        std::cout << "zzz";
         allInterfaceObjects.emplace_back(object);
        
     }
@@ -68,6 +74,10 @@ public:
         return storage;
     }
 
+    std::shared_ptr<ShopMenu>& getShopMenu()
+    {
+        return shopMenu;
+    }
     void handleLeftClick(int xPos, int yPos)
     {
         for (const auto& interfaceObject : allInterfaceObjects)
@@ -77,6 +87,7 @@ public:
                 if (yPos > interfaceObject->getY() && yPos < interfaceObject->getY() + interfaceObject->getHeight())
                 {
                     interfaceObject->onClick();
+                    break;
                 }
                 
             }
@@ -90,6 +101,7 @@ public:
                 yPos > interfaceObject->getY() && yPos < interfaceObject->getY() + interfaceObject->getHeight())
             {
                 interfaceObject->setIsHovered(true);
+                interfaceObject->onHovered();
             }
             else
             {
@@ -99,7 +111,7 @@ public:
     }
     void update()
     {
-        for (const auto& object: allInterfaceObjects)
+        for (const auto& object: getAllVisibleObjects())
         {
             object->update();
         }

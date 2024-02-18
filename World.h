@@ -183,7 +183,7 @@ public:
     {
         return machine;
     }
-    std::shared_ptr<GameObject> getShop()
+    std::shared_ptr<Shop> getShop()
     {
         return shop;
     }
