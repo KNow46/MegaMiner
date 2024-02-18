@@ -29,4 +29,5 @@ public:
 		else
 			return hoverTexture;
 	};
+	virtual void update() { };
 };

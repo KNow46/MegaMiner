@@ -15,17 +15,17 @@ struct Item
 
 		if (itemType == GOLD)
 		{
-			value = 300;
+			value = 30;
 			texturePath = "res/textures/gold.png";
 		}
 		if (itemType == DIAMOND)
 		{
-			value = 3000;
+			value = 300;
 			texturePath = "res/textures/diamond.png";
 		}
 		if (itemType == IRON)
 		{
-			value = 1000;
+			value = 10;
 			texturePath = "res/textures/iron.png";
 		}
 		if (itemType == EMERALD)
@@ -35,7 +35,7 @@ struct Item
 		}
 		if (itemType == MYSTIC)
 		{
-			value = 10000;
+			value = 1000;
 			texturePath = "res/textures/mystic.png";
 		}
 	};
@@ -61,6 +61,7 @@ public:
 	bool isStorageFull();
 	void addItem(Item item);
 	void erase();
+	int getItemsValue();
 
 
 };

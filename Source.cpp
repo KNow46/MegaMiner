@@ -242,6 +242,7 @@ int main(void)
              glfwGetCursorPos(window, &xpos, &ypos);
 
             World::getInstance().update();
+            InterfaceManager::getInstance().update();
 
             InterfaceManager::getInstance().handleHover(xpos, ypos);
 

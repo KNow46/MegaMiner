@@ -2,7 +2,7 @@
 #include "TextureManager.h"
 #include <iostream>
 #include "InterfaceManager.h"
-Money::Money() : InterfaceObject(30, 0, 100, 100, "res/textures/coin/1.png"), money(255)
+Money::Money() : InterfaceObject(30, 0, 100, 100, "res/textures/coin/1.png"), money(0)
 {
 	amountText = std::make_shared<Text>(140, 20, 500, 35, std::to_string(money), 30);
 

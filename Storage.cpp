@@ -52,3 +52,33 @@ void Storage::addItem(Item item)
 		currentOccupacyText->changeText(std::to_string(currentOccupacy));
 	}
 }
+int Storage::getItemsValue()
+{
+	int valueSum = 0;
+	for (const auto& item : items)
+	{
+		valueSum += item.value;
+	}
+	return valueSum;
+}
+void Storage::erase()
+{
+
+	currentOccupacy = 0;
+	aggregatedObjects.clear();
+	amountCounters.clear();
+	items.clear();
+	occupatedSlots = 0;
+
+	maxOccupacyText = std::make_shared<Text>(1290, 32, 50, 50, "/" + std::to_string(maxOccupacy), 15);
+	aggregatedObjects.emplace_back(maxOccupacyText);
+	for (int i = 0; i < slots; i++)
+	{
+		std::shared_ptr<Text> text = std::make_shared<Text>(1200, 80 + i * 70, 50, 50, "0", 15);
+		aggregatedObjects.emplace_back(text);
+		amountCounters.emplace_back(text);
+	}
+	currentOccupacyText = std::make_shared<Text>(1250, 32, 50, 50, "0", 15);
+	aggregatedObjects.emplace_back(currentOccupacyText);
+
+}

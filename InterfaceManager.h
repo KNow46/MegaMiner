@@ -14,6 +14,8 @@ private:
     std::shared_ptr<Storage> storage;
     std::shared_ptr<Money> money;
     std::shared_ptr<ShopMenu> shopMenu;
+    int mouseXpos;
+    int mouseYpos;
 
     InterfaceManager()
     { 
@@ -58,7 +60,6 @@ public:
     std::vector<std::shared_ptr<InterfaceObject>> &getAllVisibleObjects()
     {
         std::vector<std::shared_ptr<InterfaceObject>> allVisibleObjects;
-        std::cout << allInterfaceObjects.size() << std::endl;
         for (const auto& interfaceObject : allInterfaceObjects)
         {
             if (interfaceObject->getIsVisible())
@@ -78,6 +79,10 @@ public:
     {
         return shopMenu;
     }
+    std::shared_ptr<Money>& getMoney()
+    {
+        return money;
+    }
     void handleLeftClick(int xPos, int yPos)
     {
         for (const auto& interfaceObject : allInterfaceObjects)
@@ -95,6 +100,9 @@ public:
     }
     void handleHover(int xPos, int yPos)
     {
+        mouseXpos = xPos;
+        mouseYpos = yPos;
+
         for (const auto& interfaceObject : allInterfaceObjects)
         {
             if (xPos > interfaceObject->getX() && xPos < interfaceObject->getX() + interfaceObject->getWidth() && 
@@ -111,10 +119,18 @@ public:
     }
     void update()
     {
-        for (const auto& object: getAllVisibleObjects())
+        for (const auto& object: allInterfaceObjects)
         {
             object->update();
         }
+    }
+    int getMouseXpos()
+    {
+        return mouseXpos;
+    }
+    int getMouseYpos()
+    {
+        return mouseYpos;
     }
 
 };
