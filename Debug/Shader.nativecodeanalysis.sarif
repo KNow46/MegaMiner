@@ -1,0 +1,313 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6385",
+          "message": {
+            "text": "Reading invalid data from 'ss'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Shader.cpp"
+                },
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 13,
+                  "endLine": 50,
+                  "endColumn": 38
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Shader::ParseShader",
+                  "decoratedName": "?ParseShader@Shader@@AAE?AUShaderProgramSource@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Shader.cpp"
+                          },
+                          "region": {
+                            "startLine": 24,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Shader.cpp"
+                          },
+                          "region": {
+                            "startLine": 26,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Shader.cpp"
+                          },
+                          "region": {
+                            "startLine": 30,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Shader.cpp"
+                          },
+                          "region": {
+                            "startLine": 31,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "'ss' is an array of 2 elements (352 bytes)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Shader.cpp"
+                          },
+                          "region": {
+                            "startLine": 32,
+                            "startColumn": 16
+                          }
+                        },
+                        "message": {
+                          "text": "'type' is equal to -1"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Shader.cpp"
+                          },
+                          "region": {
+                            "startLine": 34,
+                            "startColumn": 19
+                          }
+                        },
+                        "message": {
+                          "text": "Enter this loop, (assume 'getline(stream, line)->._N()')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Shader.cpp"
+                          },
+                          "region": {
+                            "startLine": 36,
+                            "startColumn": 34
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume 'line.find(\"#shader\", 0)!=npos' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Shader.cpp"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "'ss' is an Output from 'std::<<' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.36.32532\\include\\xstring:5221)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Shader.cpp"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "Invalid read from 'ss[-1]', (readable range is 0 to 1)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6255",
+          "message": {
+            "text": "`_alloca` indicates failure by raising a stack overflow exception.  Consider using _malloca instead."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Shader.cpp"
+                },
+                "region": {
+                  "startLine": 69,
+                  "startColumn": 32,
+                  "endLine": 69,
+                  "endColumn": 48
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Shader::CompileShader",
+                  "decoratedName": "?CompileShader@Shader@@AAEIIABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.36.32532.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Shader.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "76159ef3957dd168867a36b296d9315982a2463637b358f722342a8edbea01f4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/shader.h"
+          },
+          "hashes": {
+            "sha-256": "a61a19cc155ee17eb91c68d33527a645d4cc22016be68d177b87c46f06ae8af4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/renderer.h"
+          },
+          "hashes": {
+            "sha-256": "4a4a50093f489e0e842db7975f351a3fa6787fca88f27312fe0ed5a69c7bdd91"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/depedencies/glew/include/gl/glew.h"
+          },
+          "hashes": {
+            "sha-256": "1a2d50dc00a69940838cb3b5413cf7a7ac3cee8078672f27ffbfa2d3b88ad344"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/vertexarray.h"
+          },
+          "hashes": {
+            "sha-256": "a4344e8a0c124dc45b78eb48a39890e6dead35dabd82df83386ea5f60fc4c3c6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/vertexbuffer.h"
+          },
+          "hashes": {
+            "sha-256": "67db90ef6d0779ebf25c839d0fc215c09033a4e30893e31221892a0d4625bd10"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/indexbuffer.h"
+          },
+          "hashes": {
+            "sha-256": "86d4c87d2c930b7ec88c4a0157cfcaa90ffa1c6a6a87b61f0bbdb40951995c39"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 #include "Text.h"
 MenuShopUpgradeDrillTile::MenuShopUpgradeDrillTile() :InterfaceObject(400, 370, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png")
 {
-	aggregatedObjects.push_back(std::make_shared<Text>(460, 400, 340, 40, "Upgrade drill", 18));
+	aggregatedObjects.push_back(std::make_shared<Text>(440, 400, 340, 40, "Upgrade drill", 18));
 
 	confirmButton = std::make_shared<InterfaceObject>(1030, 520, 50, 50, "res/textures/confirm.png");
 	confirmButton->setIsVisible(false);

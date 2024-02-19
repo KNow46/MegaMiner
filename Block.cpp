@@ -24,10 +24,10 @@ std::string Block::getBlockTexturePath(BlockType blockType) {
 int getBlockInitialHp(BlockType blockType) {
     switch (blockType) {
     case BlockType::STONE:
-        return 20;
+        return 50;
 
     default:
-        return 20;
+        return 50;
     }
 }
 

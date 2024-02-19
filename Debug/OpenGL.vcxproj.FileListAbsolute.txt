@@ -7,3 +7,5 @@ C:\Users\Krzysztof\source\repos\MegaMiner\Debug\2Dsetup.exe
 C:\Users\Krzysztof\Desktop\MegaMiner\MegaMiner\Debug\2Dsetup.exe
 C:\Users\Krzysztof\Desktop\MegaMiner\Debug\2Dsetup.exe
 C:\Users\Krzysztof\Desktop\kopia\MegaMiner\Debug\2Dsetup.exe
+C:\Users\Krzysztof\Desktop\MegaMiner\Debug\2Dsetup.exe.lastcodeanalysissucceeded
+C:\Users\Krzysztof\Desktop\MegaMiner\Debug\NativeCodeAnalysis.read.1.tlog

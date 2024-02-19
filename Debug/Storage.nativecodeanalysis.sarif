@@ -1,0 +1,174 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Item::value' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Storage.h"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 2,
+                  "endLine": 12,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Item::{ctor}",
+                  "decoratedName": "??0Item@@QAE@W4ItemType@0@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Item::value"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.36.32532.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/Krzysztof/Desktop/MegaMiner/Storage.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "7b258486b384a9a7cbba820c95abc658e30bc6c0f73b6546d4c54a5ec4bbee5c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/storage.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "fd3ec218006617578dd66cd0965d2a4a381442ee094c384e6d5ca56101d22278"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/interfaceobject.h"
+          },
+          "hashes": {
+            "sha-256": "67f0ff8e999ad01a2c7f4a48602af56e47c8ce69a8598231ecf8d2d3f93875b1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/gameobject.h"
+          },
+          "hashes": {
+            "sha-256": "fe21bfcc3363143f064f91f841a6ddac6ede820ea8c064d261c360d979628201"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/texture.h"
+          },
+          "hashes": {
+            "sha-256": "a64c7ad0de21b934fa6f18aced3b74221701da4279b82ac061c9f5172a760bee"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/renderer.h"
+          },
+          "hashes": {
+            "sha-256": "4a4a50093f489e0e842db7975f351a3fa6787fca88f27312fe0ed5a69c7bdd91"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/depedencies/glew/include/gl/glew.h"
+          },
+          "hashes": {
+            "sha-256": "1a2d50dc00a69940838cb3b5413cf7a7ac3cee8078672f27ffbfa2d3b88ad344"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/vertexarray.h"
+          },
+          "hashes": {
+            "sha-256": "a4344e8a0c124dc45b78eb48a39890e6dead35dabd82df83386ea5f60fc4c3c6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/vertexbuffer.h"
+          },
+          "hashes": {
+            "sha-256": "67db90ef6d0779ebf25c839d0fc215c09033a4e30893e31221892a0d4625bd10"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/indexbuffer.h"
+          },
+          "hashes": {
+            "sha-256": "86d4c87d2c930b7ec88c4a0157cfcaa90ffa1c6a6a87b61f0bbdb40951995c39"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/shader.h"
+          },
+          "hashes": {
+            "sha-256": "a61a19cc155ee17eb91c68d33527a645d4cc22016be68d177b87c46f06ae8af4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/texturemanager.h"
+          },
+          "hashes": {
+            "sha-256": "b47b87ab5d00fa3cee08d43297a4a9152b5c61b3f92adf863b05b4f499e958c0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/block.h"
+          },
+          "hashes": {
+            "sha-256": "4611ecabc5ec86f1bc02077281495ccd609e055a0251f634129e0527716c733c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/text.h"
+          },
+          "hashes": {
+            "sha-256": "fab299e56533393588d72bb93d4a43bf29b1d0ed414a56318cb4d45192ec6887"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.36.32532.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/indexbuffer.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "95c29fa19f61df17e187fe8f3c6e252161e2a62db6c7674f5c568dbb8574bbc3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/indexbuffer.h"
+          },
+          "hashes": {
+            "sha-256": "86d4c87d2c930b7ec88c4a0157cfcaa90ffa1c6a6a87b61f0bbdb40951995c39"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/renderer.h"
+          },
+          "hashes": {
+            "sha-256": "4a4a50093f489e0e842db7975f351a3fa6787fca88f27312fe0ed5a69c7bdd91"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/depedencies/glew/include/gl/glew.h"
+          },
+          "hashes": {
+            "sha-256": "1a2d50dc00a69940838cb3b5413cf7a7ac3cee8078672f27ffbfa2d3b88ad344"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/vertexarray.h"
+          },
+          "hashes": {
+            "sha-256": "a4344e8a0c124dc45b78eb48a39890e6dead35dabd82df83386ea5f60fc4c3c6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/vertexbuffer.h"
+          },
+          "hashes": {
+            "sha-256": "67db90ef6d0779ebf25c839d0fc215c09033a4e30893e31221892a0d4625bd10"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/krzysztof/desktop/megaminer/shader.h"
+          },
+          "hashes": {
+            "sha-256": "a61a19cc155ee17eb91c68d33527a645d4cc22016be68d177b87c46f06ae8af4"
+          }
+        }
+      ]
+    }
+  ]
+}

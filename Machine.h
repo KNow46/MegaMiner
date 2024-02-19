@@ -3,7 +3,7 @@
 #include "GameObject.h"
 #include <map>
 #include "Texture.h"
-
+#include "Drill.h"
 class Machine : public GameObject
 {
 public:
@@ -25,9 +25,11 @@ public:
 
 	void update();
 
+	Drill getDrill();
 
 private:
 	State currentState;
+	Drill drill;
 
 
 };

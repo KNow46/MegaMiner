@@ -57,3 +57,10 @@ void ShopMenu::onClick()
         }
     }
 }
+
+void ShopMenu::setIsVisible(bool isVisible)
+{
+    upgradeDrillTile->upgradeWindowClear();
+
+    this->isVisible = isVisible;
+}

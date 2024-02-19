@@ -13,4 +13,5 @@ public:
 	ShopMenu();
 	virtual void update();
 	void onClick();
+	void setIsVisible(bool isVisible);
 };
