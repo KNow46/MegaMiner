@@ -37,7 +37,7 @@ public:
     void setY(float y);
     bool getIsDestroyed();
     bool getIsVisible();
-    void setIsVisible(bool isVisible);
+    virtual void setIsVisible(bool isVisible);
     virtual const Texture& getTexture();
 
     virtual void update();

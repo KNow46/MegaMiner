@@ -28,13 +28,26 @@ void Text::changeText(std::string newText)
 
 void Text::stringTextToTexture()
 {
+	int line = 0;
+	double positionX = x;
 	for (int i = 0; i < strText.length(); i++)
 	{
-		double positionX = x + (i * fontSize) % width;
-		int line = floor(i * fontSize / width);
-
+		//x + (i * fontSize) % width;
+		positionX += fontSize;
+		if (positionX + fontSize > width + x)
+		{
+			positionX = x - fontSize;
+			line++;
+		}
+		
 		double positionY = y + line * fontSize * 2;
 
+		if (strText[i] == ';')
+		{
+			line++;
+			positionX = x - fontSize;
+			continue;
+		}
 		if (strText[i] == ' ')
 		{
 			aggregatedObjects.emplace_back(new GameObject(positionX, positionY, fontSize * 0.9, fontSize * 1.8,

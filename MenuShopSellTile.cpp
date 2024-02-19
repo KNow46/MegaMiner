@@ -4,7 +4,7 @@
 #include "Text.h"
 MenuShopSellTile::MenuShopSellTile() :InterfaceObject(400, 270, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png")
 {
-	aggregatedObjects.push_back(std::make_shared<Text>(410, 305, 340, 40, "Sell all resources", 18));
+	aggregatedObjects.push_back(std::make_shared<Text>(405, 300, 400, 40, "Sell all resources", 18));
 }
 void MenuShopSellTile::onClick()
 {

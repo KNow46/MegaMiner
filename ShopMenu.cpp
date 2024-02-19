@@ -7,6 +7,11 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
     
     sellTile = std::make_shared<MenuShopSellTile>();
     aggregatedObjects.push_back(sellTile);
+
+    upgradeDrillTile = std::make_shared<MenuShopUpgradeDrillTile>();
+    aggregatedObjects.push_back(upgradeDrillTile);
+
+
 }
 void ShopMenu::update()
 {
@@ -45,6 +50,8 @@ void ShopMenu::onClick()
             if (xPos > interfaceObject->getX() && xPos < interfaceObject->getX() + interfaceObject->getWidth() &&
                 yPos > interfaceObject->getY() && yPos < interfaceObject->getY() + interfaceObject->getHeight())
             {
+                upgradeDrillTile->upgradeWindowClear();
+
                 interfaceObject->onClick();
             }
         }

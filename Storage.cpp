@@ -16,7 +16,7 @@ currentOccupacy(0), occupatedSlots(0)
 	currentOccupacyText = std::make_shared<Text>(1250, 32, 50, 50, "0", 15);
 	aggregatedObjects.emplace_back(currentOccupacyText);
 
-	maxOccupacyText = std::make_shared<Text>(1290, 32, 50, 50, "/" + std::to_string(maxOccupacy), 15);
+	maxOccupacyText = std::make_shared<Text>(1290, 32, 200, 50, "/" + std::to_string(maxOccupacy), 15);
 	aggregatedObjects.emplace_back(maxOccupacyText);
 }
 void Storage::addItem(Item item)
@@ -70,11 +70,11 @@ void Storage::erase()
 	items.clear();
 	occupatedSlots = 0;
 
-	maxOccupacyText = std::make_shared<Text>(1290, 32, 50, 50, "/" + std::to_string(maxOccupacy), 15);
+	maxOccupacyText = std::make_shared<Text>(1290, 32, 200, 50, "/" + std::to_string(maxOccupacy), 15);
 	aggregatedObjects.emplace_back(maxOccupacyText);
 	for (int i = 0; i < slots; i++)
 	{
-		std::shared_ptr<Text> text = std::make_shared<Text>(1200, 80 + i * 70, 50, 50, "0", 15);
+		std::shared_ptr<Text> text = std::make_shared<Text>(1200, 80 + i * 70, 200, 50, "0", 15);
 		aggregatedObjects.emplace_back(text);
 		amountCounters.emplace_back(text);
 	}
