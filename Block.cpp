@@ -41,7 +41,7 @@ void Block::hit(int damage)
     
     if(!isDestroyed)
     {
-
+       
         hp -= damage;
         if (hp <= 0)
         {

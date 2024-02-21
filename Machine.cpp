@@ -69,8 +69,7 @@ void Machine::update()
 
     std::shared_ptr<Block> blockUnderMachine1 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x , y + height + fallingYSpeed));
     std::shared_ptr<Block> blockUnderMachine2 = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x+width, y + height + fallingYSpeed));
-    std::cout << drill.getPower() <<std::endl;
-    std::cout << drill.getLevel();
+
     if (!blockUnderMachine1 && !blockUnderMachine2)
     {
         isBlockUnder = false;

@@ -8,6 +8,7 @@ public:
 	Drill();
 	void upgrade();
 	int getUpgradeCost();
+	int getPower(int atLevel);
 	int getPower();
 	int getLevel();
 };
