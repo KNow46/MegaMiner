@@ -38,8 +38,10 @@ Block::Block(int x, int y, int width, int height, BlockType blockType)
 
 void Block::hit(int damage)
 {
+    
     if(!isDestroyed)
     {
+
         hp -= damage;
         if (hp <= 0)
         {

@@ -22,6 +22,10 @@ void Money::takeMoney(int amount)
 	money -= amount;
 	amountText->changeText(std::to_string(money));
 }
+int Money::getMoneyAmount()
+{
+	return money;
+}
 void Money::update()
 {
 

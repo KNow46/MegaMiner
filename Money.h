@@ -12,7 +12,7 @@ class Money: public InterfaceObject
 public:
 	
 	Money();
-	int getMoney();
+	int getMoneyAmount();
 	void addMoney(int amount);
 	void takeMoney(int amount);
 	void update();

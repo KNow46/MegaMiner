@@ -87,14 +87,18 @@ public:
     {
         for (const auto& interfaceObject : allInterfaceObjects)
         {
-            if(xPos > interfaceObject->getX() && xPos < interfaceObject->getX() + interfaceObject->getWidth())
+            if (interfaceObject->getIsVisible())
             {
-                if (yPos > interfaceObject->getY() && yPos < interfaceObject->getY() + interfaceObject->getHeight())
+
+                if (xPos > interfaceObject->getX() && xPos < interfaceObject->getX() + interfaceObject->getWidth())
                 {
-                    interfaceObject->onClick();
-                    break;
+                    if (yPos > interfaceObject->getY() && yPos < interfaceObject->getY() + interfaceObject->getHeight())
+                    {
+                        interfaceObject->onClick();
+                        break;
+                    }
+
                 }
-                
             }
         }
     }
@@ -127,6 +131,7 @@ public:
 
         for (const auto& interfaceObject : allInterfaceObjects)
         {
+
             if (xPos > interfaceObject->getX() && xPos < interfaceObject->getX() + interfaceObject->getWidth() && 
                 yPos > interfaceObject->getY() && yPos < interfaceObject->getY() + interfaceObject->getHeight())
             {

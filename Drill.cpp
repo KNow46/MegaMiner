@@ -1,5 +1,5 @@
 #include "Drill.h"
-
+#include <iostream>
 Drill::Drill(): power(1), level(1)
 {
 
@@ -26,15 +26,16 @@ int Drill::getUpgradeCost()
 }
 void Drill::upgrade()
 {
-	if (level == 1)
-		power = 2;
-	if (level == 2)
-		power = 3;
-	if (level == 3)
-		power = 4;
-	if (level == 4)
-		power = 5;
-	if (level == 5)
-		power = 6;
 	level++;
+	if (level == 1)
+		power = 1;
+	if (level == 2)
+		power = 20;
+	if (level == 3)
+		power = 3;
+	if (level == 4)
+		power = 4;
+	if (level == 5)
+		power = 5;
+
 }

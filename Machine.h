@@ -25,7 +25,7 @@ public:
 
 	void update();
 
-	Drill getDrill();
+	Drill &getDrill();
 
 private:
 	State currentState;

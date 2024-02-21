@@ -1,11 +1,46 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Arkanoid.vcxproj, OpenGL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Block.cpp
-  Money.cpp
-  Shop.cpp
+  Machine.cpp
 C:\Users\Krzysztof\Desktop\MegaMiner\World.h(151,34): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Krzysztof\Desktop\MegaMiner\World.h(151,66): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Krzysztof\Desktop\MegaMiner\World.h(194,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  ShopMenu.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(70,151): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(70,136): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(71,156): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(71,137): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(99,149): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(99,137): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(112,141): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(112,129): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(124,152): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(124,129): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(134,143): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(134,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(135,151): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(135,141): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(152,144): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(152,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(153,152): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(153,141): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(155,164): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(155,148): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(156,166): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(156,148): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(182,144): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(182,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(183,152): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(183,141): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(185,155): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(185,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(186,157): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(186,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(216,165): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(216,148): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(217,167): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(217,148): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(236,156): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(236,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(237,158): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(237,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   Main.cpp
 C:\Users\Krzysztof\Desktop\MegaMiner\World.h(151,34): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Krzysztof\Desktop\MegaMiner\World.h(151,66): warning C4018: '<': signed/unsigned mismatch
@@ -25,8 +60,14 @@ C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(62,96): warning C4244: 'argument':
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(62,169): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(63,51): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(63,142): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  Shop.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(151,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(151,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(194,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  ShopMenu.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(151,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(151,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(194,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating Code...
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(54): warning C4715: 'Machine::getTexture': not all control paths return a value
   OpenGL.vcxproj -> C:\Users\Krzysztof\Desktop\MegaMiner\Debug\2Dsetup.exe
