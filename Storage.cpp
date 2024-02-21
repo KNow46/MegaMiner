@@ -55,10 +55,12 @@ void Storage::addItem(Item item)
 int Storage::getItemsValue()
 {
 	int valueSum = 0;
-	for (const auto& item : items)
+
+	for (int i = 0; i < occupatedSlots; i++)
 	{
-		valueSum += item.value;
+		valueSum += items[i].value * amountCounters[i]->getIntText();
 	}
+
 	return valueSum;
 }
 void Storage::erase()

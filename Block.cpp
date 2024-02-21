@@ -1,6 +1,7 @@
+#pragma once
 #include "Block.h"
 #include "InterfaceManager.h"
-
+#include <iostream>
 std::string Block::getBlockTexturePath(BlockType blockType) {
     switch (blockType) {
     case BlockType::STONE:
@@ -38,10 +39,24 @@ Block::Block(int x, int y, int width, int height, BlockType blockType)
 
 void Block::hit(int damage)
 {
+
     
     if(!isDestroyed)
     {
-       
+        int destructionStage = (1.0 - static_cast<float>(hp) /getBlockInitialHp(blockType)) * 5;
+  /*      float test = (static_cast<float>(hp) / getBlockInitialHp(blockType));
+
+        std::cout << hp << std::endl;
+        std::cout << getBlockInitialHp(blockType) << std::endl;
+        std::cout << test << std::endl;*/
+
+        if (destructionStage > 0)
+        {
+            aggregatedObjects.clear();
+            aggregatedObjects.push_back(std::make_shared<InterfaceObject>(x, y, width, height, "res/textures/crack/" +
+                std::to_string(destructionStage) + ".png"));
+        }
+
         hp -= damage;
         if (hp <= 0)
         {
