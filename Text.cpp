@@ -42,10 +42,29 @@ void Text::stringTextToTexture()
 		
 		double positionY = y + line * fontSize * 2;
 
+		
 		if (strText[i] == ';')
 		{
 			line++;
 			positionX = x - fontSize;
+			continue;
+		}
+		if (strText[i] == ':')
+		{
+			aggregatedObjects.emplace_back(new GameObject(positionX, positionY, fontSize * 0.9, fontSize * 1.8,
+				"res/textures/ansi/colon.png"));
+			continue;
+		}
+		if (strText[i] == '>')
+		{
+			aggregatedObjects.emplace_back(new GameObject(positionX, positionY, fontSize * 0.9, fontSize * 1.8,
+				"res/textures/ansi/moreSign.png"));
+			continue;
+		}
+		if (strText[i] == '<')
+		{
+			aggregatedObjects.emplace_back(new GameObject(positionX, positionY, fontSize * 0.9, fontSize * 1.8,
+				"res/textures/ansi/lessSign.png"));
 			continue;
 		}
 		if (strText[i] == ' ')

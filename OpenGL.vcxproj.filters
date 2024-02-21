@@ -153,9 +153,6 @@
     <ClInclude Include="InterfaceObject.h">
       <Filter>Header Files\InterfaceClasses</Filter>
     </ClInclude>
-    <ClInclude Include="Image.h">
-      <Filter>Header Files\InterfaceClasses</Filter>
-    </ClInclude>
     <ClInclude Include="ShopMenu.h">
       <Filter>Header Files\InterfaceClasses</Filter>
     </ClInclude>

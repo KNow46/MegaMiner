@@ -17,18 +17,22 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
     aggregatedObjects.push_back(sellAllButton);
     aggregatedObjects.push_back(std::make_shared<Text>(405, 300, 400, 40, "Sell all resources", 18));
 
-   
+    drillPhoto = std::make_shared<InterfaceObject>(850, 300, 180, 180, "res/textures/drill.png");
+    aggregatedObjects.push_back(drillPhoto);
+    drillPhoto->setIsVisible(false);
 
     upgradeDrillButton = std::make_shared<Button>(400, 370, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png",
         [this]()
         {
             upgradeDrillConfirm->setIsVisible(true);
+            upgradeDrillInfo->setIsVisible(true);
+            drillPhoto->setIsVisible(true);
         });
     aggregatedObjects.push_back(upgradeDrillButton);
     aggregatedObjects.push_back(std::make_shared<Text>(440, 400, 340, 40, "Upgrade drill", 18));
  
 
-    upgradeDrillConfirm = std::make_shared<Button>(1030, 500, 50, 50, "res/textures/confirm.png",
+    upgradeDrillConfirm = std::make_shared<Button>(900, 600, 100, 50, "res/textures/upgrade.png", "res/textures/upgradeHovered.png",
         [this]()
         {
             
@@ -40,10 +44,10 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
                 Drill drill = World::getInstance().getMachine()->getDrill();
                 std::cout << drill.getLevel() << std::endl;
 
-                    upgradeDrillInfo->changeText("Cost " +
+                    upgradeDrillInfo->changeText("  Cost: " +
                         std::to_string(drill.getUpgradeCost()) + 
-                        ";Power " +
-                    std::to_string(drill.getPower()) + " to " +
+                        ";Power: " +
+                    std::to_string(drill.getPower()) + " -> " +
                     std::to_string(drill.getPower(drill.getLevel() + 1))
                 );
             }
@@ -53,13 +57,14 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
 
     Drill drill = World::getInstance().getMachine()->getDrill();
 
-    upgradeDrillInfo = std::make_shared<Text>(830, 500, 500, 500, "Cost " +
+    upgradeDrillInfo = std::make_shared<Text>(830, 500, 500, 500, "  Cost: " +
         std::to_string(drill.getUpgradeCost()) +
-        ";Power " + 
-        std::to_string(drill.getPower()) + " to " +
+        ";Power: " + 
+        std::to_string(drill.getPower()) + " -> " +
         std::to_string(drill.getPower(drill.getLevel() + 1))
         , 15);
     aggregatedObjects.push_back(upgradeDrillInfo);
+    upgradeDrillInfo->setIsVisible(false);
 }
 void ShopMenu::update()
 {
@@ -107,10 +112,14 @@ void ShopMenu::onClick()
             }
         }
     }
+    
 }
 
 void ShopMenu::setIsVisible(bool isVisible)
 {
     upgradeDrillConfirm->setIsVisible(false);
+    upgradeDrillInfo->setIsVisible(false);
+    drillPhoto->setIsVisible(false);
+
     this->isVisible = isVisible;
 }

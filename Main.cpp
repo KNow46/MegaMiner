@@ -16,7 +16,6 @@
 #include "Shader.h"
 #include "Texture.h"
 #include "GameObject.h"
-#include "Image.h"
 #include "InterfaceObject.h"
 #include "TestObject.h"
 #include "InterfaceManager.h"

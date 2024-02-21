@@ -177,7 +177,6 @@
     <ClInclude Include="Drill.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Global.h" />
-    <ClInclude Include="Image.h" />
     <ClInclude Include="IndexBuffer.h" />
     <ClInclude Include="InterfaceManager.h" />
     <ClInclude Include="InterfaceObject.h" />
