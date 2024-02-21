@@ -1,15 +1,29 @@
 #include "ShopMenu.h"
 #include "InterfaceManager.h"
+#include "Button.h"
 
 ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMenu/1.png")
 {
     isVisible = false;
     
-    sellTile = std::make_shared<MenuShopSellTile>();
-    aggregatedObjects.push_back(sellTile);
 
-    upgradeDrillTile = std::make_shared<MenuShopUpgradeDrillTile>();
-    aggregatedObjects.push_back(upgradeDrillTile);
+    sellAllButton = std::make_shared<Button>(400, 270, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png",
+        []() {
+            InterfaceManager::getInstance().getMoney()->addMoney(InterfaceManager::getInstance().getStorage()->getItemsValue());
+            InterfaceManager::getInstance().getStorage()->erase(); 
+        });
+    sellAllButton->getAggregatedObjects().push_back(std::make_shared<Text>(405, 300, 400, 40, "Sell all resources", 18));
+
+    aggregatedObjects.push_back(sellAllButton);
+
+    upgradeDrillButton = std::make_shared<Button>(400, 370, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png",
+        []()
+        {
+
+        });
+    aggregatedObjects.push_back(upgradeDrillButton);
+    upgradeDrillButton->getAggregatedObjects().push_back(std::make_shared<Text>(440, 400, 340, 40, "Upgrade drill", 18));
+ 
 
 
 }
@@ -50,8 +64,6 @@ void ShopMenu::onClick()
             if (xPos > interfaceObject->getX() && xPos < interfaceObject->getX() + interfaceObject->getWidth() &&
                 yPos > interfaceObject->getY() && yPos < interfaceObject->getY() + interfaceObject->getHeight())
             {
-                upgradeDrillTile->upgradeWindowClear();
-
                 interfaceObject->onClick();
             }
         }
@@ -60,7 +72,5 @@ void ShopMenu::onClick()
 
 void ShopMenu::setIsVisible(bool isVisible)
 {
-    upgradeDrillTile->upgradeWindowClear();
-
     this->isVisible = isVisible;
 }

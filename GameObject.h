@@ -13,6 +13,7 @@ protected:
     bool isDestroyed;
     int height;
     int width;
+    std::string texturePath;
     Texture& texture;
     int displayPriority;
     double x;
@@ -43,4 +44,5 @@ public:
     virtual void update();
 
     std::vector <std::shared_ptr<GameObject>>& getAggregatedObjects();
+
 };

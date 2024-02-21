@@ -153,14 +153,12 @@
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
     <ClCompile Include="Machine.cpp" />
-    <ClCompile Include="MenuShopUpgradeDrillTile.cpp" />
     <ClCompile Include="Money.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shop.cpp" />
     <ClCompile Include="ShopMenu.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="MenuShopSellTile.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\vendor\stb_image\stb_image.cpp" />
     <ClCompile Include="Storage.cpp" />
     <ClCompile Include="Text.cpp" />
@@ -184,8 +182,6 @@
     <ClInclude Include="InterfaceManager.h" />
     <ClInclude Include="InterfaceObject.h" />
     <ClInclude Include="Machine.h" />
-    <ClInclude Include="MenuShopSellTile.h" />
-    <ClInclude Include="MenuShopUpgradeDrillTile.h" />
     <ClInclude Include="Money.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shader.h" />

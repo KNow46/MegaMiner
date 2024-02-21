@@ -1,14 +1,15 @@
 #pragma once
 
 #include "InterfaceObject.h"
-#include "MenuShopSellTile.h"
-#include "MenuShopUpgradeDrillTile.h"
+#include "Button.h"
+
 #include <memory>
 
 class ShopMenu : public InterfaceObject
 {
-	std::shared_ptr<MenuShopSellTile> sellTile;
-	std::shared_ptr< MenuShopUpgradeDrillTile> upgradeDrillTile;
+	std::shared_ptr<Button> sellAllButton;
+	std::shared_ptr<Button> upgradeDrillButton;
+
 public:
 	ShopMenu();
 	virtual void update();

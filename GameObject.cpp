@@ -3,7 +3,7 @@
 int GameObject::nextId = 1;
 
 GameObject::GameObject(int x, int y, int width, int height, std::string texturePath)
-    : x(x), y(y), height(height), width(width), isDestroyed(false), texture(TextureManager::getInstance().getTexture(texturePath)),isVisible(true)
+    : x(x), y(y), height(height), width(width), isDestroyed(false), texture(TextureManager::getInstance().getTexture(texturePath)),isVisible(true), texturePath(texturePath)
 {
     id = nextId++;
 }
