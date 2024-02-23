@@ -20,6 +20,10 @@ public:
             onClickAction();
         }
     }
+    void setOnClickAction(std::function<void()> newAction)
+    {
+        onClickAction = newAction;
+    }
 
 private:
     std::function<void()> onClickAction;

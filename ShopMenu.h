@@ -9,8 +9,11 @@ class ShopMenu : public InterfaceObject
 {
 	std::shared_ptr<Button> sellAllButton;
 	std::shared_ptr<Button> upgradeDrillButton;
-	std::shared_ptr<Button> upgradeDrillConfirm;
-	std::shared_ptr<Text> upgradeDrillInfo;
+	std::shared_ptr<Button> upgradeStorageButton;
+
+	std::shared_ptr<Button> upgradeConfirm;
+
+	std::shared_ptr<Text> upgradeInfo;
 	std::shared_ptr<InterfaceObject> drillPhoto;
 
 public:

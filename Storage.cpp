@@ -3,7 +3,7 @@
 #include <iostream>
 #include "Text.h"
 
-Storage::Storage() : InterfaceObject(1200, 30, 175, 620, "res/textures/storage.png"), level(1), maxOccupacy(100), slots(8),
+Storage::Storage() : InterfaceObject(1200, 30, 175, 620, "res/textures/storage.png"), level(1), capacity(5), slots(8),
 currentOccupacy(0), occupatedSlots(0)
 {
 	
@@ -16,8 +16,8 @@ currentOccupacy(0), occupatedSlots(0)
 	currentOccupacyText = std::make_shared<Text>(1250, 32, 50, 50, "0", 15);
 	aggregatedObjects.emplace_back(currentOccupacyText);
 
-	maxOccupacyText = std::make_shared<Text>(1290, 32, 200, 50, "/" + std::to_string(maxOccupacy), 15);
-	aggregatedObjects.emplace_back(maxOccupacyText);
+	capacityText = std::make_shared<Text>(1290, 32, 200, 50, "/" + std::to_string(capacity), 15);
+	aggregatedObjects.emplace_back(capacityText);
 }
 void Storage::addItem(Item item)
 {
@@ -31,7 +31,7 @@ void Storage::addItem(Item item)
 			break;
 		}
 	}
-	if(currentOccupacy < maxOccupacy)
+	if(currentOccupacy < capacity)
 	{
 		if(itemIndex == -1)
 		{
@@ -72,8 +72,8 @@ void Storage::erase()
 	items.clear();
 	occupatedSlots = 0;
 
-	maxOccupacyText = std::make_shared<Text>(1290, 32, 200, 50, "/" + std::to_string(maxOccupacy), 15);
-	aggregatedObjects.emplace_back(maxOccupacyText);
+	capacityText = std::make_shared<Text>(1290, 32, 200, 50, "/" + std::to_string(capacity), 15);
+	aggregatedObjects.emplace_back(capacityText);
 	for (int i = 0; i < slots; i++)
 	{
 		std::shared_ptr<Text> text = std::make_shared<Text>(1200, 80 + i * 70, 200, 50, "0", 15);
@@ -83,4 +83,43 @@ void Storage::erase()
 	currentOccupacyText = std::make_shared<Text>(1250, 32, 50, 50, "0", 15);
 	aggregatedObjects.emplace_back(currentOccupacyText);
 
+}
+int Storage::getCapacity(int atLevel)
+{
+	if (atLevel == 1)
+		return 5;
+	if (atLevel == 2)
+		return 10;
+	if (atLevel == 3)
+		return 15;
+	if (atLevel == 4)
+		return 20;
+	if (atLevel == 5)
+		return 25;
+}
+int Storage::getCapacity()
+{
+	return capacity;
+}
+int Storage::getUpgradeCost()
+{
+	if (level == 1)
+		return 500;
+	if (level == 2)
+		return 1000;
+	if (level == 3)
+		return 2000;
+	if (level == 4)
+		return 5000;
+	return 99999999;
+}
+void Storage::upgrade()
+{
+	level++;
+	capacity = getCapacity(level);
+	capacityText->changeText("/" + std::to_string(capacity));
+}
+int Storage::getLevel()
+{
+	return level;
 }

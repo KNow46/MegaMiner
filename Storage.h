@@ -47,18 +47,22 @@ struct Item
 class Storage : public InterfaceObject
 {
 	int level;
-	int maxOccupacy;
+	int capacity;
 	int currentOccupacy;
 	int slots;
 	int occupatedSlots;
 	std::vector<Item> items;
 	std::vector<std::shared_ptr<Text>> amountCounters;
-	std::shared_ptr<Text> maxOccupacyText;
+	std::shared_ptr<Text> capacityText;
 	std::shared_ptr<Text> currentOccupacyText;
 public:
 	Storage();
 	void upgrade();
 	bool isStorageFull();
+	int getUpgradeCost();
+	int getCapacity();
+	int getCapacity(int atLevel);
+	int getLevel();
 	void addItem(Item item);
 	void erase();
 	int getItemsValue();
