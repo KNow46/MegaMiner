@@ -149,6 +149,7 @@
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Drill.cpp" />
+    <ClCompile Include="FuelTank.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
@@ -175,6 +176,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Drill.h" />
+    <ClInclude Include="FuelTank.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="IndexBuffer.h" />

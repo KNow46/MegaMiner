@@ -48,6 +48,16 @@ void GameObject::update() {
   
 }
 
+void GameObject::setWidth(int newWidth)
+{
+    width = newWidth;
+}
+
+void GameObject::setHeight(int newHeight)
+{
+    height = newHeight;
+}
+
 int GameObject::getId()
 {
     return id;

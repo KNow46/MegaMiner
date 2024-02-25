@@ -29,6 +29,8 @@ public:
 
     virtual void collision(GameObject&) {};
 
+    void setWidth(int newWidth);
+    void setHeight(int newHeight);
     int getId();
     int getHeight();
     int getWidth();

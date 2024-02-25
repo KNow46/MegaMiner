@@ -6,6 +6,7 @@
 #include "Text.h"
 #include "Money.h"
 #include "ShopMenu.h"
+#include "FuelTank.h"
 
 class InterfaceManager
 {
@@ -14,6 +15,8 @@ private:
     std::shared_ptr<Storage> storage;
     std::shared_ptr<Money> money;
     std::shared_ptr<ShopMenu> shopMenu;
+    std::shared_ptr<FuelTank> fuelTank;
+
     int mouseXpos;
     int mouseYpos;
 
@@ -27,6 +30,9 @@ private:
 
     shopMenu = std::make_shared<ShopMenu>();
      allInterfaceObjects.emplace_back(shopMenu);
+
+     fuelTank = std::make_shared<FuelTank>();
+     allInterfaceObjects.emplace_back(fuelTank);
   
     }
 

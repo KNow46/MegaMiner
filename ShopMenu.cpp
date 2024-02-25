@@ -21,6 +21,11 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
     aggregatedObjects.push_back(drillPhoto);
     drillPhoto->setIsVisible(false);
 
+   storagePhoto = std::make_shared<InterfaceObject>(840, 300, 200, 150, "res/textures/storageUpgrade.png");
+   aggregatedObjects.push_back(storagePhoto);
+   storagePhoto->setIsVisible(false);
+
+
     upgradeDrillButton = std::make_shared<Button>(400, 370, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png",
         [this]()
         {
@@ -34,6 +39,7 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
             upgradeConfirm->setIsVisible(true);
             upgradeInfo->setIsVisible(true);
             drillPhoto->setIsVisible(true);
+            storagePhoto->setIsVisible(false);
 
             upgradeConfirm->setOnClickAction([this]()
                 {
@@ -72,6 +78,7 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
             upgradeConfirm->setIsVisible(true);
             upgradeInfo->setIsVisible(true);
             drillPhoto->setIsVisible(false);
+            storagePhoto->setIsVisible(true);
 
             upgradeConfirm->setOnClickAction([this]() {
                 if (InterfaceManager::getInstance().getMoney()->getMoneyAmount() >= InterfaceManager::getInstance().getStorage()->getUpgradeCost())
@@ -183,6 +190,7 @@ void ShopMenu::setIsVisible(bool isVisible)
     upgradeConfirm->setIsVisible(false);
     upgradeInfo->setIsVisible(false);
     drillPhoto->setIsVisible(false);
+    storagePhoto->setIsVisible(false);
 
     this->isVisible = isVisible;
 }

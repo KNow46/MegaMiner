@@ -101,6 +101,9 @@
     <ClCompile Include="Drill.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FuelTank.cpp">
+      <Filter>Source Files\InterfaceClasses</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader">
@@ -181,6 +184,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
+      <Filter>Header Files\InterfaceClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="FuelTank.h">
       <Filter>Header Files\InterfaceClasses</Filter>
     </ClInclude>
   </ItemGroup>

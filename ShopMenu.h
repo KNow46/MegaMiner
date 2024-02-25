@@ -15,6 +15,7 @@ class ShopMenu : public InterfaceObject
 
 	std::shared_ptr<Text> upgradeInfo;
 	std::shared_ptr<InterfaceObject> drillPhoto;
+	std::shared_ptr<InterfaceObject> storagePhoto;
 
 public:
 	ShopMenu();
