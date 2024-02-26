@@ -89,6 +89,10 @@ public:
     {
         return money;
     }
+    std::shared_ptr<FuelTank>& getFuelTank()
+    {
+        return fuelTank;
+    }
     void handleLeftClick(int xPos, int yPos)
     {
         for (const auto& interfaceObject : allInterfaceObjects)

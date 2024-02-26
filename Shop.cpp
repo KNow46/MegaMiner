@@ -13,7 +13,7 @@ void Shop::update()
 {
 	if (!text)
 	{
-		text = std::make_shared<Text>(400, 800, 800, 35, "Press tab to open shop", 30);
+		text = std::make_shared<Text>(400, 700, 800, 35, "Press tab to open shop", 30);
 		text->setIsVisible(false);
 		textId = text->getId();
 		InterfaceManager::getInstance().addObject(text);

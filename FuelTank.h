@@ -4,7 +4,7 @@
 class FuelTank : public InterfaceObject
 {
 private:
-	float maxFuel;
+	float capacity;
 	float currentFuel;
 	int level;
 	std::shared_ptr<InterfaceObject> fuelLevelImage;
@@ -13,8 +13,8 @@ private:
 public:
 	FuelTank();
 	int getLevel();
-	float getMaxFuel();
-	float getMaxFuel(int atLevel);
+	float getCapacity();
+	float getCapacity(int atLevel);
 	void upgrade();
 	int getUpgradeCost();
 	void fillUp(float amount);

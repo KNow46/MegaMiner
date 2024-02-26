@@ -3,19 +3,20 @@
 #include "Button.h"
 #include "World.h"
 #include "Drill.h"
+#include "FuelTank.h"
 ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMenu/1.png")
 {
     isVisible = false;
     
 
 
-    sellAllButton = std::make_shared<Button>(400, 270, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png",
+    sellAllButton = std::make_shared<Button>(400, 250, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png",
         []() {
             InterfaceManager::getInstance().getMoney()->addMoney(InterfaceManager::getInstance().getStorage()->getItemsValue());
             InterfaceManager::getInstance().getStorage()->erase(); 
         });
     aggregatedObjects.push_back(sellAllButton);
-    aggregatedObjects.push_back(std::make_shared<Text>(405, 300, 400, 40, "Sell all resources", 18));
+    aggregatedObjects.push_back(std::make_shared<Text>(405, 280, 400, 40, "Sell all resources", 18));
 
     drillPhoto = std::make_shared<InterfaceObject>(850, 300, 180, 180, "res/textures/drill.png");
     aggregatedObjects.push_back(drillPhoto);
@@ -26,7 +27,7 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
    storagePhoto->setIsVisible(false);
 
 
-    upgradeDrillButton = std::make_shared<Button>(400, 370, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png",
+    upgradeDrillButton = std::make_shared<Button>(400, 350, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png",
         [this]()
         {
             Drill drill = World::getInstance().getMachine()->getDrill();
@@ -41,7 +42,7 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
             drillPhoto->setIsVisible(true);
             storagePhoto->setIsVisible(false);
 
-            upgradeConfirm->setOnClickAction([this]()
+            upgradeConfirm->setOnClickAction([this, drill]()
                 {
 
                     if (InterfaceManager::getInstance().getMoney()->getMoneyAmount() >= World::getInstance().getMachine()->getDrill().getUpgradeCost())
@@ -50,7 +51,7 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
                         World::getInstance().getMachine()->getDrill().upgrade();
 
                         Drill drill = World::getInstance().getMachine()->getDrill();
-                        std::cout << drill.getLevel() << std::endl;
+                      
 
                         upgradeInfo->changeText("  Cost: " +
                             std::to_string(drill.getUpgradeCost()) +
@@ -62,9 +63,9 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
                 });
         });
     aggregatedObjects.push_back(upgradeDrillButton);
-    aggregatedObjects.push_back(std::make_shared<Text>(440, 400, 340, 40, "Upgrade drill", 18));
+    aggregatedObjects.push_back(std::make_shared<Text>(440, 380, 340, 40, "Upgrade drill", 18));
 
-    upgradeStorageButton = std::make_shared<Button>(400, 470, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png",
+    upgradeStorageButton = std::make_shared<Button>(400, 450, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png",
         [this]()
         {
             std::shared_ptr<Storage> storage = InterfaceManager::getInstance().getStorage();
@@ -80,13 +81,13 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
             drillPhoto->setIsVisible(false);
             storagePhoto->setIsVisible(true);
 
-            upgradeConfirm->setOnClickAction([this]() {
+            upgradeConfirm->setOnClickAction([this, storage]() {
                 if (InterfaceManager::getInstance().getMoney()->getMoneyAmount() >= InterfaceManager::getInstance().getStorage()->getUpgradeCost())
                 {
                     InterfaceManager::getInstance().getMoney()->takeMoney(InterfaceManager::getInstance().getStorage()->getUpgradeCost());
                     InterfaceManager::getInstance().getStorage()->upgrade();
 
-                    std::shared_ptr<Storage> storage = InterfaceManager::getInstance().getStorage();
+             
                    
 
                     upgradeInfo->changeText("  Cost: " +
@@ -100,7 +101,45 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
                 });
         });
     aggregatedObjects.push_back(upgradeStorageButton);
-    aggregatedObjects.push_back(std::make_shared<Text>(430, 500, 340, 40, "Upgrade storage", 18));
+    aggregatedObjects.push_back(std::make_shared<Text>(430, 480, 340, 40, "Upgrade storage", 18));
+
+    upgradeFuelTankButton = std::make_shared<Button>(400, 550, 350, 90, "res/textures/shopMenu/menuTile.png", "res/textures/shopMenu/menuTileHovered.png",
+        [this]()
+        {
+            std::shared_ptr<FuelTank> fuelTank = InterfaceManager::getInstance().getFuelTank();
+
+            std::cout << fuelTank->getCapacity() << std::endl;
+
+            upgradeInfo->changeText("  Cost: " +
+                std::to_string(fuelTank->getUpgradeCost()) +
+                ";Capacity: " +
+                std::to_string(int(fuelTank->getCapacity())) +" -> " +
+                std::to_string(int(fuelTank->getCapacity(fuelTank->getLevel() + 1))));
+
+            upgradeConfirm->setIsVisible(true);
+            upgradeInfo->setIsVisible(true);
+            drillPhoto->setIsVisible(false);
+            storagePhoto->setIsVisible(false);
+          //  fuelTankPhoto->setIsVisible(true);
+
+            upgradeConfirm->setOnClickAction([this, fuelTank]() {
+                if (InterfaceManager::getInstance().getMoney()->getMoneyAmount() >= InterfaceManager::getInstance().getFuelTank()->getUpgradeCost())
+                {
+                    InterfaceManager::getInstance().getMoney()->takeMoney(InterfaceManager::getInstance().getFuelTank()->getUpgradeCost());
+                    InterfaceManager::getInstance().getFuelTank()->upgrade();
+
+                    upgradeInfo->changeText("  Cost: " +
+                        std::to_string(fuelTank->getUpgradeCost()) +
+                        ";Capacity: " +
+                        std::to_string(int(fuelTank->getCapacity())) + " -> " +
+                        std::to_string(int(fuelTank->getCapacity(fuelTank->getLevel() + 1))));
+
+                }
+
+                });
+        });
+    aggregatedObjects.push_back(upgradeFuelTankButton);
+    aggregatedObjects.push_back(std::make_shared<Text>(400, 580, 340, 40, "Upgrade fuel tank", 18));
 
     upgradeConfirm = std::make_shared<Button>(900, 600, 100, 50, "res/textures/upgrade.png", "res/textures/upgradeHovered.png",
         [this]()

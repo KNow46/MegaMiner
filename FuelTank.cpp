@@ -6,7 +6,7 @@ void FuelTank::onEmptyTank()
 
 }
 
-FuelTank::FuelTank() :InterfaceObject(50, windowHeight - 150, 555, 130, "res/textures/fuelTank.png"), maxFuel(100), currentFuel(100), level(1), fuelLevelImgaeMaxWidth(450)
+FuelTank::FuelTank() :InterfaceObject(50, windowHeight - 150, 555, 130, "res/textures/fuelTank.png"), capacity(100), currentFuel(100), level(1), fuelLevelImgaeMaxWidth(450)
 {
 	fuelLevelImage = std::make_shared<InterfaceObject>(145, windowHeight - 85, fuelLevelImgaeMaxWidth, 54, "res/textures/fuelLevel.png");
 	aggregatedObjects.push_back(fuelLevelImage);
@@ -15,11 +15,12 @@ int FuelTank::getLevel()
 {
 	return level;
 }
-float FuelTank::getMaxFuel()
+float FuelTank::getCapacity()
 {
-	return maxFuel;
+	
+	return capacity;
 }
-float FuelTank::getMaxFuel(int atLevel)
+float FuelTank::getCapacity(int atLevel)
 {
 	
 	return atLevel * 100;
@@ -32,7 +33,7 @@ void FuelTank::upgrade()
 
 int FuelTank::getUpgradeCost()
 {
-	return 0;
+	return level * 500;
 }
 
 void FuelTank::fillUp(float amount)
@@ -42,10 +43,10 @@ void FuelTank::fillUp(float amount)
 
 void FuelTank::update()
 {
-	if(currentFuel > 1)
+	if(currentFuel > 0)
 	{
 		currentFuel -= 0.05;
-		fuelLevelImage->setWidth(fuelLevelImgaeMaxWidth * currentFuel / maxFuel);
+		fuelLevelImage->setWidth(fuelLevelImgaeMaxWidth * currentFuel / capacity);
 	}
 	else
 	{
