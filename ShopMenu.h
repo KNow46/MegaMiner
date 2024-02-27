@@ -19,6 +19,12 @@ class ShopMenu : public InterfaceObject
 	std::shared_ptr<InterfaceObject> drillPhoto;
 	std::shared_ptr<InterfaceObject> storagePhoto;
 	std::shared_ptr<InterfaceObject> fuelTankPhoto;
+
+	void createDrillButton();
+	void createStorageButton();
+	void createFuelTankButton();
+	void setPhotosVisibilityFalse();
+
 public:
 	ShopMenu();
 	virtual void update();

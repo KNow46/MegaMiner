@@ -29,6 +29,7 @@ float FuelTank::getCapacity(int atLevel)
 void FuelTank::upgrade()
 {
 	level++;
+	capacity = getCapacity(level);
 }
 
 int FuelTank::getUpgradeCost()
