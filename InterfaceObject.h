@@ -14,7 +14,7 @@ public:
 	InterfaceObject(int x, int y, int height, int width, std::string texturePath)
 		:GameObject(x, y, height, width, texturePath), isHovered(0), hoverTexture(TextureManager::getInstance().getTexture(texturePath)) {};
 
-	virtual void onClick() { std::cout << "clicked"; };
+	virtual void onClick() {};
 	virtual void onHovered() {};
 	
 	void setIsHovered(bool isHovered)

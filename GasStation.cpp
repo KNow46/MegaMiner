@@ -20,7 +20,7 @@ void GasStation::update()
 	if (isCollidingWithMachine())
 	{
 		text->setIsVisible(true);
-		if (InterfaceManager::getInstance().getShopMenu()->getIsVisible())
+		if (1)//InterfaceManager::getInstance().getShopMenu()->getIsVisible()
 		{
 			text->changeText("Press tab to close");
 		}
@@ -33,7 +33,7 @@ void GasStation::update()
 	else
 	{
 		text->setIsVisible(false);
-		InterfaceManager::getInstance().getShopMenu()->setIsVisible(false);
+		//InterfaceManager::getInstance().getShopMenu()->setIsVisible(false);
 	}
 }
 

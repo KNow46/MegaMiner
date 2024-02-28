@@ -170,6 +170,8 @@ int main(void)
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
 
+   InterfaceManager::getInstance().setWindow(window);
+
     if (glewInit() != GLEW_OK)
         std::cout << "glew error";
     else

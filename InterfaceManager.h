@@ -7,6 +7,9 @@
 #include "Money.h"
 #include "ShopMenu.h"
 #include "FuelTank.h"
+#include "Slider.h"
+
+#include <GLFW/glfw3.h>
 
 class InterfaceManager
 {
@@ -16,6 +19,7 @@ private:
     std::shared_ptr<Money> money;
     std::shared_ptr<ShopMenu> shopMenu;
     std::shared_ptr<FuelTank> fuelTank;
+    GLFWwindow* window;
 
     int mouseXpos;
     int mouseYpos;
@@ -33,7 +37,8 @@ private:
 
      fuelTank = std::make_shared<FuelTank>();
      allInterfaceObjects.emplace_back(fuelTank);
-  
+
+     //allInterfaceObjects.emplace_back(std::make_shared<Slider>(500,500, 800, 150));
     }
 
 public:
@@ -41,6 +46,15 @@ public:
     {
         static InterfaceManager instance;
         return instance;
+    }
+
+    void setWindow(GLFWwindow* window)
+    {
+        this->window = window;
+    }
+    GLFWwindow* getWindow()
+    {
+        return window;
     }
 
     std::shared_ptr<InterfaceObject> getObjectById(int id)
@@ -95,19 +109,19 @@ public:
     }
     void handleLeftClick(int xPos, int yPos)
     {
-        for (const auto& interfaceObject : allInterfaceObjects)
+        for (auto it = allInterfaceObjects.rbegin(); it != allInterfaceObjects.rend(); ++it)
         {
+            auto& interfaceObject = *it;
+
             if (interfaceObject->getIsVisible())
             {
-
                 if (xPos > interfaceObject->getX() && xPos < interfaceObject->getX() + interfaceObject->getWidth())
                 {
                     if (yPos > interfaceObject->getY() && yPos < interfaceObject->getY() + interfaceObject->getHeight())
                     {
                         interfaceObject->onClick();
-                        break;
+                        return; 
                     }
-
                 }
             }
         }

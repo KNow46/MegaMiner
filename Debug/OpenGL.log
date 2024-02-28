@@ -1,4 +1,22 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Arkanoid.vcxproj, OpenGL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Block.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\Block.cpp(46,30): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\xutility(265,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\memory(2092,13): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,double&,double&,int&,int&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>>(_Ty &,double &,double &,int &,int &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=InterfaceObject
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\memory(2765,46): message : see reference to function template instantiation 'std::_Ref_count_obj2<InterfaceObject>::_Ref_count_obj2<double&,double&,int&,int&,_Ty>(double &,double &,int &,int &,_Ty &&)' being compiled
+          with
+          [
+              _Ty=std::basic_string<char,std::char_traits<char>,std::allocator<char>>
+          ]
+C:\Users\Krzysztof\Desktop\MegaMiner\Block.cpp(56,46): message : see reference to function template instantiation 'std::shared_ptr<InterfaceObject> std::make_shared<InterfaceObject,double&,double&,int&,int&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>>(double &,double &,int &,int &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&)' being compiled
+  GasStation.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(154,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(154,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(201,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Main.cpp
 C:\Users\Krzysztof\Desktop\MegaMiner\World.h(154,34): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Krzysztof\Desktop\MegaMiner\World.h(154,66): warning C4018: '<': signed/unsigned mismatch
@@ -7,10 +25,10 @@ C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(34,18): warning C4244: '=': conver
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(38,64): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(87,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(87,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(246,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(246,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(248,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(248,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(59,51): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(250,13): message : see reference to function template instantiation 'void rendererScene<Block>(std::vector<std::shared_ptr<Block>,std::allocator<std::shared_ptr<Block>>> &,Renderer &,Shader &,VertexArray &,VertexBuffer &,VertexBufferLayout &,IndexBuffer &,GLFWwindow *,Camera *,bool)' being compiled
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(252,13): message : see reference to function template instantiation 'void rendererScene<Block>(std::vector<std::shared_ptr<Block>,std::allocator<std::shared_ptr<Block>>> &,Renderer &,Shader &,VertexArray &,VertexBuffer &,VertexBufferLayout &,IndexBuffer &,GLFWwindow *,Camera *,bool)' being compiled
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(59,189): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(60,96): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(60,214): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
@@ -18,4 +36,21 @@ C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(61,96): warning C4244: 'argument':
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(61,169): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(62,51): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
 C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(62,142): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  Money.cpp
+  Shop.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(154,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(154,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(201,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  ShopMenu.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(154,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(154,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(201,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Slider.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\Slider.cpp(25,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Slider.cpp(29,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Slider.cpp(33,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Slider.cpp(62,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Slider.cpp(63,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+C:\Users\Krzysztof\Desktop\MegaMiner\Slider.cpp(68): warning C4715: 'Slider::getHandlerPosition': not all control paths return a value
   OpenGL.vcxproj -> C:\Users\Krzysztof\Desktop\MegaMiner\Debug\2Dsetup.exe
