@@ -13,14 +13,14 @@ void GasStation::update()
 {
 	if (!text)
 	{
-		text = std::make_shared<Text>(400, 700, 800, 35, "Press tab to buy gas", 30);
+		text = std::make_shared<Text>(400, 750, 800, 35, "Press tab to buy gas", 30);
 		text->setIsVisible(false);
 		InterfaceManager::getInstance().addObject(text);
 	}
 	if (isCollidingWithMachine())
 	{
 		text->setIsVisible(true);
-		if (1)//InterfaceManager::getInstance().getShopMenu()->getIsVisible()
+		if (InterfaceManager::getInstance().getGasStationMenu()->getIsVisible())
 		{
 			text->changeText("Press tab to close");
 		}
@@ -33,7 +33,7 @@ void GasStation::update()
 	else
 	{
 		text->setIsVisible(false);
-		//InterfaceManager::getInstance().getShopMenu()->setIsVisible(false);
+		InterfaceManager::getInstance().getGasStationMenu()->setIsVisible(false);
 	}
 }
 

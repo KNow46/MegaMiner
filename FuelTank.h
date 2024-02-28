@@ -19,4 +19,5 @@ public:
 	int getUpgradeCost();
 	void fillUp(float amount);
 	void update();
+	float getCurrentFuel();
 };

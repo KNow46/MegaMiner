@@ -90,9 +90,12 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
     bool isTabPressed = (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS);
-    if (isTabPressed && World::getInstance().getShop()->isCollidingWithMachine())
+    if (isTabPressed)
     { 
-        InterfaceManager::getInstance().getShopMenu()->setIsVisible(!InterfaceManager::getInstance().getShopMenu()->getIsVisible());
+        if(World::getInstance().getShop()->isCollidingWithMachine())
+            InterfaceManager::getInstance().getShopMenu()->setIsVisible(!InterfaceManager::getInstance().getShopMenu()->getIsVisible());
+        if(World::getInstance().getGasStation()->isCollidingWithMachine())
+            InterfaceManager::getInstance().getGasStationMenu()->setIsVisible(!InterfaceManager::getInstance().getGasStationMenu()->getIsVisible());
     }
        
 }

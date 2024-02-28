@@ -151,6 +151,7 @@
     <ClCompile Include="Drill.cpp" />
     <ClCompile Include="FuelTank.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GasStationMenu.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
     <ClCompile Include="Machine.cpp" />
@@ -181,6 +182,7 @@
     <ClInclude Include="FuelTank.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GasStation.h" />
+    <ClInclude Include="GasStationMenu.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="IndexBuffer.h" />
     <ClInclude Include="InterfaceManager.h" />

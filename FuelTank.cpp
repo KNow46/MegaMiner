@@ -56,3 +56,8 @@ void FuelTank::update()
 
 
 }
+
+float FuelTank::getCurrentFuel()
+{
+	return currentFuel;
+}

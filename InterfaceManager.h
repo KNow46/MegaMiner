@@ -8,7 +8,7 @@
 #include "ShopMenu.h"
 #include "FuelTank.h"
 #include "Slider.h"
-
+#include "GasStationMenu.h"
 #include <GLFW/glfw3.h>
 
 class InterfaceManager
@@ -19,6 +19,7 @@ private:
     std::shared_ptr<Money> money;
     std::shared_ptr<ShopMenu> shopMenu;
     std::shared_ptr<FuelTank> fuelTank;
+    std::shared_ptr<GasStationMenu> gasStationMenu;
     GLFWwindow* window;
 
     int mouseXpos;
@@ -38,7 +39,8 @@ private:
      fuelTank = std::make_shared<FuelTank>();
      allInterfaceObjects.emplace_back(fuelTank);
 
-     //allInterfaceObjects.emplace_back(std::make_shared<Slider>(500,500, 800, 150));
+     gasStationMenu = std::make_shared<GasStationMenu>();
+     allInterfaceObjects.emplace_back(gasStationMenu);
     }
 
 public:
@@ -106,6 +108,10 @@ public:
     std::shared_ptr<FuelTank>& getFuelTank()
     {
         return fuelTank;
+    }
+    std::shared_ptr<GasStationMenu>& getGasStationMenu()
+    {
+        return gasStationMenu;
     }
     void handleLeftClick(int xPos, int yPos)
     {

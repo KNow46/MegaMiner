@@ -64,6 +64,6 @@ float Slider::getHandlerPosition()
     int currPos = handler->getX();
 
     if(maxPos-minPos != 0)
-        return (currPos - minPos) / (maxPos - minPos) * 100;
+        return (currPos - minPos) / (maxPos - minPos);
 }
 

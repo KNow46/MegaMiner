@@ -110,6 +110,9 @@
     <ClCompile Include="Slider.cpp">
       <Filter>Source Files\InterfaceClasses</Filter>
     </ClCompile>
+    <ClCompile Include="GasStationMenu.cpp">
+      <Filter>Source Files\InterfaceClasses</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader">
@@ -199,6 +202,9 @@
       <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="Slider.h">
+      <Filter>Header Files\InterfaceClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="GasStationMenu.h">
       <Filter>Header Files\InterfaceClasses</Filter>
     </ClInclude>
   </ItemGroup>
