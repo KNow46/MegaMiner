@@ -11,7 +11,6 @@ public:
 	bool isCollidingWithMachine();
 private:
 
-	int textId;
 	std::shared_ptr<Text> text;
 
 

@@ -4,6 +4,7 @@
 #include "Machine.h"
 #include "Block.h"
 #include "Shop.h"
+#include "GasStation.h"
 #include <vector>
 #include <memory>
 #include <cstdlib>
@@ -14,6 +15,7 @@ class World {
     World()
     {
         shop = std::make_shared<Shop>(0, -500,500, 500);
+        gasStation = std::make_shared<GasStation>(1000, -500, 500, 500);
 
         machine = std::make_shared<Machine>(100, -150, 90, 60);
         addObject(machine);
@@ -78,6 +80,7 @@ public:
     {
         shop->update();
         machine->update();
+        gasStation->update();
         for (const auto& object : visibleBlocks) 
         {
             if(object != nullptr)
@@ -187,6 +190,10 @@ public:
     {
         return shop;
     }
+    std::shared_ptr<GasStation> getGasStation()
+    {
+        return gasStation;
+    }
 private:
 
     void generateBlocks()
@@ -251,6 +258,7 @@ private:
     std::vector<std::vector<std::shared_ptr<Block>>> blocks2d;
     std::shared_ptr<Machine> machine;
     std::shared_ptr<Shop> shop;
+    std::shared_ptr<GasStation> gasStation;
     std::shared_ptr<Block> block;
     std::vector<std::vector<std::vector<std::shared_ptr<Block>>>> sectors;
     std::vector<std::shared_ptr<Block>> adjacentBlocks;

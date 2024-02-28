@@ -104,6 +104,9 @@
     <ClCompile Include="FuelTank.cpp">
       <Filter>Source Files\InterfaceClasses</Filter>
     </ClCompile>
+    <ClCompile Include="GasStation.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader">
@@ -188,6 +191,9 @@
     </ClInclude>
     <ClInclude Include="FuelTank.h">
       <Filter>Header Files\InterfaceClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="GasStation.h">
+      <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

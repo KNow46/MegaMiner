@@ -1,6 +1,21 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Arkanoid.vcxproj, OpenGL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  ShopMenu.cpp
-C:\Users\Krzysztof\Desktop\MegaMiner\World.h(151,34): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\Desktop\MegaMiner\World.h(151,66): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\Desktop\MegaMiner\World.h(194,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Main.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(154,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(154,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(201,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(34,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(38,64): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(87,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(87,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(246,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(246,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(59,51): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(250,13): message : see reference to function template instantiation 'void rendererScene<Block>(std::vector<std::shared_ptr<Block>,std::allocator<std::shared_ptr<Block>>> &,Renderer &,Shader &,VertexArray &,VertexBuffer &,VertexBufferLayout &,IndexBuffer &,GLFWwindow *,Camera *,bool)' being compiled
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(59,189): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(60,96): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(60,214): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(61,96): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(61,169): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(62,51): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(62,142): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
   OpenGL.vcxproj -> C:\Users\Krzysztof\Desktop\MegaMiner\Debug\2Dsetup.exe

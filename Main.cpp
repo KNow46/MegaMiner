@@ -250,7 +250,9 @@ int main(void)
             rendererScene(World::getInstance().getVisibleBlocks(), renderer, shader, va, vb, layout, ib, window, basicCamera, false);
             std::vector<std::shared_ptr <GameObject>> noBlockObjectsToRender;
             noBlockObjectsToRender.push_back(World::getInstance().getShop());
+            noBlockObjectsToRender.push_back(World::getInstance().getGasStation());
             noBlockObjectsToRender.push_back(World::getInstance().getMachine());
+          
             
 
             rendererScene(noBlockObjectsToRender, renderer, shader, va, vb, layout, ib, window, basicCamera, false);
