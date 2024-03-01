@@ -2,32 +2,31 @@
 #include "GameObject.h"
 #include <functional>
 #include "TextureManager.h"
+
+
 class InterfaceObject : public GameObject
 {
 protected:
 	bool isHovered;
 	Texture& hoverTexture;
 
+	virtual void handleAgregatedObjectsOnClick();
+	virtual void handleAgregatedObjectsHover();
+	virtual void handleAgregatedObjectsUpdate();
+
 public:
-	InterfaceObject(int x, int y, int height, int width, std::string texturePath, std::string textureHoveredPath)
-		:GameObject(x, y, height, width, texturePath),  isHovered(0), hoverTexture(TextureManager::getInstance().getTexture(textureHoveredPath)) {};
-	InterfaceObject(int x, int y, int height, int width, std::string texturePath)
-		:GameObject(x, y, height, width, texturePath), isHovered(0), hoverTexture(TextureManager::getInstance().getTexture(texturePath)) {};
+	InterfaceObject(int x, int y, int height, int width, std::string texturePath, std::string textureHoveredPath);
+	
+	InterfaceObject(int x, int y, int height, int width, std::string texturePath);
+
 
 	virtual void onClick() {};
 	virtual void onHovered() {};
 	
-	void setIsHovered(bool isHovered)
-	{
-		this->isHovered = isHovered;
-	}
+	void setIsHovered(bool isHovered);
 
-	virtual const Texture &getTexture()
-	{ 
-		if (isHovered == false)
-			return texture;
-		else
-			return hoverTexture;
-	};
-	virtual void update() { };
+
+	virtual const Texture& getTexture();
+	
+	virtual void update() {};
 };

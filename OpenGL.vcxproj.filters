@@ -89,9 +89,6 @@
     <ClCompile Include="Block.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
     <ClCompile Include="Machine.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
@@ -111,6 +108,15 @@
       <Filter>Source Files\InterfaceClasses</Filter>
     </ClCompile>
     <ClCompile Include="GasStationMenu.cpp">
+      <Filter>Source Files\InterfaceClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceObject.cpp">
       <Filter>Source Files\InterfaceClasses</Filter>
     </ClCompile>
   </ItemGroup>
@@ -205,6 +211,9 @@
       <Filter>Header Files\InterfaceClasses</Filter>
     </ClInclude>
     <ClInclude Include="GasStationMenu.h">
+      <Filter>Header Files\InterfaceClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogBox.h">
       <Filter>Header Files\InterfaceClasses</Filter>
     </ClInclude>
   </ItemGroup>

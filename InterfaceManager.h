@@ -10,7 +10,7 @@
 #include "Slider.h"
 #include "GasStationMenu.h"
 #include <GLFW/glfw3.h>
-
+#include "DialogBox.h"
 class InterfaceManager
 {
 private:
@@ -41,6 +41,9 @@ private:
 
      gasStationMenu = std::make_shared<GasStationMenu>();
      allInterfaceObjects.emplace_back(gasStationMenu);
+
+     allInterfaceObjects.emplace_back(std::make_shared<DialogBox>(300, 300, 600, 300));
+
     }
 
 public:
@@ -179,7 +182,7 @@ public:
         for (const auto& object: allInterfaceObjects)
         {
             object->update();
-        }
+        }  
     }
     int getMouseXpos()
     {
@@ -188,6 +191,20 @@ public:
     int getMouseYpos()
     {
         return mouseYpos;
+    }
+
+    void removeInterfaceObject(int id)
+    {
+        std::cout << allInterfaceObjects.size() << std::endl;
+        for (int i = 0; i < allInterfaceObjects.size(); i++)
+        {
+            if (allInterfaceObjects[i]->getId() == id)
+            {
+                allInterfaceObjects.erase(allInterfaceObjects.begin() + i);
+                break;
+            }
+        }
+        std::cout << allInterfaceObjects.size() << std::endl;
     }
 
 };

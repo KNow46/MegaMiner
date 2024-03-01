@@ -56,26 +56,7 @@ void GasStationMenu::update()
 
 void GasStationMenu::onClick()
 {
-
-
-    int xPos = InterfaceManager::getInstance().getMouseXpos();
-    int yPos = InterfaceManager::getInstance().getMouseYpos();
-
-    for (const auto& gameObject : aggregatedObjects)
-    {
-        if (std::shared_ptr<InterfaceObject> interfaceObject = std::dynamic_pointer_cast<InterfaceObject>(gameObject))
-        {
-            if (interfaceObject->getIsVisible())
-            {
-                if (xPos > interfaceObject->getX() && xPos < interfaceObject->getX() + interfaceObject->getWidth() &&
-                    yPos > interfaceObject->getY() && yPos < interfaceObject->getY() + interfaceObject->getHeight())
-                {
-                    interfaceObject->onClick();
-                }
-            }
-        }
-    }
-
+    handleAgregatedObjectsOnClick();
 }
 
 void GasStationMenu::setIsVisible(bool isVisible)
