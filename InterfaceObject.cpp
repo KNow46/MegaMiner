@@ -12,7 +12,7 @@ InterfaceObject::InterfaceObject(int x, int y, int height, int width, std::strin
 }
 
 
-void InterfaceObject::handleAgregatedObjectsOnClick()
+void InterfaceObject::handleAggregatedObjectsOnClick()
 {
 	int xPos = InterfaceManager::getInstance().getMouseXpos();
 	int yPos = InterfaceManager::getInstance().getMouseYpos();
@@ -33,7 +33,7 @@ void InterfaceObject::handleAgregatedObjectsOnClick()
 		}
 }
 
-void InterfaceObject::handleAgregatedObjectsHover()
+void InterfaceObject::handleAggregatedObjectsHover()
 {
 	int xPos = InterfaceManager::getInstance().getMouseXpos();
 	int yPos = InterfaceManager::getInstance().getMouseYpos();
@@ -58,7 +58,7 @@ void InterfaceObject::handleAgregatedObjectsHover()
 	}
 }
 
-void InterfaceObject::handleAgregatedObjectsUpdate()
+void InterfaceObject::handleAggregatedObjectsUpdate()
 {
 	for (const auto& gameObject : aggregatedObjects)
 	{

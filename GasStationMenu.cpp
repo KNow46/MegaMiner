@@ -56,7 +56,7 @@ void GasStationMenu::update()
 
 void GasStationMenu::onClick()
 {
-    handleAgregatedObjectsOnClick();
+    handleAggregatedObjectsOnClick();
 }
 
 void GasStationMenu::setIsVisible(bool isVisible)

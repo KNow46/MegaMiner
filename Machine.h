@@ -4,10 +4,12 @@
 #include <map>
 #include "Texture.h"
 #include "Drill.h"
+#include "Animation.h"
 class Machine : public GameObject
 {
 public:
 	enum State { STANDING, FLYING, FLYING_LEFT, FLYING_RIGHT, DRILLING_DOWN, DRILLING_LEFT, DRILLING_RIGHT, FALLING_DOWN, FALLING_LEFT, FALLING_RIGHT };
+
 
 	Machine(int x, int y, int width, int height);
 
@@ -30,6 +32,7 @@ public:
 private:
 	State currentState;
 	Drill drill;
+	Animation drilllingRightAnimation;
 
 
 };

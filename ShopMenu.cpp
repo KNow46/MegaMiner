@@ -45,12 +45,12 @@ ShopMenu::ShopMenu() : InterfaceObject(300, 200, 900, 500, "res/textures/shopMen
 }
 void ShopMenu::update()
 {
-    handleAgregatedObjectsHover();
+    handleAggregatedObjectsHover();
 }
 
 void ShopMenu::onClick()
 {
-    handleAgregatedObjectsOnClick();
+    handleAggregatedObjectsOnClick();
 }
 
 void ShopMenu::setIsVisible(bool isVisible)

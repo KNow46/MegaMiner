@@ -11,6 +11,7 @@
 #include "GasStationMenu.h"
 #include <GLFW/glfw3.h>
 #include "DialogBox.h"
+#include "Animation.h"
 class InterfaceManager
 {
 private:
@@ -42,7 +43,7 @@ private:
      gasStationMenu = std::make_shared<GasStationMenu>();
      allInterfaceObjects.emplace_back(gasStationMenu);
 
-     allInterfaceObjects.emplace_back(std::make_shared<DialogBox>(300, 300, 600, 300));
+    
 
     }
 

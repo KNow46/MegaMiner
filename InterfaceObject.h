@@ -10,9 +10,9 @@ protected:
 	bool isHovered;
 	Texture& hoverTexture;
 
-	virtual void handleAgregatedObjectsOnClick();
-	virtual void handleAgregatedObjectsHover();
-	virtual void handleAgregatedObjectsUpdate();
+	virtual void handleAggregatedObjectsOnClick();
+	virtual void handleAggregatedObjectsHover();
+	virtual void handleAggregatedObjectsUpdate();
 
 public:
 	InterfaceObject(int x, int y, int height, int width, std::string texturePath, std::string textureHoveredPath);

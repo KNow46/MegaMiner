@@ -12,5 +12,5 @@ DialogBox::DialogBox(int x, int y, int width, int height) : InterfaceObject(x,y,
 
 void DialogBox::onClick()
 {
-	handleAgregatedObjectsOnClick();
+	handleAggregatedObjectsOnClick();
 }

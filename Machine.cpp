@@ -1,10 +1,12 @@
 #include "Machine.h"
 #include "TextureManager.h"
 #include "CollisionManager.h"
-
+#include "Animation.h"
 Machine::Machine(int x, int y, int width, int height)
     : GameObject(x, y, width, height, "res/textures/machine/standing.png"), currentState(STANDING)
+    ,drilllingRightAnimation(x, y, width, height, "res/textures/machine/drillingRight")
 {
+   
 }
 
 const Texture& Machine::getTexture()
@@ -37,7 +39,7 @@ const Texture& Machine::getTexture()
     }
     else if (currentState == DRILLING_RIGHT)
     {
-        return TextureManager::getInstance().getTexture(basePath + "drillingRight.png");
+        return drilllingRightAnimation.getTexture();
     }
     else if (currentState == FALLING_DOWN)
     {
