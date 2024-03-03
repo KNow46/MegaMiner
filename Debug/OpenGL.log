@@ -1,6 +1,95 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Arkanoid.vcxproj, OpenGL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Animation.cpp
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
+  GasStation.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\InterfaceManager.h(197,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(17,46): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(158,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(158,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(205,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  GasStationMenu.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\InterfaceManager.h(197,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(17,46): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(158,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(158,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(205,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\GasStationMenu.cpp(18,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\GasStationMenu.cpp(68,145): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\GasStationMenu.cpp(74,22): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Machine.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(17,46): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(158,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(158,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(205,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(89,151): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(89,136): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(90,156): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(90,137): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(127,149): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(127,137): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(141,141): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(141,129): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(153,152): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(153,129): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(163,143): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(163,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(164,151): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(164,141): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(183,144): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(183,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(184,152): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(184,141): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(186,164): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(186,148): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(187,166): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(187,148): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(215,144): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(215,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(216,152): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(216,141): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(218,155): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(218,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(219,157): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(219,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(251,165): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(251,148): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(252,167): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(252,148): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(273,156): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(273,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(274,158): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(274,139): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Main.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\InterfaceManager.h(197,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(17,46): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(158,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(158,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(205,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(34,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(38,64): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(87,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(87,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(252,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(252,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(59,51): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(256,13): message : see reference to function template instantiation 'void rendererScene<Block>(std::vector<std::shared_ptr<Block>,std::allocator<std::shared_ptr<Block>>> &,Renderer &,Shader &,VertexArray &,VertexBuffer &,VertexBufferLayout &,IndexBuffer &,GLFWwindow *,Camera *,bool)' being compiled
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(59,189): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(60,96): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(60,214): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(61,96): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(61,169): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(62,51): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(62,142): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  Shop.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\InterfaceManager.h(197,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(17,46): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(158,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(158,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(205,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  ShopMenu.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\InterfaceManager.h(197,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(17,46): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(158,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(158,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(205,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+C:\Users\Krzysztof\Desktop\MegaMiner\Machine.cpp(73): warning C4715: 'Machine::getTexture': not all control paths return a value
   OpenGL.vcxproj -> C:\Users\Krzysztof\Desktop\MegaMiner\Debug\2Dsetup.exe

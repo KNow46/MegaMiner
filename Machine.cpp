@@ -3,37 +3,49 @@
 #include "CollisionManager.h"
 #include "Animation.h"
 Machine::Machine(int x, int y, int width, int height)
-    : GameObject(x, y, width, height, "res/textures/machine/standing.png"), currentState(STANDING)
+    : GameObject(x, y, width, height, "res/textures/machine/standing.png"), currentState(STANDING), isFacingRight(true)
     ,drilllingRightAnimation(x, y, width, height, "res/textures/machine/drillingRight")
     ,drilllingLeftAnimation(x, y, width, height, "res/textures/machine/drillingLeft")
     , drilllingDownAnimation(x, y, width, height, "res/textures/machine/drillingDown")
+    , flyingRightAnimation(x, y, width, height, "res/textures/machine/flyingRight")
+    , flyingLeftAnimation(x, y, width, height, "res/textures/machine/flyingLeft")
+    , drilllingDownLeftAnimation(x, y, width, height, "res/textures/machine/drillingDownLeft")
 {
    
 }
 
 const Texture& Machine::getTexture()
 {
-    std::string basePath = "res/textures/machine/";
+   
 
     if (currentState == STANDING)
     {
-        return drilllingRightAnimation.getTexture();
+        if(isFacingRight)
+            return drilllingRightAnimation.getTexture();
+        else
+            return drilllingLeftAnimation.getTexture();
     }
     else if (currentState == FLYING)
     {
-        return TextureManager::getInstance().getTexture(basePath + "flying.png");
+        if (isFacingRight)
+            return flyingRightAnimation.getTexture();
+        else
+            return flyingLeftAnimation.getTexture();
     }
     else if (currentState == FLYING_LEFT)
     {
-        return TextureManager::getInstance().getTexture(basePath + "flying.png");
+        return flyingLeftAnimation.getTexture();
     }
     else if (currentState == FLYING_RIGHT)
     {
-        return TextureManager::getInstance().getTexture(basePath + "flying.png");
+        return flyingRightAnimation.getTexture();
     }
     else if (currentState == DRILLING_DOWN)
     {
-        return drilllingDownAnimation.getTexture();
+        if (isFacingRight)
+            return drilllingDownAnimation.getTexture();
+        else
+            return drilllingDownLeftAnimation.getTexture();
     }
     else if (currentState == DRILLING_LEFT)
     {
@@ -45,15 +57,18 @@ const Texture& Machine::getTexture()
     }
     else if (currentState == FALLING_DOWN)
     {
-        return drilllingRightAnimation.getTexture();
+        if(isFacingRight)
+            return flyingRightAnimation.getTexture();
+        else
+            return flyingLeftAnimation.getTexture();
     }
     else if (currentState == FALLING_LEFT)
     {
-        return drilllingLeftAnimation.getTexture();
+        return flyingLeftAnimation.getTexture();
     }
     else if (currentState == FALLING_RIGHT)
     {
-        return drilllingRightAnimation.getTexture();
+        return flyingRightAnimation.getTexture();
     }
 }
 
@@ -108,6 +123,7 @@ void Machine::update()
     }
     else if (currentState == DRILLING_RIGHT)
     {
+        isFacingRight = true;
         std::shared_ptr<Block> block = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x + width + xSpeed, y + height/2));
         if (block)
         {
@@ -121,6 +137,7 @@ void Machine::update()
     }
     else if (currentState == DRILLING_LEFT)
     {
+        isFacingRight = false;
         std::shared_ptr<Block> block = std::dynamic_pointer_cast<Block>(CollisionManager::getInstance().checkBlocksCollisions(x - xSpeed, y + height / 2));
         if (block)
         {
@@ -158,6 +175,8 @@ void Machine::update()
     }
     else if (currentState == FLYING_RIGHT)
     {
+        isFacingRight = true;
+
         bool isBlockOver = true;
         bool isBlockOnTheRight = true;
 
@@ -188,6 +207,8 @@ void Machine::update()
     }
     else if (currentState == FLYING_LEFT)
     {
+        isFacingRight = false;
+
         bool isBlockOver = true;
         bool isBlockOnTheLeft= true;
 
@@ -221,6 +242,8 @@ void Machine::update()
     }
     if (currentState == FALLING_RIGHT)
     {
+        isFacingRight = true;
+
         y += fallingYSpeed;
 
         bool isBlockOnTheRight = true;
@@ -241,6 +264,8 @@ void Machine::update()
     }
     if (currentState == FALLING_LEFT)
     {
+        isFacingRight = false;
+
         y += fallingYSpeed;
 
         bool isBlockOnTheLeft = true;

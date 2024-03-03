@@ -35,5 +35,8 @@ private:
 	Animation drilllingRightAnimation;
 	Animation drilllingLeftAnimation;
 	Animation drilllingDownAnimation;
-
+	Animation drilllingDownLeftAnimation;
+	Animation flyingRightAnimation;
+	Animation flyingLeftAnimation;
+	bool isFacingRight;
 };
