@@ -42,9 +42,6 @@ private:
 
      gasStationMenu = std::make_shared<GasStationMenu>();
      allInterfaceObjects.emplace_back(gasStationMenu);
-
-    
-
     }
 
 public:

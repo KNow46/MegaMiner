@@ -33,6 +33,7 @@ private:
 	State currentState;
 	Drill drill;
 	Animation drilllingRightAnimation;
-
+	Animation drilllingLeftAnimation;
+	Animation drilllingDownAnimation;
 
 };

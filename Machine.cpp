@@ -5,6 +5,8 @@
 Machine::Machine(int x, int y, int width, int height)
     : GameObject(x, y, width, height, "res/textures/machine/standing.png"), currentState(STANDING)
     ,drilllingRightAnimation(x, y, width, height, "res/textures/machine/drillingRight")
+    ,drilllingLeftAnimation(x, y, width, height, "res/textures/machine/drillingLeft")
+    , drilllingDownAnimation(x, y, width, height, "res/textures/machine/drillingDown")
 {
    
 }
@@ -15,7 +17,7 @@ const Texture& Machine::getTexture()
 
     if (currentState == STANDING)
     {
-        return TextureManager::getInstance().getTexture(basePath + "standing.png");
+        return drilllingRightAnimation.getTexture();
     }
     else if (currentState == FLYING)
     {
@@ -31,11 +33,11 @@ const Texture& Machine::getTexture()
     }
     else if (currentState == DRILLING_DOWN)
     {
-        return TextureManager::getInstance().getTexture(basePath + "drillingDown.png");
+        return drilllingDownAnimation.getTexture();
     }
     else if (currentState == DRILLING_LEFT)
     {
-        return TextureManager::getInstance().getTexture(basePath + "drillingLeft.png");
+        return drilllingLeftAnimation.getTexture();
     }
     else if (currentState == DRILLING_RIGHT)
     {
@@ -43,15 +45,15 @@ const Texture& Machine::getTexture()
     }
     else if (currentState == FALLING_DOWN)
     {
-        return TextureManager::getInstance().getTexture(basePath + "drillingRight.png");
+        return drilllingRightAnimation.getTexture();
     }
     else if (currentState == FALLING_LEFT)
     {
-        return TextureManager::getInstance().getTexture(basePath + "drillingLeft.png");
+        return drilllingLeftAnimation.getTexture();
     }
     else if (currentState == FALLING_RIGHT)
     {
-        return TextureManager::getInstance().getTexture(basePath + "drillingRight.png");
+        return drilllingRightAnimation.getTexture();
     }
 }
 
@@ -76,6 +78,15 @@ void Machine::update()
     {
         isBlockUnder = false;
     }
+    else if (blockUnderMachine1)
+    {
+        y = blockUnderMachine1->getY() - 1 - height;
+    }
+    else if (blockUnderMachine2)
+    {
+        y = blockUnderMachine2->getY() - 1 - height;
+    }
+
     if (!isBlockUnder && !(currentState == FLYING_LEFT || currentState == FLYING_RIGHT || currentState == FLYING))
     {
         if (currentState == DRILLING_LEFT)

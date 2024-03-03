@@ -10,7 +10,7 @@ Animation::Animation(int x, int y, int width, int height, std::string folderPath
 
     std::string fileName;
 
-    for (const auto& entry : fs::directory_iterator("res/textures/machine/drillingRight"))
+    for (const auto& entry : fs::directory_iterator(folderPath))
     {
         if (fs::is_regular_file(entry.path())) 
         {

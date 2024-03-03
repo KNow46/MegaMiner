@@ -14,10 +14,12 @@ class World {
 
     World()
     {
+        objects.reserve(mapWidth * mapHeight * 1.1);
+
         shop = std::make_shared<Shop>(0, -500,500, 500);
         gasStation = std::make_shared<GasStation>(1000, -500, 500, 500);
 
-        machine = std::make_shared<Machine>(100, -150, 90, 60);
+        machine = std::make_shared<Machine>(100, -150, 110, 90);
         addObject(machine);
 
         int numVerticalSectors = mapHeight / sectorSize;
@@ -31,7 +33,7 @@ class World {
         {
             for (int j = 0; j < 20; j++)
             {
-                visibleBlocks.push_back(blocks[i + j * mapWidth]);
+                visibleBlocks.emplace_back(blocks[i + j * mapWidth]);
             }
         }
 
@@ -123,7 +125,7 @@ public:
 
             if (blockX >= machineX - horizontalVision && blockX <= machineX + horizontalVision &&
                 blockY >= machineY - verticalVision && blockY <= machineY + verticalVision) {
-                visibleBlocks.push_back(block);
+                visibleBlocks.emplace_back(block);
             }
         }
     }
@@ -159,7 +161,7 @@ public:
                      for(auto & block: sectors[i][j])
                      {
                          if (block->getIsDestroyed() == false)
-                            adjacentBlocks.push_back(block);
+                            adjacentBlocks.emplace_back(block);
                       
                          
                      }
@@ -246,7 +248,7 @@ private:
                 std::shared_ptr<Block> block = std::make_shared<Block>(j * blocksSize, i * blocksSize, blocksSize, blocksSize, blockType);
 
                 
-                sectors[sectorRow][sectorCol].push_back(block);
+                sectors[sectorRow][sectorCol].emplace_back(block);
  
             }
         }
@@ -268,6 +270,6 @@ private:
     int sectorSize = 6;
     int mapWidth = sectorSize * 20;
     int mapHeight = sectorSize * 20;
-    int blocksSize = 120;
+    int blocksSize = 130;
     int time = 0;
 };

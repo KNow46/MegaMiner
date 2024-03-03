@@ -225,7 +225,8 @@ int main(void)
 
         while (!glfwWindowShouldClose(window))
         {
-            
+            glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
+
             double currentTime = glfwGetTime();
             nbFrames++;
             if (currentTime - lastTime >= 1.0) {
