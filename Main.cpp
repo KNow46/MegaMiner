@@ -22,6 +22,7 @@
 #include "Camera.h"
 #include "Machine.h"
 #include "World.h"
+#include "Timer.h"
 
 //transforms to range (-1,1)
 //if transforming point set length to 0
@@ -245,15 +246,17 @@ int main(void)
              GLCall(glfwPollEvents());
                 
              glfwGetCursorPos(window, &xpos, &ypos);
-
-            World::getInstance().update();
+;
+              World::getInstance().update();
+             
             InterfaceManager::getInstance().update();
 
             InterfaceManager::getInstance().handleHover(xpos, ypos);
 
             renderer.Clear();
 
-            rendererScene(World::getInstance().getVisibleBlocks(), renderer, shader, va, vb, layout, ib, window, basicCamera, false);
+            rendererScene(World::getInstance().getVisibleBlocks(), renderer, shader, va, vb, layout, ib, window, basicCamera, false);\
+
             std::vector<std::shared_ptr <GameObject>> noBlockObjectsToRender;
             noBlockObjectsToRender.push_back(World::getInstance().getShop());
             noBlockObjectsToRender.push_back(World::getInstance().getGasStation());

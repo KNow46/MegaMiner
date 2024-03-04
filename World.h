@@ -9,11 +9,14 @@
 #include <memory>
 #include <cstdlib>
 #include <ctime>
+#include "Timer.h"
 
 class World {
 
     World()
     {
+        
+
         objects.reserve(mapWidth * mapHeight * 1.1);
 
         shop = std::make_shared<Shop>(0, -500,500, 500);
@@ -82,7 +85,9 @@ public:
  
     void update() 
     {
+   
         shop->update();
+       
         machine->update();
         gasStation->update();
         for (const auto& object : visibleBlocks) 

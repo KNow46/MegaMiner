@@ -11,6 +11,17 @@ Shop::Shop(int x, int y, int width, int height): GameObject(x,y,width,height, "r
 
 void Shop::update()
 {
+	static int optimizationCounter = 0;
+	if (optimizationCounter < 10)
+	{
+		optimizationCounter++;
+		return;
+	}
+	else
+	{
+		optimizationCounter = 0;
+	}
+
 	if (!text)
 	{
 		text = std::make_shared<Text>(400, 750, 800, 35, "Press tab to open shop", 30);
