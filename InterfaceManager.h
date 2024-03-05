@@ -204,5 +204,11 @@ public:
         }
         std::cout << allInterfaceObjects.size() << std::endl;
     }
+    void reset()
+    {
+        storage->reset();
+        fuelTank->reset();
+        money->takeMoney(money->getMoneyAmount());
+    }
 
 };

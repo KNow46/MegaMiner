@@ -66,6 +66,7 @@ public:
 	void addItem(Item item);
 	void erase();
 	int getItemsValue();
+	void reset();
 
 
 };

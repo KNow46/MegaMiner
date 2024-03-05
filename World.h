@@ -203,6 +203,34 @@ public:
     {
         return gasStation;
     }
+    void reset()
+    {
+        objects.clear();
+        blocks.clear();
+        visibleBlocks.clear();
+        sectors.clear();
+
+        int numVerticalSectors = mapHeight / sectorSize;
+        int numHorizontalSectors = mapWidth / sectorSize;
+        sectors.resize(numVerticalSectors, std::vector<std::vector<std::shared_ptr<Block>>>(numHorizontalSectors));
+
+        machine->setX(0);
+        machine->setY(-150);
+        machine->getDrill().resetLevel();
+        
+        generateBlocks();
+
+        for (int i = 0; i < 20; i++)
+        {
+            for (int j = 0; j < 20; j++)
+            {
+                visibleBlocks.emplace_back(blocks[i + j * mapWidth]);
+            }
+        }
+
+        setAdjacentBlocks();
+
+    }
 private:
 
     void generateBlocks()
@@ -260,11 +288,11 @@ private:
 
 
     }
+  
 
     std::vector<std::shared_ptr<GameObject>> objects;
     std::vector<std::shared_ptr<Block>> blocks;
     std::vector<std::shared_ptr<Block>> visibleBlocks;
-    std::vector<std::vector<std::shared_ptr<Block>>> blocks2d;
     std::shared_ptr<Machine> machine;
     std::shared_ptr<Shop> shop;
     std::shared_ptr<GasStation> gasStation;

@@ -8,6 +8,11 @@ int Drill::getLevel()
 {
 	return level;
 }
+void Drill::resetLevel()
+{
+	level = 1;
+	power = getPower(level);
+}
 int Drill::getPower()
 {
 	return power;

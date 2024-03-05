@@ -1,9 +1,17 @@
 #pragma once
 #include "FuelTank.h"
 #include "Global.h"
+#include "World.h"
+#include "InterfaceManager.h"
 void FuelTank::onEmptyTank()
 {
-
+	//static int i = 0;
+	//if(i == 0)
+	{
+		World::getInstance().reset();
+		InterfaceManager::getInstance().reset();
+	}
+	//i++;
 }
 
 FuelTank::FuelTank() :InterfaceObject(50, windowHeight - 150, 555, 130, "res/textures/fuelTank.png"), capacity(100), currentFuel(100), level(1), fuelLevelImgaeMaxWidth(450)
@@ -60,4 +68,11 @@ void FuelTank::update()
 float FuelTank::getCurrentFuel()
 {
 	return currentFuel;
+}
+
+void FuelTank::reset()
+{
+	level = 1;
+	capacity = getCapacity(level);
+	currentFuel = capacity;
 }

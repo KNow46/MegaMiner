@@ -63,6 +63,12 @@ int Storage::getItemsValue()
 
 	return valueSum;
 }
+void Storage::reset()
+{
+	level = 1;
+	capacity = getCapacity(level);
+	erase();
+}
 void Storage::erase()
 {
 

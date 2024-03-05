@@ -11,4 +11,5 @@ public:
 	int getPower(int atLevel);
 	int getPower();
 	int getLevel();
+	void resetLevel();
 };
