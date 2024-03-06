@@ -67,6 +67,4 @@ public:
 	void erase();
 	int getItemsValue();
 	void reset();
-
-
 };

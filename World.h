@@ -13,6 +13,23 @@
 
 class World {
 
+
+    std::vector<std::shared_ptr<GameObject>> objects;
+    std::vector<std::shared_ptr<Block>> blocks;
+    std::vector<std::shared_ptr<Block>> visibleBlocks;
+    std::shared_ptr<Machine> machine;
+    std::shared_ptr<Shop> shop;
+    std::shared_ptr<GasStation> gasStation;
+    std::shared_ptr<Block> block;
+    std::vector<std::vector<std::vector<std::shared_ptr<Block>>>> sectors;
+    std::vector<std::shared_ptr<Block>> adjacentBlocks;
+
+    int sectorSize = 6;
+    int mapWidth = sectorSize * 20;
+    int mapHeight = sectorSize * 20;
+    int blocksSize = 130;
+    int time = 0;
+
     World()
     {
         
@@ -289,20 +306,4 @@ private:
 
     }
   
-
-    std::vector<std::shared_ptr<GameObject>> objects;
-    std::vector<std::shared_ptr<Block>> blocks;
-    std::vector<std::shared_ptr<Block>> visibleBlocks;
-    std::shared_ptr<Machine> machine;
-    std::shared_ptr<Shop> shop;
-    std::shared_ptr<GasStation> gasStation;
-    std::shared_ptr<Block> block;
-    std::vector<std::vector<std::vector<std::shared_ptr<Block>>>> sectors;
-    std::vector<std::shared_ptr<Block>> adjacentBlocks;
-
-    int sectorSize = 6;
-    int mapWidth = sectorSize * 20;
-    int mapHeight = sectorSize * 20;
-    int blocksSize = 130;
-    int time = 0;
 };

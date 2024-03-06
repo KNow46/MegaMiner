@@ -4,6 +4,8 @@
 #include <iostream>
 class Timer
 {
+	std::chrono::time_point < std::chrono::high_resolution_clock > startTimePoint;
+
 public:
 	Timer()
 	{
@@ -24,7 +26,5 @@ public:
 		double ms = duration * 0.001;
 		std::cout << duration << "us("<<ms<<"ms)" << std::endl;
 	}
-private:
-	std::chrono::time_point < std::chrono::high_resolution_clock > startTimePoint;
-	
+
 };

@@ -20,7 +20,7 @@ public:
 	InterfaceObject(int x, int y, int height, int width, std::string texturePath);
 
 
-	virtual void onClick() {};
+	virtual void onClick() { handleAggregatedObjectsOnClick(); }
 	virtual void onHovered() {};
 	
 	void setIsHovered(bool isHovered);
@@ -28,5 +28,8 @@ public:
 
 	virtual const Texture& getTexture();
 	
-	virtual void update() {};
+	virtual void update() {
+		handleAggregatedObjectsHover();
+		handleAggregatedObjectsUpdate();
+	};
 };

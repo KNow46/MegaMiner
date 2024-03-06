@@ -23,6 +23,7 @@ private:
     std::shared_ptr<GasStationMenu> gasStationMenu;
     GLFWwindow* window;
 
+
     int mouseXpos;
     int mouseYpos;
 
@@ -73,7 +74,8 @@ public:
     }
     void addObject(std::shared_ptr<InterfaceObject> object)
     {
-        allInterfaceObjects.emplace_back(object);
+        std::shared_ptr<InterfaceObject> objectCopy = object;
+        allInterfaceObjects.push_back(objectCopy);
        
     }
     std::vector<std::shared_ptr<InterfaceObject>> &getAllInterfaceObjects()
@@ -133,28 +135,6 @@ public:
             }
         }
     }
-    /*void handleLeftClickRecursively(int xPos, int yPos, std::vector<std::shared_ptr<InterfaceObject>>)
-    {
-        for (const auto& interfaceObject : allInterfaceObjects)
-        {
-            if (interfaceObject->getAggregatedObjects().size() == 0)
-            {
-                if (xPos > interfaceObject->getX() && xPos < interfaceObject->getX() + interfaceObject->getWidth())
-                {
-                    if (yPos > interfaceObject->getY() && yPos < interfaceObject->getY() + interfaceObject->getHeight())
-                    {
-                        interfaceObject->onClick();
-                        break;
-                    }
-
-                }
-            }
-            else
-            {
-                handleLeftClickRecursively(xPos, yPos, interfaceObject->getAggregatedObjects());
-            }
-        }
-    }*/
     void handleHover(int xPos, int yPos)
     {
         mouseXpos = xPos;
@@ -208,7 +188,7 @@ public:
     {
         storage->reset();
         fuelTank->reset();
-        money->takeMoney(money->getMoneyAmount());
+        money->reset();
     }
-
+   
 };

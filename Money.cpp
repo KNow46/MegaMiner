@@ -16,6 +16,7 @@ void Money::addMoney(int amount)
 {
 	money += amount;
 	amountText->changeText(std::to_string(money));
+	totalAccumulatedMoney += amount;
 }
 void Money::takeMoney(int amount)
 {
@@ -63,4 +64,16 @@ Texture& Money::getTexture()
 		return TextureManager::getInstance().getTexture("res/textures/coin/1.png");
 	}
 
+}
+
+int Money::getTotalAccumulatedMoney()
+{
+	return totalAccumulatedMoney;
+}
+
+void Money::reset()
+{
+	money = 0;
+	amountText->changeText(std::to_string(money));
+	totalAccumulatedMoney = 0;
 }

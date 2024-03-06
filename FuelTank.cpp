@@ -3,18 +3,15 @@
 #include "Global.h"
 #include "World.h"
 #include "InterfaceManager.h"
+#include "GameOverScreen.h"
+
 void FuelTank::onEmptyTank()
 {
-	//static int i = 0;
-	//if(i == 0)
-	{
-		World::getInstance().reset();
-		InterfaceManager::getInstance().reset();
-	}
-	//i++;
+	InterfaceManager::getInstance().addObject(std::make_shared<GameOverScreen>());
+	currentFuel = INT_MAX;
 }
 
-FuelTank::FuelTank() :InterfaceObject(50, windowHeight - 150, 555, 130, "res/textures/fuelTank.png"), capacity(100), currentFuel(100), level(1), fuelLevelImgaeMaxWidth(450)
+FuelTank::FuelTank() :InterfaceObject(50, windowHeight - 150, 555, 130, "res/textures/fuelTank.png"), capacity(100), currentFuel(10), level(1), fuelLevelImgaeMaxWidth(450)
 {
 	fuelLevelImage = std::make_shared<InterfaceObject>(145, windowHeight - 85, fuelLevelImgaeMaxWidth, 54, "res/textures/fuelLevel.png");
 	aggregatedObjects.push_back(fuelLevelImage);

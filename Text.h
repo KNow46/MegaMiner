@@ -6,6 +6,11 @@
 
 class Text : public InterfaceObject
 {
+protected:
+	std::string fontPath;
+	int fontSize;
+	std::string strText;
+	void stringTextToTexture();
 public:
 
 	Text(int x, int y, int width, int height, std::string strText, int fontSize);
@@ -15,9 +20,4 @@ public:
 
 	int getIntText();
 
-protected:
-	void stringTextToTexture();
-	std::string fontPath;
-	int fontSize;
-	std::string strText;
 };
