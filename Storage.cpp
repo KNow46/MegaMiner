@@ -36,7 +36,7 @@ void Storage::addItem(Item item)
 		if(itemIndex == -1)
 		{
 			items.emplace_back(item);
-			aggregatedObjects.emplace_back(new GameObject(1262, 70 + (items.size() - 1) * 70, 70, 70, item.texturePath));
+			aggregatedObjects.emplace_back(new GameObject(1263, 70 + (items.size() - 1) * 70, 65, 65, item.texturePath));
 			amountCounters[occupatedSlots]->changeText("1");
 			occupatedSlots++;
 			currentOccupacy++;

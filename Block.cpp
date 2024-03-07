@@ -5,20 +5,20 @@
 std::string Block::getBlockTexturePath(BlockType blockType) {
     switch (blockType) {
     case BlockType::STONE:
-        return "stone.jpg";
+        return "stone.png";
     case BlockType::GOLD:
         return "goldOre.png";
     case BlockType::DIAMOND:
-        return "diamondOre.jpg";
+        return "diamondOre.png";
     case BlockType::EMERALD:
         return "emeraldOre.png";
     case BlockType::IRON:
-        return "ironOre.jpg";
+        return "ironOre.png";
     case BlockType::MYSTIC:
         return "mysticOre.png";
 
     default:
-        return "stone.jpg";
+        return "stone.png";
     }
 }
 

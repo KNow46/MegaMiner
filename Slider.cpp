@@ -2,7 +2,7 @@
 #include "InterfaceManager.h"
 #include <GLFW/glfw3.h>
 
-Slider::Slider(int x, int y, int width, int height) : InterfaceObject(x,y, width, height, "res/textures/slider.png")
+Slider::Slider(int x, int y, int width, int height) : InterfaceObject(x,y, width, height, "res/textures/slider.png"), isHandlerGrabbed(false)
 {
 	handler = std::make_shared<InterfaceObject>(x, y, height, height, "res/textures/sliderHandler.png");
     aggregatedObjects.push_back(handler);
