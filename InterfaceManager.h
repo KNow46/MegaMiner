@@ -12,6 +12,7 @@
 #include <GLFW/glfw3.h>
 #include "DialogBox.h"
 #include "Animation.h"
+#include "GameRulesScreen.h"
 class InterfaceManager
 {
 private:
@@ -26,8 +27,9 @@ private:
 
     int mouseXpos;
     int mouseYpos;
+    bool isGamePaused;
 
-    InterfaceManager()
+    InterfaceManager() : isGamePaused(true)
     { 
      storage = std::make_shared<Storage>();
      allInterfaceObjects.emplace_back(storage);
@@ -43,6 +45,8 @@ private:
 
      gasStationMenu = std::make_shared<GasStationMenu>();
      allInterfaceObjects.emplace_back(gasStationMenu);
+
+     allInterfaceObjects.emplace_back(std::make_shared<GameRulesScreen>());
     }
 
 public:
@@ -50,6 +54,17 @@ public:
     {
         static InterfaceManager instance;
         return instance;
+    }
+    void setIsGamePaused(bool isPaused)
+    {
+        isGamePaused = isPaused;
+
+        if(isPaused)
+            fuelTank->setIsGamePaused(true);
+    }
+    bool getIsGamePaused()
+    {
+        return isGamePaused;
     }
 
     void setWindow(GLFWwindow* window)

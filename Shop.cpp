@@ -30,16 +30,18 @@ void Shop::update()
 	}
 	if (isCollidingWithMachine())
 	{
-		text->setIsVisible(true);
-		if (InterfaceManager::getInstance().getShopMenu()->getIsVisible())
+		if(InterfaceManager::getInstance().getIsGamePaused() == false)
 		{
-			text->changeText("Press tab to close shop");
-		}
-		else
-		{
-			text->changeText("Press tab to open shop");
-		}
-		
+			text->setIsVisible(true);
+			if (InterfaceManager::getInstance().getShopMenu()->getIsVisible())
+			{
+				text->changeText("Press tab to close shop");
+			}
+			else
+			{
+				text->changeText("Press tab to open shop");
+			}
+		}	
 	}
 	else
 	{

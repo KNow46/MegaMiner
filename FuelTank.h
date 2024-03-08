@@ -10,6 +10,7 @@ private:
 	std::shared_ptr<InterfaceObject> fuelLevelImage;
 	void onEmptyTank();
 	int fuelLevelImgaeMaxWidth;
+	bool isGamePaused;
 public:
 	FuelTank();
 	int getLevel();
@@ -21,4 +22,5 @@ public:
 	void update();
 	float getCurrentFuel();
 	void reset();
+	void setIsGamePaused(bool isPaused);
 };

@@ -11,7 +11,8 @@ void FuelTank::onEmptyTank()
 	currentFuel = INT_MAX;
 }
 
-FuelTank::FuelTank() :InterfaceObject(50, windowHeight - 150, 555, 130, "res/textures/fuelTank.png"), capacity(100), currentFuel(100), level(1), fuelLevelImgaeMaxWidth(450)
+FuelTank::FuelTank() :InterfaceObject(50, windowHeight - 150, 555, 130, "res/textures/fuelTank.png"), 
+capacity(100), currentFuel(100), level(1), fuelLevelImgaeMaxWidth(450), isGamePaused(false)
 {
 	fuelLevelImage = std::make_shared<InterfaceObject>(145, windowHeight - 85, fuelLevelImgaeMaxWidth, 54, "res/textures/fuelLevel.png");
 	aggregatedObjects.push_back(fuelLevelImage);
@@ -49,17 +50,18 @@ void FuelTank::fillUp(float amount)
 
 void FuelTank::update()
 {
-	if(currentFuel > 0)
+	if(!isGamePaused)
 	{
-		currentFuel -= 0.05;
-		fuelLevelImage->setWidth(fuelLevelImgaeMaxWidth * currentFuel / capacity);
+		if (currentFuel > 0)
+		{
+			currentFuel -= 0.05;
+			fuelLevelImage->setWidth(fuelLevelImgaeMaxWidth * currentFuel / capacity);
+		}
+		else
+		{
+			onEmptyTank();
+		}
 	}
-	else
-	{
-		onEmptyTank();
-	}
-
-
 }
 
 float FuelTank::getCurrentFuel()
@@ -72,4 +74,9 @@ void FuelTank::reset()
 	level = 1;
 	capacity = getCapacity(level);
 	currentFuel = capacity;
+}
+
+void FuelTank::setIsGamePaused(bool isPaused)
+{
+	isGamePaused = isPaused;
 }

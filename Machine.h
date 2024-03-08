@@ -26,6 +26,8 @@ public:
 	State getCurrentState();
 
 	void update();
+	
+	void setIsGamePaused(bool isPaused);
 
 	Drill &getDrill();
 
@@ -39,4 +41,7 @@ private:
 	Animation flyingRightAnimation;
 	Animation flyingLeftAnimation;
 	bool isFacingRight;
+	bool isGamePaused; 
+
+	void move();
 };

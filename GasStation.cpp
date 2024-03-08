@@ -19,14 +19,17 @@ void GasStation::update()
 	}
 	if (isCollidingWithMachine())
 	{
-		text->setIsVisible(true);
-		if (InterfaceManager::getInstance().getGasStationMenu()->getIsVisible())
+		if (InterfaceManager::getInstance().getIsGamePaused() == false)
 		{
-			text->changeText("Press tab to close");
-		}
-		else
-		{
-			text->changeText("Press tab to buy gas");
+			text->setIsVisible(true);
+			if (InterfaceManager::getInstance().getGasStationMenu()->getIsVisible())
+			{
+				text->changeText("Press tab to close");
+			}
+			else
+			{
+				text->changeText("Press tab to buy gas");
+			}
 		}
 
 	}

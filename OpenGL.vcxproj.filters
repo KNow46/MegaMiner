@@ -122,8 +122,11 @@
     <ClCompile Include="Animation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameRulesScreen.cpp">
+      <Filter>Source Files\InterfaceClasses</Filter>
+    </ClCompile>
     <ClCompile Include="GameOverScreen.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\InterfaceClasses</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -229,6 +232,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameOverScreen.h">
+      <Filter>Header Files\InterfaceClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRulesScreen.h">
       <Filter>Header Files\InterfaceClasses</Filter>
     </ClInclude>
   </ItemGroup>
