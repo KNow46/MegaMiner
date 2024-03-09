@@ -16,6 +16,8 @@ std::string Block::getBlockTexturePath(BlockType blockType) {
         return "ironOre.png";
     case BlockType::MYSTIC:
         return "mysticOre.png";
+    case BlockType::RUBY:
+        return "rubyOre.png";
 
     default:
         return "stone.png";
@@ -73,6 +75,8 @@ void Block::hit(int damage)
                 InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::EMERALD));
             if (blockType == BlockType::MYSTIC)
                 InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::MYSTIC));
+            if (blockType == BlockType::RUBY)
+                InterfaceManager::getInstance().getStorage()->addItem(Item(Item::ItemType::RUBY));
 
         }
     }

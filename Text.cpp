@@ -32,11 +32,12 @@ void Text::stringTextToTexture()
 	double positionX = x;
 	for (int i = 0; i < strText.length(); i++)
 	{
-		//x + (i * fontSize) % width;
-		positionX += fontSize;
+		if(i > 0)
+			positionX += fontSize;
+
 		if (positionX + fontSize > width + x)
 		{
-			positionX = x - fontSize;
+			positionX = x;
 			line++;
 		}
 		
@@ -46,7 +47,7 @@ void Text::stringTextToTexture()
 		if (strText[i] == ';')
 		{
 			line++;
-			positionX = x - fontSize;
+			positionX = x -fontSize;
 			continue;
 		}
 		if (strText[i] == ':')

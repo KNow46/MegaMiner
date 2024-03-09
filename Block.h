@@ -11,6 +11,7 @@ enum BlockType
 	EMERALD,
 	IRON,
 	MYSTIC,
+	RUBY,
 };
 
 class Block : public GameObject

@@ -39,7 +39,7 @@ class World {
         shop = std::make_shared<Shop>(0, -500,500, 500);
         gasStation = std::make_shared<GasStation>(1000, -500, 500, 500);
 
-        machine = std::make_shared<Machine>(100, -150, 110, 90);
+        machine = std::make_shared<Machine>(100, 0, 110, 90);
         addObject(machine);
 
         int numVerticalSectors = mapHeight / sectorSize;
@@ -260,9 +260,13 @@ private:
             { 
                 BlockType blockType;
                 int random = std::rand() % 100;
-                if (random <= 75)
+                if (random <= 70)
                 {
                     blockType = BlockType::STONE;
+                }
+                else if (random <= 75)
+                {
+                    blockType = BlockType::RUBY;
                 }
                 else if (random <= 80)
                 {

@@ -14,16 +14,26 @@ GameRulesScreen::GameRulesScreen():InterfaceObject(0,0,windowWidth, windowHeight
 	screenText.emplace_back(std::make_shared<Text>(600, 200, 800, 500, "-control your ;machine movement;;-open shop", 37));
 
 	screens.emplace_back(std::make_shared<InterfaceObject>(100, 200, 400, 300, "res/textures/shop.png"));
-	screenText.emplace_back(std::make_shared<Text>(600, 230, 800, 500, "in shop you can ;buy upgrades for your machine; and sell resources", 35));
-
+	screenText.emplace_back(std::make_shared<Text>(600, 230, 800, 500, "in shop you can ;buy upgrades for your machine and;sell resources", 35));
+	
 	screens.emplace_back(std::make_shared<InterfaceObject>(100, 200, 400, 300, "res/textures/gasstation.png"));
 	screenText.emplace_back(std::make_shared<Text>(600, 220, 800, 500, "in gas station you ;can buy fuel", 35));
 
 	screens.emplace_back(std::make_shared<InterfaceObject>(100, 200, 400, 300, "res/textures/fueltankonly.png"));
-	screenText.emplace_back(std::make_shared<Text>(600, 210, 800, 500, "control fuel amount. You lose if it is empty", 35));
+	screenText.emplace_back(std::make_shared<Text>(600, 200, 800, 500, "control fuel amount. ;You lose if it is empty", 33));
 
 	screens.emplace_back(std::make_shared<InterfaceObject>(300, 60, 200, 700, "res/textures/storage.png"));
 	screenText.emplace_back(std::make_shared<Text>(600, 210, 800, 500, "-storage for ;mined rescources", 35));
+
+	screens.emplace_back(std::make_shared<Button>(windowWidth/2-150, windowHeight/2-50, 300, 100, "res/textures/start.png", "res/textures/startHovered.png",[this]()
+		{
+			InterfaceManager::getInstance().removeInterfaceObject(this->id);
+			World::getInstance().getMachine()->setIsGamePaused(false);
+			InterfaceManager::getInstance().getFuelTank()->setIsGamePaused(false);
+			InterfaceManager::getInstance().setIsGamePaused(false);
+		}));
+	screenText.emplace_back(std::make_shared<Text>(600, 210, 800, 500, "", 35));
+	
 
 
 	for (int i = 1; i < screens.size(); i++)
@@ -113,9 +123,11 @@ void GameRulesScreen::createCloseScreenButton()
 			InterfaceManager::getInstance().removeInterfaceObject(this->id);
 			World::getInstance().getMachine()->setIsGamePaused(false);
 			InterfaceManager::getInstance().getFuelTank()->setIsGamePaused(false);
+			InterfaceManager::getInstance().setIsGamePaused(false);
 		});
 	aggregatedObjects.emplace_back(closeButton);
 }
+
 void GameRulesScreen::updateScreenVisibility()
 {
 	for (int i = 0; i < this->screens.size(); i++)

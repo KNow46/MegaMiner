@@ -4,11 +4,11 @@ C:\Users\Krzysztof\Desktop\MegaMiner\World.h(180,34): warning C4018: '<': signed
 C:\Users\Krzysztof\Desktop\MegaMiner\World.h(180,66): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Krzysztof\Desktop\MegaMiner\World.h(255,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\Krzysztof\Desktop\MegaMiner\InterfaceManager.h(192,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\Desktop\MegaMiner\GameRulesScreen.cpp(29,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\Desktop\MegaMiner\GameRulesScreen.cpp(33,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\Desktop\MegaMiner\GameRulesScreen.cpp(74,33): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\Desktop\MegaMiner\GameRulesScreen.cpp(121,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krzysztof\Desktop\MegaMiner\GameRulesScreen.cpp(132,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\GameRulesScreen.cpp(39,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\GameRulesScreen.cpp(43,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\GameRulesScreen.cpp(84,33): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\GameRulesScreen.cpp(133,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\GameRulesScreen.cpp(144,20): warning C4018: '<': signed/unsigned mismatch
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\xutility(265,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\memory(2092,13): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,double,double&,int,int,const char(&)[25],GameRulesScreen::createCloseScreenButton::<lambda_1>>(_Ty &,double &&,double &,int &&,int &&,const char (&)[25],GameRulesScreen::createCloseScreenButton::<lambda_1> &&) noexcept(false)' being compiled
           with
@@ -20,17 +20,38 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.3253
           [
               _Ty=double
           ]
-C:\Users\Krzysztof\Desktop\MegaMiner\GameRulesScreen.cpp(111,21): message : see reference to function template instantiation 'std::shared_ptr<Button> std::make_shared<Button,double,double&,int,int,const char(&)[25],GameRulesScreen::createCloseScreenButton::<lambda_1>>(double &&,double &,int &&,int &&,const char (&)[25],GameRulesScreen::createCloseScreenButton::<lambda_1> &&)' being compiled
+C:\Users\Krzysztof\Desktop\MegaMiner\GameRulesScreen.cpp(121,21): message : see reference to function template instantiation 'std::shared_ptr<Button> std::make_shared<Button,double,double&,int,int,const char(&)[25],GameRulesScreen::createCloseScreenButton::<lambda_1>>(double &&,double &,int &&,int &&,const char (&)[25],GameRulesScreen::createCloseScreenButton::<lambda_1> &&)' being compiled
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\xutility(265,77): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
           with
           [
               _Ty=double
           ]
+  Main.cpp
+C:\Users\Krzysztof\Desktop\MegaMiner\InterfaceManager.h(192,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(37,46): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(180,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(180,66): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krzysztof\Desktop\MegaMiner\World.h(255,29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(35,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(39,64): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(88,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(88,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(258,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(258,57): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(60,51): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(262,13): message : see reference to function template instantiation 'void rendererScene<Block>(std::vector<std::shared_ptr<Block>,std::allocator<std::shared_ptr<Block>>> &,Renderer &,Shader &,VertexArray &,VertexBuffer &,VertexBufferLayout &,IndexBuffer &,GLFWwindow *,Camera *,bool)' being compiled
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(60,189): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(61,96): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(61,214): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(62,96): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(62,169): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(63,51): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Krzysztof\Desktop\MegaMiner\Main.cpp(63,142): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  10 of 2751 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+  17 of 2782 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    11 functions had inline decision re-evaluated but remain unchanged
+    30 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
   OpenGL.vcxproj -> C:\Users\Krzysztof\Desktop\MegaMiner\Release\2Dsetup.exe
