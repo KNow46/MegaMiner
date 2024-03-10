@@ -258,8 +258,10 @@ private:
         {
             for (int j = 0; j < mapWidth; j++)
             { 
-                BlockType blockType;
-                int random = std::rand() % 100;
+
+                BlockType blockType = drawBlockType(i/10);
+
+                /*int random = std::rand() % 100;
                 if (random <= 70)
                 {
                     blockType = BlockType::STONE;
@@ -287,7 +289,7 @@ private:
                 else
                 {
                     blockType = BlockType::IRON;
-                }
+                }*/
 
                 block = std::make_shared<Block>(j * blocksSize, i * blocksSize, blocksSize, blocksSize, blockType);
                 addObject(block);
@@ -308,6 +310,155 @@ private:
         }
 
 
+    }
+
+    BlockType drawBlockType(int depthLevel)
+    {
+        int random = std::rand() % 100;
+
+        if (depthLevel == 0)
+        {
+            if (random < 20)
+                return BlockType::IRON;
+            else
+                return BlockType::STONE;
+        }
+        else if (depthLevel == 1)
+        {
+            if (random < 20)
+                return BlockType::IRON;
+            else if (random < 30)
+                return BlockType::GOLD;
+            else 
+                return BlockType::STONE;
+        }
+        else if (depthLevel == 2)
+        {
+            if (random < 15)
+                return BlockType::IRON;
+            else if (random < 30)
+                return BlockType::GOLD;
+            else if (random < 35)
+                return BlockType::DIAMOND;
+            else
+                return BlockType::STONE;
+        }
+        else if (depthLevel == 3)
+        {
+            if (random < 15)
+                return BlockType::IRON;
+            else if (random < 30)
+                return BlockType::GOLD;
+            else if (random < 35)
+                return BlockType::DIAMOND;
+            else
+                return BlockType::STONE;
+        }
+        else if (depthLevel == 3)
+        {
+            if (random < 10)
+                return BlockType::IRON;
+            else if (random < 25)
+                return BlockType::GOLD;
+            else if (random < 35)
+                return BlockType::DIAMOND;
+            else
+                return BlockType::STONE;
+        }
+        else if (depthLevel == 4)
+        {
+            if (random < 10)
+                return BlockType::IRON;
+            else if (random < 20)
+                return BlockType::GOLD;
+            else if (random < 30)
+                return BlockType::DIAMOND;
+            else if (random < 35)
+                return BlockType::EMERALD;
+            else
+                return BlockType::STONE;
+        }
+        else if (depthLevel == 5)
+        {
+            if (random < 10)
+                return BlockType::IRON;
+            else if (random < 20)
+                return BlockType::GOLD;
+            else if (random < 30)
+                return BlockType::DIAMOND;
+            else if (random < 40)
+                return BlockType::EMERALD;
+            else
+                return BlockType::STONE;
+        }
+        else if (depthLevel == 6)
+        {
+            if (random < 10)
+                return BlockType::IRON;
+            else if (random < 15)
+                return BlockType::GOLD;
+            else if (random < 20)
+                return BlockType::DIAMOND;
+            else if (random < 30)
+                return BlockType::EMERALD;
+            else if (random < 35)
+                return BlockType::MYSTIC;
+            else
+                return BlockType::STONE;
+        }
+        else if (depthLevel == 7)
+        {
+            if (random < 5)
+                return BlockType::IRON;
+            else if (random < 10)
+                return BlockType::GOLD;
+            else if (random < 20)
+                return BlockType::DIAMOND;
+            else if (random < 30)
+                return BlockType::EMERALD;
+            else if (random < 40)
+                return BlockType::MYSTIC;
+            else
+                return BlockType::STONE;
+        }
+        else if (depthLevel == 8)
+        {
+            if (random < 5)
+                return BlockType::IRON;
+            else if (random < 10)
+                return BlockType::GOLD;
+            else if (random < 20)
+                return BlockType::DIAMOND;
+            else if (random < 30)
+                return BlockType::EMERALD;
+            else if (random < 35)
+                return BlockType::MYSTIC;
+            else if (random < 40)
+                return BlockType::RUBY;
+            else
+                return BlockType::STONE;
+        }
+        else if (depthLevel == 9)
+        {
+            if (random < 5)
+                return BlockType::IRON;
+            else if (random < 10)
+                return BlockType::GOLD;
+            else if (random < 20)
+                return BlockType::DIAMOND;
+            else if (random < 30)
+                return BlockType::EMERALD;
+            else if (random < 40)
+                return BlockType::MYSTIC;
+            else if (random < 50)
+                return BlockType::RUBY;
+            else
+                return BlockType::STONE;
+         }
+
+
+
+        return BlockType::STONE;
     }
   
 };

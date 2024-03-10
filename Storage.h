@@ -15,7 +15,7 @@ struct Item
 
 		if (itemType == GOLD)
 		{
-			value = 30;
+			value = 150;
 			texturePath = "res/textures/gold.png";
 		}
 		if (itemType == DIAMOND)
@@ -25,12 +25,12 @@ struct Item
 		}
 		if (itemType == IRON)
 		{
-			value = 10;
+			value = 80;
 			texturePath = "res/textures/iron.png";
 		}
 		if (itemType == EMERALD)
 		{
-			value = 100;
+			value = 700;
 			texturePath = "res/textures/emerald.png";
 		}
 		if (itemType == MYSTIC)

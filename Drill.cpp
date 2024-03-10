@@ -19,16 +19,7 @@ int Drill::getPower()
 }
 int Drill::getPower(int atLevel)
 {
-	if (atLevel == 1)
-		return 1;
-	if (atLevel == 2)
-		return 2;
-	if (atLevel == 3)
-		return 3;
-	if (atLevel == 4)
-		return 4;
-	if (atLevel == 5)
-		return 5;
+	return atLevel * 1;
 }
 int Drill::getUpgradeCost()
 {
@@ -37,10 +28,11 @@ int Drill::getUpgradeCost()
 	if (level == 2)
 		return 1000;
 	if (level == 3)
-		return 2000;
+		return 1500;
 	if (level == 4)
-		return 5000;
-	return 99999999;
+		return 2500;
+	else
+		return level * 1000;
 }
 void Drill::upgrade()
 {
