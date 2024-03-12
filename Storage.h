@@ -40,7 +40,7 @@ struct Item
 		}
 		if (itemType == RUBY)
 		{
-			value = 500;
+			value = 1500;
 			texturePath = "res/textures/ruby.png";
 		}
 	};

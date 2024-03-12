@@ -3,7 +3,8 @@
 int GameObject::nextId = 1;
 
 GameObject::GameObject(int x, int y, int width, int height, std::string texturePath)
-    : x(x), y(y), height(height), width(width), isDestroyed(false), texture(TextureManager::getInstance().getTexture(texturePath)),isVisible(true), texturePath(texturePath)
+    : x(x), y(y), height(height), width(width), isDestroyed(false), rotation(0),
+    texture(TextureManager::getInstance().getTexture(texturePath)),isVisible(true), texturePath(texturePath)
 {
     id = nextId++;
 }
@@ -42,6 +43,16 @@ bool GameObject::getIsDestroyed() {
 
 const Texture& GameObject::getTexture() {
     return texture;
+}
+
+void GameObject::setRotation(float rotation)
+{
+    this->rotation = rotation;
+}
+
+float GameObject::getRotation()
+{
+    return rotation;
 }
 
 void GameObject::update() {

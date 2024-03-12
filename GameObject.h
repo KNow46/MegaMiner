@@ -22,6 +22,7 @@ protected:
     bool isVisible;
     static int nextId;
     int id;
+    float rotation;
 
 public:
     GameObject(int x, int y, int width, int height, std::string texturePath);
@@ -42,7 +43,8 @@ public:
     bool getIsVisible();
     virtual void setIsVisible(bool isVisible);
     virtual const Texture& getTexture();
-
+    void setRotation(float rotation);
+    float getRotation();
     virtual void update();
 
     std::vector <std::shared_ptr<GameObject>>& getAggregatedObjects();

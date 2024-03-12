@@ -92,16 +92,7 @@ void Storage::erase()
 }
 int Storage::getCapacity(int atLevel)
 {
-	if (atLevel == 1)
-		return 5;
-	if (atLevel == 2)
-		return 10;
-	if (atLevel == 3)
-		return 15;
-	if (atLevel == 4)
-		return 20;
-	if (atLevel == 5)
-		return 25;
+	return atLevel * 5;
 }
 int Storage::getCapacity()
 {
@@ -116,8 +107,8 @@ int Storage::getUpgradeCost()
 	if (level == 3)
 		return 2000;
 	if (level == 4)
-		return 5000;
-	return 99999999;
+		return 3000;
+	return level * 1000;
 }
 void Storage::upgrade()
 {

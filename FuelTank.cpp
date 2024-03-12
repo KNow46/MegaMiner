@@ -54,7 +54,7 @@ void FuelTank::update()
 	{
 		if (currentFuel > 0)
 		{
-			currentFuel -= 0.05;
+			currentFuel -= 0.02;
 			fuelLevelImage->setWidth(fuelLevelImgaeMaxWidth * currentFuel / capacity);
 		}
 		else

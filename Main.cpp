@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <cmath>
 
 #include "Global.h"
 #include "Renderer.h"
@@ -41,6 +42,42 @@ float transformToOpenGl(const float &position, const float &length, const bool &
     return result;
 }
 
+struct point
+{
+    int x, y;
+};
+point* rotateRectangle(std::shared_ptr<GameObject> object)
+{
+
+    float angle = object->getRotation();
+    angle = angle * 3.14159 / 180.0;
+
+    point center = { object->getX() + object->getWidth() / 2, object->getY() + object->getHeight() };
+
+    point leftUpper;
+    leftUpper.x = center.x + (object->getX() - center.x) * cos(angle) - (object->getY() - center.y) * sin(angle);
+    leftUpper.y = center.y + (object->getX() - center.x) * sin(angle) + (object->getY() - center.y) * cos(angle);
+ 
+
+    point rightUpper;
+    rightUpper.x = center.x + (object->getX() + object->getWidth() - center.x) * cos(angle) - (object->getY() - center.y) * sin(angle);
+    rightUpper.y = center.y + (object->getX() + object->getWidth() - center.x) * sin(angle) + (object->getY() - center.y) * cos(angle);
+
+    point leftLower;
+    leftLower.x = center.x + (object->getX()  - center.x) * cos(angle) - (object->getY() + object->getHeight() - center.y) * sin(angle);
+    leftLower.y = center.y + (object->getX() - center.x) * sin(angle) + (object->getY() + object->getHeight() - center.y) * cos(angle); 
+
+    point rightLower;
+    rightLower.x = center.x + (object->getX() + object->getWidth() - center.x) * cos(angle) - (object->getY() + object->getHeight() - center.y) * sin(angle);
+    rightLower.y = center.y + (object->getX() + object->getWidth() - center.x) * sin(angle) + (object->getY() + object->getHeight() - center.y) * cos(angle);
+
+    point* returnPoints = new point[4]{ leftUpper , rightUpper, leftLower , rightLower };
+
+   
+
+    return returnPoints;
+}
+
 template<typename T>
 void rendererScene(std::vector<std::shared_ptr<T>> &sceneObjects, Renderer& renderer, Shader& shader, 
     VertexArray& va, VertexBuffer& vb, VertexBufferLayout& layout, IndexBuffer& ib, GLFWwindow* window, Camera *camera, bool areObjectsInterface)
@@ -52,15 +89,25 @@ void rendererScene(std::vector<std::shared_ptr<T>> &sceneObjects, Renderer& rend
         {
             //float angle = 1.0;
 
+            point *points = rotateRectangle(sceneObject);
+
+            
             glEnable(GL_SCISSOR_TEST);
 
             glScissor(0, 0, camera->getXrange(), camera->getYrange());
 
-            float positionsTransformed[] = {
+        /*    float positionsTransformed[] = {
             transformToOpenGl(sceneObject->getX() - (areObjectsInterface ? 0 : camera->getX()), 0, 1),  transformToOpenGl(sceneObject->getY() - (areObjectsInterface ? 0 : camera->getY())  + sceneObject->getHeight(),0,0), 0.0f, 0.0f,
             transformToOpenGl(sceneObject->getX() - (areObjectsInterface ? 0 : camera->getX()) + sceneObject->getWidth(), 0, 1) , transformToOpenGl(sceneObject->getY() - (areObjectsInterface ? 0 : camera->getY()) + sceneObject->getHeight(),0,0), 1.0f, 0.0f,
             transformToOpenGl(sceneObject->getX() - (areObjectsInterface ? 0 : camera->getX()) + sceneObject->getWidth(), 0, 1) , transformToOpenGl(sceneObject->getY() - (areObjectsInterface ? 0 : camera->getY()), 0, 0) , 1.0f, 1.0f,
             transformToOpenGl(sceneObject->getX() - (areObjectsInterface ? 0 : camera->getX()), 0, 1), transformToOpenGl(sceneObject->getY() - (areObjectsInterface ? 0 : camera->getY()), 0, 0), 0.0f, 1.0f
+            };*/
+ 
+            float positionsTransformed[] = {
+          transformToOpenGl(points[2].x - (areObjectsInterface ? 0 : camera->getX()), 0, 1),  transformToOpenGl(points[2].y - (areObjectsInterface ? 0 : camera->getY()) ,0,0), 0.0f, 0.0f,
+          transformToOpenGl(points[3].x - (areObjectsInterface ? 0 : camera->getX()), 0, 1) , transformToOpenGl(points[3].y - (areObjectsInterface ? 0 : camera->getY()) ,0,0), 1.0f, 0.0f,
+          transformToOpenGl(points[1].x - (areObjectsInterface ? 0 : camera->getX()) , 0, 1) , transformToOpenGl(points[1].y - (areObjectsInterface ? 0 : camera->getY()), 0, 0) , 1.0f, 1.0f,
+          transformToOpenGl(points[0].x - (areObjectsInterface ? 0 : camera->getX()), 0, 1), transformToOpenGl(points[0].y - (areObjectsInterface ? 0 : camera->getY()), 0, 0), 0.0f, 1.0f
             };
 
            vb.changeData(positionsTransformed, 4 * 4 * sizeof(float));
@@ -73,6 +120,7 @@ void rendererScene(std::vector<std::shared_ptr<T>> &sceneObjects, Renderer& rend
 
 
             glDisable(GL_SCISSOR_TEST);
+            delete[] points;
         }
 
     }	
